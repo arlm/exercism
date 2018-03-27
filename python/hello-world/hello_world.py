@@ -1,2 +1,2 @@
-def hello(name=''):
-    return 'Hello, World!'
+def hello(name='World'):
+    return 'Hello, {}!'.format(name)
