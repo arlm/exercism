@@ -6,9 +6,11 @@ def is_pangram(sentence):
 
     if sentence == "":
         return False
+    
+    sentence = sentence.lower()
 
     for char in string.ascii_lowercase:
-        if sentence.lower().count(char) == 0:
+        if char not in sentence:
             return False
 
     return True
