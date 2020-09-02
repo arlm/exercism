@@ -5,6 +5,39 @@ public static class NucleotideCount
 {
     public static IDictionary<char, int> Count(string sequence)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var result = new Dictionary<char, int>
+        {
+            { 'A' , 0 },
+            { 'C' , 0 },
+            { 'G' , 0 },
+            { 'T' , 0 }
+        };
+
+        foreach (var nucleotid in sequence)
+        {
+            switch(nucleotid)
+            {
+                case 'A':
+                    result['A']++;
+                    break;
+
+                case 'C':
+                    result['C']++;
+                    break;
+
+                case 'G':
+                    result['G']++;
+                    break;
+
+                case 'T':
+                    result['T']++;
+                    break;
+
+                default:
+                    throw new ArgumentException($"Invalid nucleotid: {nucleotid}");
+            }
+        }
+
+        return result;
     }
 }

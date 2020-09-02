@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Remove="Example.cs" />
+    <Compile Remove="Program.cs" />
   </ItemGroup>
 
   <ItemGroup>
