@@ -13,7 +13,7 @@ public class Tree
     public int Id { get; set; }
     public int ParentId { get; set; }
 
-    public List<Tree> Children { get; set; }
+    public List<Tree> Children { get; } = new List<Tree>();
 
     public bool IsLeaf => Children.Count == 0;
 }
@@ -32,11 +32,11 @@ public static class TreeBuilder
 
         foreach (var record in records)
         {
-            var t = new Tree { Children = new List<Tree>(), Id = record.RecordId, ParentId = record.ParentId };
-            trees.Add(t);
 
+            var t = new Tree { Id = record.RecordId, ParentId = record.ParentId };
             ValidateRecord(previousRecordId, t);
 
+            trees.Add(t);
             previousRecordId++;
         }
 
