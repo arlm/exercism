@@ -25,7 +25,9 @@ public static class TreeBuilder
 {
     public static Tree BuildTree(IEnumerable<TreeBuildingRecord> records)
     {
-        if (!(records?.Any() ?? false))
+        _ = records ?? throw new ArgumentException();
+
+        if (!records.Any())
         {
             throw new ArgumentException();
         }
