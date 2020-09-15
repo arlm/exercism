@@ -49,10 +49,9 @@ public static class TreeBuilder
             .Select((record, index) => record.RecordId == index ? new Tree(record) : throw new ArgumentException())
             .ToList();
 
-        foreach (var record in trees)
+        foreach (var record in trees.Skip(1))
         {
-            if (record.RecordId != 0)
-                trees.First(parent => parent.RecordId == record.ParentId).Children.Add(record);
+            trees.First(parent => parent.RecordId == record.ParentId).Children.Add(record);
         }
 
         return trees.First(t => t.RecordId == 0);
