@@ -22,8 +22,8 @@ public static class TreeBuilder
 {
     public static Tree BuildTree(IEnumerable<TreeBuildingRecord> records)
     {
-        var ordered = new SortedList<int, TreeBuildingRecord>(
-            records.ToDictionary(record => record.RecordId));
+        var dictionary = records.ToDictionary(record => record.RecordId);
+        var ordered = new SortedList<int, TreeBuildingRecord>(dictionary);
 
         records = ordered.Values;
 
@@ -32,11 +32,11 @@ public static class TreeBuilder
 
         foreach (var record in records)
         {
-
             var t = new Tree { Id = record.RecordId, ParentId = record.ParentId };
             ValidateRecord(previousRecordId, t);
 
             trees.Add(t);
+
             previousRecordId++;
         }
 
@@ -57,14 +57,21 @@ public static class TreeBuilder
 
     private static void ValidateRecord(int previousRecordId, Tree t)
     {
-        if (t.Id == 0 && (t.ParentId != 0))
+        if (t.Id == 0)
         {
-            throw new ArgumentException();
+            if (t.ParentId == 0)
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (t.ParentId < t.Id && t.Id == previousRecordId + 1)
+            {
+                return;
+            }
         }
 
-        if (t.Id != 0 && (t.ParentId >= t.Id || t.Id != previousRecordId + 1))
-        {
-            throw new ArgumentException();
-        }
+        throw new ArgumentException();
     }
 }
