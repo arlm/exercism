@@ -25,11 +25,12 @@ public static class TreeBuilder
         records = records.OrderBy(record => record.RecordId);
 
         var trees = new List<Tree>();
-        var previousRecordId = -1;
+        var previousRecordId = 0;
 
         foreach (var record in records)
         {
             var t = new Tree { Id = record.RecordId, ParentId = record.ParentId };
+
             ValidateRecord(previousRecordId, t);
 
             trees.Add(t);
@@ -59,7 +60,7 @@ public static class TreeBuilder
             return;
         }
         
-        if (t.ParentId < t.Id && t.Id == previousRecordId + 1)
+        if (t.ParentId < t.Id && t.Id == previousRecordId)
         {
             return;
         }
