@@ -42,7 +42,7 @@ public static class TreeBuilder
                 throw new ArgumentException();
             }
 
-            ++previousRecordId;
+            previousRecordId++;
         }
         
         if (trees.Count == 0)
