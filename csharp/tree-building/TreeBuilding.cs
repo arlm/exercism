@@ -16,6 +16,13 @@ public class Tree
     public List<Tree> Children { get; } = new List<Tree>();
 
     public bool IsLeaf => Children.Count == 0;
+
+    public static explicit operator Tree(TreeBuildingRecord obj) =>
+        new Tree
+        {
+            Id = obj.RecordId,
+            ParentId = obj.ParentId
+        };
 }
 
 public static class TreeBuilder
@@ -32,7 +39,7 @@ public static class TreeBuilder
 
         foreach (var record in records.OrderBy(record => record.RecordId))
         {
-            var item = new Tree { Id = record.RecordId, ParentId = record.ParentId };
+            var item = (Tree)record;
 
             ValidateRecord(previousRecordId, item);
 
@@ -56,7 +63,7 @@ public static class TreeBuilder
             // It is the root item
             return;
         }
-        
+
         if (item.ParentId < item.Id && item.Id == previousRecordId)
         {
             // It is a valid regular item
