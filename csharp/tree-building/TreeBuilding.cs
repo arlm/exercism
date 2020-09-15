@@ -14,7 +14,18 @@ public class Tree : TreeBuildingRecord
     {
         ParentId = record.ParentId;
         RecordId = record.RecordId;
+
+        if (RecordId == 0)
+        {
+            if (ParentId != 0)
+                throw new ArgumentException();
+        }
+        else if (ParentId >= RecordId)
+        {
+            throw new ArgumentException();
+        }
     }
+
     public List<Tree> Children { get; } = new List<Tree>();
 
     public bool IsLeaf => Children.Count == 0;
@@ -34,10 +45,7 @@ public static class TreeBuilder
 
         var orderedRecords = records.OrderBy(record => record.RecordId);
 
-        var hasInvalidItems = orderedRecords.Where((r, index) =>
-             r.RecordId != index ||
-            (r.RecordId == 0 && r.ParentId != 0) ||
-            (r.RecordId != 0 && r.ParentId >= r.RecordId)).Any();
+        var hasInvalidItems = orderedRecords.Where((r, index) => r.RecordId != index ).Any();
 
         if (hasInvalidItems)
         {
