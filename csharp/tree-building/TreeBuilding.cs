@@ -35,21 +35,23 @@ public static class TreeBuilder
         }
 
         var trees = new List<Tree>();
-        var previousRecordId = 0;
+        var index = 0;
 
         foreach (var record in records.OrderBy(record => record.RecordId))
         {
             var item = (Tree)record;
 
-            ValidateRecord(previousRecordId, item);
-
-            trees.Add(item);
+            ValidateRecord(index, item);
 
             if (item.Id != 0)
                 trees.First(leaf => leaf.Id == item.ParentId).Children.Add(item);
 
-            previousRecordId++;
+            trees.Add(item);
+
+            index++;
         }
+
+
 
         return trees.First(t => t.Id == 0);
     }
