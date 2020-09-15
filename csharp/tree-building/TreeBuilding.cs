@@ -8,21 +8,17 @@ public class TreeBuildingRecord
     public int RecordId { get; set; }
 }
 
-public class Tree
+public class Tree : TreeBuildingRecord
 {
-    public int Id { get; set; }
-    public int ParentId { get; set; }
-
+    public Tree(TreeBuildingRecord record)
+    {
+        ParentId = record.ParentId;
+        RecordId = record.RecordId;
+    }
     public List<Tree> Children { get; } = new List<Tree>();
 
     public bool IsLeaf => Children.Count == 0;
 
-    public static explicit operator Tree(TreeBuildingRecord obj) =>
-        new Tree
-        {
-            Id = obj.RecordId,
-            ParentId = obj.ParentId
-        };
 }
 
 public static class TreeBuilder
@@ -39,12 +35,12 @@ public static class TreeBuilder
 
         foreach (var record in records.OrderBy(record => record.RecordId))
         {
-            var item = (Tree)record;
+            var item = new Tree(record);
 
             ValidateRecord(index, item);
 
-            if (item.Id != 0)
-                trees.First(leaf => leaf.Id == item.ParentId).Children.Add(item);
+            if (item.RecordId != 0)
+                trees.First(leaf => leaf.RecordId == item.ParentId).Children.Add(item);
 
             trees.Add(item);
 
@@ -53,18 +49,18 @@ public static class TreeBuilder
 
 
 
-        return trees.First(t => t.Id == 0);
+        return trees.First(t => t.RecordId == 0);
     }
 
     private static void ValidateRecord(int previousRecordId, Tree item)
     {
-        if (item.Id == 0 && item.ParentId == 0)
+        if (item.RecordId == 0 && item.ParentId == 0)
         {
             // It is the root item
             return;
         }
 
-        if (item.ParentId < item.Id && item.Id == previousRecordId)
+        if (item.ParentId < item.RecordId && item.RecordId == previousRecordId)
         {
             // It is a valid regular item
             return;
