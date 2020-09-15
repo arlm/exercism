@@ -34,11 +34,11 @@ public static class TreeBuilder
 
         foreach (var record in records)
         {
-            var t = new Tree { Id = record.RecordId, ParentId = record.ParentId };
+            var item = new Tree { Id = record.RecordId, ParentId = record.ParentId };
 
-            ValidateRecord(previousRecordId, t);
+            ValidateRecord(previousRecordId, item);
 
-            trees.Add(t);
+            trees.Add(item);
 
             previousRecordId++;
         }
