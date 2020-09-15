@@ -54,6 +54,6 @@ public static class TreeBuilder
             trees.First(parent => parent.RecordId == record.ParentId).Children.Add(record);
         }
 
-        return trees.First(t => t.RecordId == 0);
+        return trees.First();
     }
 }
