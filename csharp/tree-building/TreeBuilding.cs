@@ -43,10 +43,9 @@ public static class TreeBuilder
             throw new ArgumentException();
         }
 
-        for (int i = 1; i < trees.Count; i++)
+        foreach(var item in trees.Skip(1))
         {
-            var t = trees.First(x => x.Id == i);
-            trees.First(x => x.Id == t.ParentId).Children.Add(t);
+            trees.First(x => x.Id == item.ParentId).Children.Add(item);
         }
 
         return trees.First(t => t.Id == 0);
