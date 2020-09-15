@@ -46,8 +46,7 @@ public static class TreeBuilder
         for (int i = 1; i < trees.Count; i++)
         {
             var t = trees.First(x => x.Id == i);
-            var parent = trees.First(x => x.Id == t.ParentId);
-            parent.Children.Add(t);
+            trees.First(x => x.Id == t.ParentId).Children.Add(t);
         }
 
         return trees.First(t => t.Id == 0);
