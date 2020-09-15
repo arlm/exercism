@@ -27,12 +27,10 @@ public static class TreeBuilder
             throw new ArgumentException();
         }
 
-        records = records.OrderBy(record => record.RecordId);
-
         var trees = new List<Tree>();
         var previousRecordId = 0;
 
-        foreach (var record in records)
+        foreach (var record in records.OrderBy(record => record.RecordId))
         {
             var item = new Tree { Id = record.RecordId, ParentId = record.ParentId };
 
