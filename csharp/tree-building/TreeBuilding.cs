@@ -22,10 +22,7 @@ public static class TreeBuilder
 {
     public static Tree BuildTree(IEnumerable<TreeBuildingRecord> records)
     {
-        var dictionary = records.ToDictionary(record => record.RecordId);
-        var ordered = new SortedList<int, TreeBuildingRecord>(dictionary);
-
-        records = ordered.Values;
+        records = records.OrderBy(record => record.RecordId);
 
         var trees = new List<Tree>();
         var previousRecordId = -1;
