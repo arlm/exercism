@@ -45,23 +45,14 @@ public static class TreeBuilder
 
         var orderedRecords = records.OrderBy(record => record.RecordId);
 
-        var hasInvalidItems = orderedRecords.Where((r, index) => r.RecordId != index ).Any();
+        var trees = orderedRecords
+            .Select((record, index) => record.RecordId == index ? new Tree(record) : throw new ArgumentException())
+            .ToList();
 
-        if (hasInvalidItems)
+        foreach (var record in trees)
         {
-            throw new ArgumentException();
-        }
-
-        var trees = new List<Tree>();
-
-        foreach (var record in orderedRecords)
-        {
-            var item = new Tree(record);
-
-            if (item.RecordId != 0)
-                trees.First(leaf => leaf.RecordId == item.ParentId).Children.Add(item);
-
-            trees.Add(item);
+            if (record.RecordId != 0)
+                trees.First(parent => parent.RecordId == record.ParentId).Children.Add(record);
         }
 
         return trees.First(t => t.RecordId == 0);
