@@ -22,6 +22,11 @@ public static class TreeBuilder
 {
     public static Tree BuildTree(IEnumerable<TreeBuildingRecord> records)
     {
+        if (!(records?.Any() ?? false))
+        {
+            throw new ArgumentException();
+        }
+
         records = records.OrderBy(record => record.RecordId);
 
         var trees = new List<Tree>();
@@ -36,11 +41,6 @@ public static class TreeBuilder
             trees.Add(t);
 
             previousRecordId++;
-        }
-
-        if (trees.Count == 0)
-        {
-            throw new ArgumentException();
         }
 
         foreach(var item in trees.Skip(1))
