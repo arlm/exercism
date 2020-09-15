@@ -51,15 +51,17 @@ public static class TreeBuilder
         return trees.First(t => t.Id == 0);
     }
 
-    private static void ValidateRecord(int previousRecordId, Tree t)
+    private static void ValidateRecord(int previousRecordId, Tree item)
     {
-        if (t.Id == 0 && t.ParentId == 0)
+        if (item.Id == 0 && item.ParentId == 0)
         {
+            // It is the root item
             return;
         }
         
-        if (t.ParentId < t.Id && t.Id == previousRecordId)
+        if (item.ParentId < item.Id && item.Id == previousRecordId)
         {
+            // It is a valid regular item
             return;
         }
 
