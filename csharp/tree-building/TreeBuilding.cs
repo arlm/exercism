@@ -45,12 +45,10 @@ public static class TreeBuilder
 
             trees.Add(item);
 
-            previousRecordId++;
-        }
+            if (item.Id != 0)
+                trees.First(leaf => leaf.Id == item.ParentId).Children.Add(item);
 
-        foreach(var item in trees.Skip(1))
-        {
-            trees.First(x => x.Id == item.ParentId).Children.Add(item);
+            previousRecordId++;
         }
 
         return trees.First(t => t.Id == 0);
