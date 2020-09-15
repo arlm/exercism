@@ -54,19 +54,14 @@ public static class TreeBuilder
 
     private static void ValidateRecord(int previousRecordId, Tree t)
     {
-        if (t.Id == 0)
+        if (t.Id == 0 && t.ParentId == 0)
         {
-            if (t.ParentId == 0)
-            {
-                return;
-            }
+            return;
         }
-        else
+        
+        if (t.ParentId < t.Id && t.Id == previousRecordId + 1)
         {
-            if (t.ParentId < t.Id && t.Id == previousRecordId + 1)
-            {
-                return;
-            }
+            return;
         }
 
         throw new ArgumentException();
