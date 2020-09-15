@@ -22,12 +22,8 @@ public static class TreeBuilder
 {
     public static Tree BuildTree(IEnumerable<TreeBuildingRecord> records)
     {
-        var ordered = new SortedList<int, TreeBuildingRecord>();
-
-        foreach (var record in records)
-        {
-            ordered.Add(record.RecordId, record);
-        }
+        var ordered = new SortedList<int, TreeBuildingRecord>(
+            records.ToDictionary(record => record.RecordId));
 
         records = ordered.Values;
 
