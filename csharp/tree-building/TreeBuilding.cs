@@ -32,42 +32,30 @@ public static class TreeBuilder
             throw new ArgumentException();
         }
 
-        var trees = new List<Tree>();
-        var index = 0;
+        var orderedRecords = records.OrderBy(record => record.RecordId);
 
-        foreach (var record in records.OrderBy(record => record.RecordId))
+        var hasInvalidItems = orderedRecords.Where((r, index) =>
+             r.RecordId != index ||
+            (r.RecordId == 0 && r.ParentId != 0) ||
+            (r.RecordId != 0 && r.ParentId >= r.RecordId)).Any();
+
+        if (hasInvalidItems)
+        {
+            throw new ArgumentException();
+        }
+
+        var trees = new List<Tree>();
+
+        foreach (var record in orderedRecords)
         {
             var item = new Tree(record);
-
-            ValidateRecord(index, item);
 
             if (item.RecordId != 0)
                 trees.First(leaf => leaf.RecordId == item.ParentId).Children.Add(item);
 
             trees.Add(item);
-
-            index++;
         }
-
-
 
         return trees.First(t => t.RecordId == 0);
-    }
-
-    private static void ValidateRecord(int previousRecordId, Tree item)
-    {
-        if (item.RecordId == 0 && item.ParentId == 0)
-        {
-            // It is the root item
-            return;
-        }
-
-        if (item.ParentId < item.RecordId && item.RecordId == previousRecordId)
-        {
-            // It is a valid regular item
-            return;
-        }
-
-        throw new ArgumentException();
     }
 }
