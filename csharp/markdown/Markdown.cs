@@ -3,14 +3,14 @@ using System.Text.RegularExpressions;
 
 public static class Markdown
 {
-    private static string Wrap(string text, string tag) => "<" + tag + ">" + text + "</" + tag + ">";
+    private static string Wrap(string text, string tag) => $"<{tag}>{text}</{tag}>";
 
-    private static bool IsTag(string text, string tag) => text.StartsWith("<" + tag + ">");
+    private static bool IsTag(string text, string tag) => text.StartsWith($"<{tag}>");
 
     private static string Parse(string markdown, string delimiter, string tag)
     {
-        var pattern = delimiter + "(.+)" + delimiter;
-        var replacement = "<" + tag + ">$1</" + tag + ">";
+        var pattern = $"{delimiter}(.+){delimiter}";
+        var replacement = $"<{tag}>$1</{tag}>";
         return Regex.Replace(markdown, pattern, replacement);
     }
 
@@ -54,13 +54,13 @@ public static class Markdown
             return null;
         }
 
-        var headerTag = "h" + count;
+        var headerTag = $"h{count}";
         var headerHtml = Wrap(markdown.Substring(count + 1), headerTag);
 
         if (list)
         {
             inListAfter = false;
-            return "</ul>" + headerHtml;
+            return $"</ul>{headerHtml}";
         }
         else
         {
@@ -83,7 +83,7 @@ public static class Markdown
             else
             {
                 inListAfter = true;
-                return "<ul>" + innerHtml;
+                return $"<ul>{innerHtml}";
             }
         }
 
@@ -101,7 +101,8 @@ public static class Markdown
         else
         {
             inListAfter = false;
-            return "</ul>" + ParseText(markdown, false);
+            var parsedText = ParseText(markdown, false);
+            return $"</ul>{parsedText}";
         }
     }
 
@@ -141,7 +142,7 @@ public static class Markdown
 
         if (list)
         {
-            return result + "</ul>";
+            return $"{result}</ul>";
         }
         else
         {
