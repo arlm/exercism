@@ -21,21 +21,12 @@ public static class Markdown
     private static string Parse(this string markdown, string delimiter, string tag) =>
         Regex.Replace(markdown, $"{delimiter}(.+){delimiter}", $"<{tag}>$1</{tag}>");
 
-    private static string ParseHeader(string markdown)
-    {
-        var count = markdown.TakeWhile(@char => @char == MARKDOWN_HEADER).Count();
-        var headerHtml = markdown.Substring(count + 1).Wrap($"h{count}");
+    private static string MaybeCloseList(this string value, bool isInList) =>
+        isInList ? $"</ul>{value}" : value;
 
-        return headerHtml;
-    }
+    private static string MaybeOpenList(this string innerHtml, bool isInList) =>
+        isInList ? innerHtml : $"<ul>{innerHtml}";
 
-    private static string ParseLineItem(string markdown, bool list)
-    {
-        var innerHtml = markdown.Substring(2).Wrap(HTML_LIST);
-
-        return list ? innerHtml : $"<ul>{innerHtml}";
-    }
-    
     private static (string, bool) ParseLine(string markdown, bool list)
     {
         markdown = markdown.Parse(MARKDOWN_BOLD, HTML_BOLD);
@@ -46,21 +37,22 @@ public static class Markdown
 
         if (markdown.StartsWith(MARKDOWN_HEADER))
         {
-            var value = ParseHeader(markdown);
-            result = isInList ? $"</ul>{value}" : value;
+            var count = markdown.TakeWhile(@char => @char == MARKDOWN_HEADER).Count();
+            var headerHtml = markdown.Substring(count + 1).Wrap($"h{count}");
+
+            result = headerHtml.MaybeCloseList(isInList);
             isInList = false;
         }
 
         if (markdown.StartsWith(MARKDOWN_LIST_ITEM))
         {
-            result = ParseLineItem(markdown, list);
+            result = markdown.Substring(2).Wrap(HTML_LIST).MaybeOpenList(list);
             isInList = true;
         }
 
         if (result == null)
         {
-            var value = markdown.Wrap(HTML_PARAGRAPH);
-            result = isInList ? $"</ul>{value}" : value;
+            result = markdown.Wrap(HTML_PARAGRAPH).MaybeCloseList(isInList);
             isInList = false;
         }
 
