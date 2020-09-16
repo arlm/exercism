@@ -64,20 +64,10 @@ public static class Markdown
 
     private static string ParseParagraph(string markdown, bool list, out bool inListAfter)
     {
-        if (!list)
-        {
-            inListAfter = false;
-            return ParseText(markdown, list);
-        }
-        else
-        {
-            inListAfter = false;
-            var parsedText = ParseText(markdown, false);
-            return $"</ul>{parsedText}";
-        }
-    }
+        inListAfter = false;
+        var parsedText = ParseText(markdown, false);
 
-
+        return list ? $"</ul>{parsedText}" : parsedText;
     }
 
     private static string ParseLine(string markdown, bool list, out bool inListAfter) =>
