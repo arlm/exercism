@@ -31,36 +31,26 @@ public static class Markdown
         return list ? parsedText : Wrap(parsedText, TAG_PARAGRAPH);
     }
 
-    private static (string, bool) ParseHeader(string markdown, bool list)
+    private static string ParseHeader(string markdown, bool list)
     {
-        if (!markdown.StartsWith(MARKDOWN_HEADER))
-        {
-            return (null, list);
-        }
-
         var count = markdown.TakeWhile(@char => @char == MARKDOWN_HEADER).Count();
         var headerHtml = Wrap(markdown.Substring(count + 1), $"h{count}");
 
-        return (list ? $"</ul>{headerHtml}" : headerHtml, false);
+        return list ? $"</ul>{headerHtml}" : headerHtml;
     }
 
-    private static (string, bool) ParseLineItem(string markdown, bool list)
+    private static string ParseLineItem(string markdown, bool list)
     {
-        if (markdown.StartsWith(MARKDOWN_LIST_ITEM))
-        {
-            var innerHtml = Wrap(ParseText(markdown.Substring(2), true), TAG_LIST);
+        var innerHtml = Wrap(ParseText(markdown.Substring(2), true), TAG_LIST);
 
-            return (list ? innerHtml : $"<ul>{innerHtml}", true);
-        }
-
-        return (null, list);
+        return list ? innerHtml : $"<ul>{innerHtml}";
     }
 
-    private static (string, bool) ParseParagraph(string markdown, bool list)
+    private static string ParseParagraph(string markdown, bool list)
     {
         var parsedText = ParseText(markdown, false);
 
-        return (list ? $"</ul>{parsedText}" : parsedText, false);
+        return list ? $"</ul>{parsedText}" : parsedText;
     }
 
     private static (string, bool) ParseLine(string markdown, bool list)
@@ -69,13 +59,22 @@ public static class Markdown
         bool inListAfter = false;
 
         if (markdown.StartsWith(MARKDOWN_HEADER))
-            (result, inListAfter) = ParseHeader(markdown, list);
+        {
+            result = ParseHeader(markdown, list);
+            inListAfter = false;
+        }
+
+        if (markdown.StartsWith(MARKDOWN_LIST_ITEM))
+        {
+            result = ParseLineItem(markdown, list);
+            inListAfter = true;
+        }
 
         if (result == null)
-            (result, inListAfter) = ParseLineItem(markdown, list);
-
-        if (result == null)
-            (result, inListAfter) = ParseParagraph(markdown, list);
+        {
+            result = ParseParagraph(markdown, list);
+            inListAfter = false;
+        }
 
         return (result ?? throw new ArgumentException("Invalid markdown"), inListAfter);
     }
