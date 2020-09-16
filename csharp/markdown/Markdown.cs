@@ -14,13 +14,13 @@ public static class Markdown
         return Regex.Replace(markdown, pattern, replacement);
     }
 
-    private static string Parse__(string markdown) => Parse(markdown, "__", "strong");
+    private static string ParseBold(string markdown) => Parse(markdown, "__", "strong");
 
-    private static string Parse_(string markdown) => Parse(markdown, "_", "em");
+    private static string ParseItalic(string markdown) => Parse(markdown, "_", "em");
 
     private static string ParseText(string markdown, bool list)
     {
-        var parsedText = Parse_(Parse__((markdown)));
+        var parsedText = ParseItalic(ParseBold(markdown));
 
         return list ? parsedText : Wrap(parsedText, "p");
     }
