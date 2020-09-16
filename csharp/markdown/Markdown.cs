@@ -82,9 +82,9 @@ public static class Markdown
         var sb = new StringBuilder();
         var list = false;
 
-        for (int i = 0; i < lines.Length; i++)
+        foreach (var line in lines)
         {
-            var lineResult = ParseLine(lines[i], list, out list);
+            var lineResult = ParseLine(line, list, out list);
             sb.Append(lineResult);
         }
 
