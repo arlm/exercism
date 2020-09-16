@@ -3,13 +3,16 @@ using System.Text.RegularExpressions;
 
 public static class Markdown
 {
-    private static string Wrap(string text, string tag) => $"<{tag}>{text}</{tag}>";
+    private static string Wrap(string text, string tag) =>
+        $"<{tag}>{text}</{tag}>";
 
     private static bool IsTag(string text, string tag) => text.StartsWith($"<{tag}>");
 
-    private static string ParseBold(string markdown) => Parse(markdown, "__", "strong");
+    private static string ParseBold(string markdown) =>
+        Parse(markdown, "__", "strong");
 
-    private static string ParseItalic(string markdown) => Parse(markdown, "_", "em");
+    private static string ParseItalic(string markdown) =>
+        Parse(markdown, "_", "em");
 
     private static string ParseText(string markdown, bool list)
     {
