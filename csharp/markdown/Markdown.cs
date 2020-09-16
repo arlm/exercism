@@ -88,7 +88,6 @@ public static class Markdown
             sb.Append(lineResult);
         }
 
-        var result = sb.ToString();
-        return list ? $"{result}</ul>" : result;
+        return list ? $"{sb}</ul>" : sb.ToString();
     }
 }
