@@ -5,12 +5,15 @@ using System.Text.RegularExpressions;
 
 public static class Markdown
 {
-    private const string TAG_ITALIC = "em";
-    private const string TAG_BOLD = "strong";
-    private const string TAG_PARAGRAPH = "p";
-    private const string TAG_LIST = "li";
+    private const string HTML_ITALIC = "em";
+    private const string HTML_BOLD = "strong";
+    private const string HTML_PARAGRAPH = "p";
+    private const string HTML_LIST = "li";
+
     private const char MARKDOWN_HEADER = '#';
     private const char MARKDOWN_LIST_ITEM = '*';
+    private const string MARKDOWN_BOLD = "__";
+    private const string MARKDOWN_ITALIC = "_";
 
     private static string Wrap(string text, string tag) =>
         $"<{tag}>{text}</{tag}>";
@@ -19,64 +22,58 @@ public static class Markdown
         Regex.Replace(markdown, $"{delimiter}(.+){delimiter}", $"<{tag}>$1</{tag}>");
 
     private static string ParseBold(string markdown) =>
-        Parse(markdown, "__", TAG_BOLD);
+        Parse(markdown, MARKDOWN_BOLD, HTML_BOLD);
 
     private static string ParseItalic(string markdown) =>
-        Parse(markdown, "_", TAG_ITALIC);
+        Parse(markdown, MARKDOWN_ITALIC, HTML_ITALIC);
 
-    private static string ParseText(string markdown, bool list)
-    {
-        var parsedText = ParseItalic(ParseBold(markdown));
+    private static string ParseParagraph(string markdown) =>
+        Wrap(markdown, HTML_PARAGRAPH);
 
-        return list ? parsedText : Wrap(parsedText, TAG_PARAGRAPH);
-    }
-
-    private static string ParseHeader(string markdown, bool list)
+    private static string ParseHeader(string markdown)
     {
         var count = markdown.TakeWhile(@char => @char == MARKDOWN_HEADER).Count();
         var headerHtml = Wrap(markdown.Substring(count + 1), $"h{count}");
 
-        return list ? $"</ul>{headerHtml}" : headerHtml;
+        return headerHtml;
     }
 
     private static string ParseLineItem(string markdown, bool list)
     {
-        var innerHtml = Wrap(ParseText(markdown.Substring(2), true), TAG_LIST);
+        var innerHtml = Wrap(markdown.Substring(2), HTML_LIST);
 
         return list ? innerHtml : $"<ul>{innerHtml}";
     }
-
-    private static string ParseParagraph(string markdown, bool list)
-    {
-        var parsedText = ParseText(markdown, false);
-
-        return list ? $"</ul>{parsedText}" : parsedText;
-    }
-
+    
     private static (string, bool) ParseLine(string markdown, bool list)
     {
+        markdown = ParseBold(markdown);
+        markdown = ParseItalic(markdown);
+
         string result = null;
-        bool inListAfter = false;
+        bool isInList = list;
 
         if (markdown.StartsWith(MARKDOWN_HEADER))
         {
-            result = ParseHeader(markdown, list);
-            inListAfter = false;
+            var value = ParseHeader(markdown);
+            result = isInList ? $"</ul>{value}" : value;
+            isInList = false;
         }
 
         if (markdown.StartsWith(MARKDOWN_LIST_ITEM))
         {
             result = ParseLineItem(markdown, list);
-            inListAfter = true;
+            isInList = true;
         }
 
         if (result == null)
         {
-            result = ParseParagraph(markdown, list);
-            inListAfter = false;
+            var value = ParseParagraph(markdown);
+            result = isInList ? $"</ul>{value}" : value;
+            isInList = false;
         }
 
-        return (result ?? throw new ArgumentException("Invalid markdown"), inListAfter);
+        return (result ?? throw new ArgumentException("Invalid markdown"), isInList);
     }
 
     public static string Parse(string markdown)
