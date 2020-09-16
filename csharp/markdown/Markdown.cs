@@ -22,14 +22,7 @@ public static class Markdown
     {
         var parsedText = Parse_(Parse__((markdown)));
 
-        if (list)
-        {
-            return parsedText;
-        }
-        else
-        {
-            return Wrap(parsedText, "p");
-        }
+        return list ? parsedText : Wrap(parsedText, "p");
     }
 
     private static string ParseHeader(string markdown, bool list, out bool inListAfter)
@@ -120,12 +113,7 @@ public static class Markdown
             result = ParseParagraph(markdown, list, out inListAfter);
         }
 
-        if (result == null)
-        {
-            throw new ArgumentException("Invalid markdown");
-        }
-
-        return result;
+        return result ?? throw new ArgumentException("Invalid markdown");
     }
 
     public static string Parse(string markdown)
@@ -140,13 +128,6 @@ public static class Markdown
             result += lineResult;
         }
 
-        if (list)
-        {
-            return $"{result}</ul>";
-        }
-        else
-        {
-            return result;
-        }
+        return list ? $"{result}</ul>" : result;
     }
 }
