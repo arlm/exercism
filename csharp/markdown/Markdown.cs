@@ -9,6 +9,7 @@ public static class Markdown
     private const string TAG_BOLD = "strong";
     private const string TAG_PARAGRAPH = "p";
     private const string TAG_LIST = "li";
+    private const char MARKDOWN_HEADER = '#';
 
     private static string Wrap(string text, string tag) =>
         $"<{tag}>{text}</{tag}>";
@@ -31,15 +32,15 @@ public static class Markdown
 
     private static string ParseHeader(string markdown, bool list, out bool inListAfter)
     {
-        var count = markdown.TakeWhile(@char => @char == '#').Count();
-        
-        if (count == 0)
+        if (!markdown.StartsWith(MARKDOWN_HEADER))
         {
             inListAfter = list;
             return null;
         }
 
         inListAfter = false;
+
+        var count = markdown.TakeWhile(@char => @char == MARKDOWN_HEADER).Count();
         var headerHtml = Wrap(markdown.Substring(count + 1), $"h{count}");
 
         return list ? $"</ul>{headerHtml}" : headerHtml;
