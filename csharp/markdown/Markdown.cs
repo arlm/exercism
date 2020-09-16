@@ -4,23 +4,28 @@ using System.Text.RegularExpressions;
 
 public static class Markdown
 {
+    private const string TAG_ITALIC = "em";
+    private const string TAG_BOLD = "strong";
+    private const string TAG_PARAGRAPH = "p";
+    private const string TAG_LIST = "li";
+
     private static string Wrap(string text, string tag) =>
         $"<{tag}>{text}</{tag}>";
 
     private static string Parse(string markdown, string delimiter, string tag) =>
-     Regex.Replace(markdown, $"{delimiter}(.+){delimiter}", $"<{tag}>$1</{tag}>");
+        Regex.Replace(markdown, $"{delimiter}(.+){delimiter}", $"<{tag}>$1</{tag}>");
 
     private static string ParseBold(string markdown) =>
-        Parse(markdown, "__", "strong");
+        Parse(markdown, "__", TAG_BOLD);
 
     private static string ParseItalic(string markdown) =>
-        Parse(markdown, "_", "em");
+        Parse(markdown, "_", TAG_ITALIC);
 
     private static string ParseText(string markdown, bool list)
     {
         var parsedText = ParseItalic(ParseBold(markdown));
 
-        return list ? parsedText : Wrap(parsedText, "p");
+        return list ? parsedText : Wrap(parsedText, TAG_PARAGRAPH);
     }
 
     private static string ParseHeader(string markdown, bool list, out bool inListAfter)
@@ -64,7 +69,7 @@ public static class Markdown
     {
         if (markdown.StartsWith("*"))
         {
-            var innerHtml = Wrap(ParseText(markdown.Substring(2), true), "li");
+            var innerHtml = Wrap(ParseText(markdown.Substring(2), true), TAG_LIST);
 
             if (list)
             {
