@@ -10,6 +10,7 @@ public static class Markdown
     private const string TAG_PARAGRAPH = "p";
     private const string TAG_LIST = "li";
     private const char MARKDOWN_HEADER = '#';
+    private const char MARKDOWN_LIST_ITEM = '*';
 
     private static string Wrap(string text, string tag) =>
         $"<{tag}>{text}</{tag}>";
@@ -48,20 +49,13 @@ public static class Markdown
 
     private static string ParseLineItem(string markdown, bool list, out bool inListAfter)
     {
-        if (markdown.StartsWith("*"))
+        if (markdown.StartsWith(MARKDOWN_LIST_ITEM))
         {
             var innerHtml = Wrap(ParseText(markdown.Substring(2), true), TAG_LIST);
 
-            if (list)
-            {
-                inListAfter = true;
-                return innerHtml;
-            }
-            else
-            {
-                inListAfter = true;
-                return $"<ul>{innerHtml}";
-            }
+            inListAfter = true;
+
+            return list ? innerHtml : $"<ul>{innerHtml}";
         }
 
         inListAfter = list;
