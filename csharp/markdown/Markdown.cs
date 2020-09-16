@@ -116,7 +116,7 @@ public static class Markdown
     public static string Parse(string markdown)
     {
         var lines = markdown.Split('\n');
-        var result = "";
+        var result = string.Empty;
         var list = false;
 
         for (int i = 0; i < lines.Length; i++)
