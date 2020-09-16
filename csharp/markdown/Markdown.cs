@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -30,20 +31,8 @@ public static class Markdown
 
     private static string ParseHeader(string markdown, bool list, out bool inListAfter)
     {
-        var count = 0;
-
-        for (int i = 0; i < markdown.Length; i++)
-        {
-            if (markdown[i] == '#')
-            {
-                count += 1;
-            }
-            else
-            {
-                break;
-            }
-        }
-
+        var count = markdown.TakeWhile(@char => @char == '#').Count();
+        
         if (count == 0)
         {
             inListAfter = list;
