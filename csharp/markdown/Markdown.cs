@@ -50,19 +50,10 @@ public static class Markdown
             return null;
         }
 
-        var headerTag = $"h{count}";
-        var headerHtml = Wrap(markdown.Substring(count + 1), headerTag);
+        inListAfter = false;
+        var headerHtml = Wrap(markdown.Substring(count + 1), $"h{count}");
 
-        if (list)
-        {
-            inListAfter = false;
-            return $"</ul>{headerHtml}";
-        }
-        else
-        {
-            inListAfter = false;
-            return headerHtml;
-        }
+        return list ? $"</ul>{headerHtml}" : headerHtml;
     }
 
     private static string ParseLineItem(string markdown, bool list, out bool inListAfter)
