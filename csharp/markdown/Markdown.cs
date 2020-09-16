@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 
 public static class Markdown
@@ -116,15 +117,16 @@ public static class Markdown
     public static string Parse(string markdown)
     {
         var lines = markdown.Split('\n');
-        var result = string.Empty;
+        var sb = new StringBuilder();
         var list = false;
 
         for (int i = 0; i < lines.Length; i++)
         {
             var lineResult = ParseLine(lines[i], list, out list);
-            result += lineResult;
+            sb.Append(lineResult);
         }
 
+        var result = sb.ToString();
         return list ? $"{result}</ul>" : result;
     }
 }
