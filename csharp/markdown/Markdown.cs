@@ -77,22 +77,14 @@ public static class Markdown
         }
     }
 
-    private static string ParseLine(string markdown, bool list, out bool inListAfter)
-    {
-        var result = ParseHeader(markdown, list, out inListAfter);
 
-        if (result == null)
-        {
-            result = ParseLineItem(markdown, list, out inListAfter);
-        }
-
-        if (result == null)
-        {
-            result = ParseParagraph(markdown, list, out inListAfter);
-        }
-
-        return result ?? throw new ArgumentException("Invalid markdown");
     }
+
+    private static string ParseLine(string markdown, bool list, out bool inListAfter) =>
+        ParseHeader(markdown, list, out inListAfter) ??
+        ParseLineItem(markdown, list, out inListAfter) ??
+        ParseParagraph(markdown, list, out inListAfter) ??
+        throw new ArgumentException("Invalid markdown");
 
     public static string Parse(string markdown)
     {
