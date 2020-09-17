@@ -21,7 +21,7 @@ public class LedgerTests
         var locale = "en-US";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
+            new LedgerEntry("2015-01-01", "Buy present", -1000)
         };
         var expected =
             "Date       | Description               | Change       \n" +
@@ -37,8 +37,8 @@ public class LedgerTests
         var locale = "en-US";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-01-02", "Get present", 1000),
-            Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
+            new LedgerEntry("2015-01-02", "Get present", 1000),
+            new LedgerEntry("2015-01-01", "Buy present", -1000)
         };
         var expected =
             "Date       | Description               | Change       \n" +
@@ -55,8 +55,8 @@ public class LedgerTests
         var locale = "en-US";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-01-01", "Buy present", -1000),
-            Ledger.CreateEntry("2015-01-01", "Get present", 1000)
+            new LedgerEntry("2015-01-01", "Buy present", -1000),
+            new LedgerEntry("2015-01-01", "Get present", 1000)
         };
         var expected =
             "Date       | Description               | Change       \n" +
@@ -73,9 +73,9 @@ public class LedgerTests
         var locale = "en-US";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-01-01", "Something", 0),
-            Ledger.CreateEntry("2015-01-01", "Something", -1),
-            Ledger.CreateEntry("2015-01-01", "Something", 1)
+            new LedgerEntry("2015-01-01", "Something", 0),
+            new LedgerEntry("2015-01-01", "Something", -1),
+            new LedgerEntry("2015-01-01", "Something", 1)
         };
         var expected =
             "Date       | Description               | Change       \n" +
@@ -93,7 +93,7 @@ public class LedgerTests
         var locale = "en-US";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-01-01", "Freude schoner Gotterfunken", -123456)
+            new LedgerEntry("2015-01-01", "Freude schoner Gotterfunken", -123456)
         };
         var expected =
             "Date       | Description               | Change       \n" +
@@ -109,7 +109,7 @@ public class LedgerTests
         var locale = "en-US";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
+            new LedgerEntry("2015-01-01", "Buy present", -1000)
         };
         var expected =
             "Date       | Description               | Change       \n" +
@@ -125,7 +125,7 @@ public class LedgerTests
         var locale = "nl-NL";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-03-12", "Buy present", 123456)
+            new LedgerEntry("2015-03-12", "Buy present", 123456)
         };
         var expected =
             "Datum      | Omschrijving              | Verandering  \n" +
@@ -141,7 +141,7 @@ public class LedgerTests
         var locale = "nl-NL";
         var entries = new[] 
         {
-            Ledger.CreateEntry("2015-03-12", "Buy present", -12345)
+            new LedgerEntry("2015-03-12", "Buy present", -12345)
         };
         var expected =
             "Datum      | Omschrijving              | Verandering  \n" +
@@ -157,7 +157,7 @@ public class LedgerTests
         var locale = "en-US";
         var entries =   new[] 
         {
-            Ledger.CreateEntry("2015-03-12", "Buy present", -12345)
+            new LedgerEntry("2015-03-12", "Buy present", -12345)
         };
         var expected =
             "Date       | Description               | Change       \n" +

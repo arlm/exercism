@@ -40,9 +40,6 @@ public static class Ledger
     private const string DATE_FORMAT_US = "MM/dd/yyyy";
     private const string DATE_FORMAT_NL = "dd/MM/yyyy";
 
-    public static LedgerEntry CreateEntry(string date, string desc, int chng) =>
-        new LedgerEntry(date, desc, chng);
-
     private static void CreateCulture(string currency, string locale)
     {
         if (currency != CURRENCY_USD && currency != CURRENCY_EUR)
