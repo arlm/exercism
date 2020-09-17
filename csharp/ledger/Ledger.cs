@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 public class LedgerEntry
 {
@@ -47,7 +48,7 @@ public static class Ledger
         culture.NumberFormat.CurrencySymbol = GetCultureInfo(cur).NumberFormat.CurrencySymbol;
         culture.NumberFormat.CurrencyNegativePattern = loc == LOCALE_US ? 0 : culture.NumberFormat.CurrencyNegativePattern;
         culture.DateTimeFormat.ShortDatePattern = loc == LOCALE_US ? DATE_FORMAT_US : DATE_FORMAT_NL;
-
+        Thread.CurrentThread.CurrentCulture = culture;
         return culture;
     }
 
