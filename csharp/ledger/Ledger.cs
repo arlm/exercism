@@ -116,23 +116,11 @@ public static class Ledger
         return desc;
     }
 
-    private static string Change(IFormatProvider culture, decimal cgh)
-    {
-        return cgh < 0.0m ? cgh.ToString("C", culture) : cgh.ToString("C", culture) + " ";
-    }
+    private static string Change(IFormatProvider culture, decimal cgh) =>
+        cgh < 0.0m ? cgh.ToString("C", culture) : cgh.ToString("C", culture) + " ";
 
-    private static string PrintEntry(IFormatProvider culture, LedgerEntry entry)
-    {
-        var formatted = "";
-
-        formatted += Date(culture, entry.Date);
-        formatted += " | ";
-        formatted += string.Format("{0,-25}", Description(entry.Desc));
-        formatted += " | ";
-        formatted += string.Format("{0,13}", Change(culture, entry.Chg));
-
-        return formatted;
-    }
+    private static string PrintEntry(IFormatProvider culture, LedgerEntry entry) =>
+        $"{Date(culture, entry.Date)} | {Description(entry.Desc),-25} | { Change(culture, entry.Chg),13}";
 
 
     private static IEnumerable<LedgerEntry> sort(LedgerEntry[] entries)
