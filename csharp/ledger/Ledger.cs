@@ -39,6 +39,7 @@ public class Locale
     private const string DESCRIPTION_NL = "Omschrijving";
     private const string CHANGE_US = "Change";
     private const string CHANGE_NL = "Verandering";
+
     private const string DATE_FORMAT_US = "MM/dd/yyyy";
     private const string DATE_FORMAT_NL = "dd/MM/yyyy";
 
@@ -49,34 +50,29 @@ public class Locale
 
     public Locale(string currency, string locale)
     {
-        switch(locale)
+        if (currency != CURRENCY_USD && currency != CURRENCY_EUR)
+        {
+            throw new ArgumentException("Invalid currency");
+        }
+
+        switch (locale)
         {
             case LOCALE_US:
                 Date = DATE_US;
                 Description = DESCRIPTION_US;
                 Change = CHANGE_US;
                 DateFormat = DATE_FORMAT_US;
-
                 break;
+
             case LOCALE_NL:
                 Date = DATE_NL;
                 Description = DESCRIPTION_NL;
                 Change = CHANGE_NL;
                 DateFormat = DATE_FORMAT_NL;
-
                 break;
+
             default:
                 throw new ArgumentException("Invalid locale");
-        }
-
-        CreateCulture(currency, locale);
-    }
-
-    private static void CreateCulture(string currency, string locale)
-    {
-        if (currency != CURRENCY_USD && currency != CURRENCY_EUR)
-        {
-            throw new ArgumentException("Invalid currency");
         }
 
         var culture = new CultureInfo(locale);
@@ -89,11 +85,11 @@ public class Locale
 
     private static CultureInfo GetCultureInfo(string currency) =>
          CultureInfo.GetCultures(CultureTypes.SpecificCultures)
-         .Where(x =>
+         .Where(cultureInfo =>
          {
              try
              {
-                 return new RegionInfo(x.LCID).ISOCurrencySymbol == currency;
+                 return new RegionInfo(cultureInfo.LCID).ISOCurrencySymbol == currency;
              }
              catch
              {
