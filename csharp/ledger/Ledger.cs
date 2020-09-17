@@ -35,44 +35,13 @@ public static class Ledger
             throw new ArgumentException("Invalid currency");
         }
 
-        string datPat = null;
-        int curNeg = 0;
-        string curSymb = string.Empty;
-
-        if (cur == CURRENCY_USD)
-        {
-            if (loc == LOCALE_US)
-            {
-                curSymb = "$";
-                datPat = "MM/dd/yyyy";
-            }
-            else if (loc == LOCALE_NL)
-            {
-                curSymb = "$";
-                curNeg = 12;
-                datPat = "dd/MM/yyyy";
-            }
-        }
-
-        if (cur == CURRENCY_EUR)
-        {
-            if (loc == LOCALE_US)
-            {
-                curSymb = "€";
-                datPat = "MM/dd/yyyy";
-            }
-            else if (loc == LOCALE_NL)
-            {
-                curSymb = "€";
-                curNeg = 12;
-                datPat = "dd/MM/yyyy";
-            }
-        }
-
+        var currency = new CultureInfo(cur == CURRENCY_EUR ? LOCALE_NL : LOCALE_US);
+        var locale = new CultureInfo(loc);
         var culture = new CultureInfo(loc);
-        culture.NumberFormat.CurrencySymbol = curSymb;
-        culture.NumberFormat.CurrencyNegativePattern = curNeg;
-        culture.DateTimeFormat.ShortDatePattern = datPat;
+
+        culture.NumberFormat.CurrencySymbol = currency.NumberFormat.CurrencySymbol;
+        culture.NumberFormat.CurrencyNegativePattern = loc == LOCALE_US ? 0 : locale.NumberFormat.CurrencyNegativePattern;
+        culture.DateTimeFormat.ShortDatePattern = loc == LOCALE_US ? "MM/dd/yyyy" : "dd/MM/yyyy";
         return culture;
     }
 
