@@ -120,7 +120,7 @@ public static class Ledger
             .OrderBy(entry => entry.Date).ThenBy(entry => entry.Description).ThenBy(entry => entry.Change)
             .Select(entry => $"\n{entry.Date:d} | {entry.Description.TrimWithEllipsis()} | {entry.Change.Pad()}");
 
-        return sb.Append(string.Join(string.Empty,items)).ToString();
+        return sb.AppendJoin(string.Empty, items).ToString();
     }
 
 }
