@@ -22,10 +22,8 @@ public static class Ledger
     private const string LOCALE_US = "en-US";
     private const string LOCALE_NL = "nl-NL";
 
-    public static LedgerEntry CreateEntry(string date, string desc, int chng)
-    {
-        return new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
-    }
+    public static LedgerEntry CreateEntry(string date, string desc, int chng) =>
+        new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
 
     private static CultureInfo CreateCulture(string cur, string loc)
     {
@@ -102,19 +100,11 @@ public static class Ledger
         }
     }
 
-    private static string Date(IFormatProvider culture, DateTime date) => date.ToString("d", culture);
+    private static string Date(IFormatProvider culture, DateTime date) =>
+        date.ToString("d", culture);
 
-    private static string Description(string desc)
-    {
-        if (desc.Length > 25)
-        {
-            var trunc = desc.Substring(0, 22);
-            trunc += "...";
-            return trunc;
-        }
-
-        return desc;
-    }
+    private static string Description(string desc) =>
+        desc.Length > 25 ? $"{desc.Substring(0, 22)}..." : desc;
 
     private static string Change(IFormatProvider culture, decimal cgh) =>
         cgh < 0.0m ? cgh.ToString("C", culture) : cgh.ToString("C", culture) + " ";
