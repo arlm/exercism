@@ -19,6 +19,9 @@ public class LedgerEntry
 
 public static class Ledger
 {
+    private const string LOCALE_US = "en-US";
+    private const string LOCALE_NL = "nl-NL";
+
     public static LedgerEntry CreateEntry(string date, string desc, int chng)
     {
         return new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
@@ -36,19 +39,19 @@ public static class Ledger
         }
         else
         {
-            if (loc != "nl-NL" && loc != "en-US")
+            if (loc != LOCALE_NL && loc != LOCALE_US)
             {
                 throw new ArgumentException("Invalid currency");
             }
 
             if (cur == "USD")
             {
-                if (loc == "en-US")
+                if (loc == LOCALE_US)
                 {
                     curSymb = "$";
                     datPat = "MM/dd/yyyy";
                 }
-                else if (loc == "nl-NL")
+                else if (loc == LOCALE_NL)
                 {
                     curSymb = "$";
                     curNeg = 12;
@@ -58,12 +61,12 @@ public static class Ledger
 
             if (cur == "EUR")
             {
-                if (loc == "en-US")
+                if (loc == LOCALE_US)
                 {
                     curSymb = "€";
                     datPat = "MM/dd/yyyy";
                 }
-                else if (loc == "nl-NL")
+                else if (loc == LOCALE_NL)
                 {
                     curSymb = "€";
                     curNeg = 12;
@@ -81,14 +84,14 @@ public static class Ledger
 
     private static string PrintHead(string loc)
     {
-        if (loc == "en-US")
+        if (loc == LOCALE_US)
         {
             return "Date       | Description               | Change       ";
         }
 
         else
         {
-            if (loc == "nl-NL")
+            if (loc == LOCALE_NL)
             {
                 return "Datum      | Omschrijving              | Verandering  ";
             }
