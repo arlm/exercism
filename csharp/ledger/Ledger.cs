@@ -50,14 +50,19 @@ public static class Ledger
         return culture;
     }
 
-
-    private static string PrintHead(string loc) =>
-        loc switch
+    private static CultureInfo GetCultureInfo(string cur) =>
+        CultureInfo.GetCultures(CultureTypes.SpecificCultures)
+        .Where(x =>
         {
-            LOCALE_US => $"{DATE_US}       | {DESCRIPTION_US}               | {CHANGE_US}       ",
-            LOCALE_NL => $"{DATE_NL}      | {DESCRIPTION_NL}              | {CHANGE_NL}  ",
-            _ => throw new ArgumentException("Invalid locale")
-        };
+            try
+            {
+                return new RegionInfo(x.LCID).ISOCurrencySymbol == cur;
+            }
+            catch
+            {
+                return false;
+            }
+        }).First();
 
     private static string Date(IFormatProvider culture, DateTime date) =>
         date.ToString("d", culture);
@@ -71,7 +76,6 @@ public static class Ledger
     private static string PrintEntry(IFormatProvider culture, LedgerEntry entry) =>
         $"{Date(culture, entry.Date)} | {Description(entry.Desc),-25} | { Change(culture, entry.Chg),13}";
 
-
     private static IEnumerable<LedgerEntry> sort(LedgerEntry[] entries)
     {
         var neg = entries.Where(e => e.Chg < 0).OrderBy(x => x.Date).ThenBy(x => x.Desc).ThenBy(x => x.Chg);
@@ -82,8 +86,12 @@ public static class Ledger
 
     public static string Format(string currency, string locale, LedgerEntry[] entries)
     {
-        var formatted = "";
-        formatted += PrintHead(locale);
+        var formatted = locale switch
+        {
+            LOCALE_US => $"{DATE_US}       | {DESCRIPTION_US}               | {CHANGE_US}       ",
+            LOCALE_NL => $"{DATE_NL}      | {DESCRIPTION_NL}              | {CHANGE_NL}  ",
+            _ => throw new ArgumentException("Invalid locale")
+        };
 
         var culture = CreateCulture(currency, locale);
 
