@@ -25,12 +25,14 @@ public class LedgerEntry
     public decimal Change { get; }
 }
 
-public static class Ledger
+public class Locale
 {
-    private const string LOCALE_US = "en-US";
-    private const string LOCALE_NL = "nl-NL";
+    public const string LOCALE_US = "en-US";
+    public const string LOCALE_NL = "nl-NL";
+
     private const string CURRENCY_USD = "USD";
     private const string CURRENCY_EUR = "EUR";
+
     private const string DATE_US = "Date";
     private const string DATE_NL = "Datum";
     private const string DESCRIPTION_US = "Description";
@@ -39,6 +41,36 @@ public static class Ledger
     private const string CHANGE_NL = "Verandering";
     private const string DATE_FORMAT_US = "MM/dd/yyyy";
     private const string DATE_FORMAT_NL = "dd/MM/yyyy";
+
+    public string Date { get; }
+    public string Description { get; }
+    public string Change { get; }
+    public string DateFormat { get; }
+
+    public Locale(string currency, string locale)
+    {
+        switch(locale)
+        {
+            case LOCALE_US:
+                Date = DATE_US;
+                Description = DESCRIPTION_US;
+                Change = CHANGE_US;
+                DateFormat = DATE_FORMAT_US;
+
+                break;
+            case LOCALE_NL:
+                Date = DATE_NL;
+                Description = DESCRIPTION_NL;
+                Change = CHANGE_NL;
+                DateFormat = DATE_FORMAT_NL;
+
+                break;
+            default:
+                throw new ArgumentException("Invalid locale");
+        }
+
+        CreateCulture(currency, locale);
+    }
 
     private static void CreateCulture(string currency, string locale)
     {
@@ -56,19 +88,22 @@ public static class Ledger
     }
 
     private static CultureInfo GetCultureInfo(string currency) =>
-        CultureInfo.GetCultures(CultureTypes.SpecificCultures)
-        .Where(x =>
-        {
-            try
-            {
-                return new RegionInfo(x.LCID).ISOCurrencySymbol == currency;
-            }
-            catch
-            {
-                return false;
-            }
-        }).First();
+         CultureInfo.GetCultures(CultureTypes.SpecificCultures)
+         .Where(x =>
+         {
+             try
+             {
+                 return new RegionInfo(x.LCID).ISOCurrencySymbol == currency;
+             }
+             catch
+             {
+                 return false;
+             }
+         }).First();
+}
 
+public static class Ledger
+{
     private static string TrimWithEllipsis(this string description) =>
         description.Length <= 25 ? $"{description,-25}" : $"{description.Substring(0, 22)}...";
 
@@ -77,20 +112,13 @@ public static class Ledger
 
     public static string Format(string currency, string locale, LedgerEntry[] entries)
     {
-        var sb = new StringBuilder(
-            locale switch
-            {
-                LOCALE_US => $"{DATE_US,-10} | {DESCRIPTION_US,-25} | {CHANGE_US,-13}",
-                LOCALE_NL => $"{DATE_NL,-10} | {DESCRIPTION_NL,-25} | {CHANGE_NL,-13}",
-                _ => throw new ArgumentException("Invalid locale")
-            });
+        var localeFormatter = new Locale(currency, locale);
+        var sb = new StringBuilder($"{localeFormatter.Date,-10} | {localeFormatter.Description,-25} | {localeFormatter.Change,-13}");
 
         if (entries.Length == 0)
         {
             return sb.ToString();
         }
-
-        CreateCulture(currency, locale);
 
         var items = entries
             .OrderBy(entry => entry.Date).ThenBy(entry => entry.Description).ThenBy(entry => entry.Change)
