@@ -72,6 +72,9 @@ public static class Ledger
     private static string TrimWithEllipsis(this string description) =>
         description.Length <= 25 ? $"{description,-25}" : $"{description.Substring(0, 22)}...";
 
+    private static string Pad(this decimal change) =>
+        change < 0.0m ? $"{change,13:C}" : $"{change,12:C} ";
+
     public static string Format(string currency, string locale, LedgerEntry[] entries)
     {
         var sb = new StringBuilder(
@@ -99,10 +102,11 @@ public static class Ledger
             sb.AppendFormat("\n{0:d} | {1} | {2}",
                 entry.Date,
                 entry.Description.TrimWithEllipsis(),
-                entry.Change < 0.0m ? $"{entry.Change,13:C}": $"{entry.Change,12:C} "
+                entry.Change.Pad()
             );
         }
 
         return sb.ToString();
     }
+
 }
