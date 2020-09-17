@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 
 public class LedgerEntry
 {
@@ -86,12 +87,13 @@ public static class Ledger
 
     public static string Format(string currency, string locale, LedgerEntry[] entries)
     {
-        var formatted = locale switch
-        {
-            LOCALE_US => $"{DATE_US}       | {DESCRIPTION_US}               | {CHANGE_US}       ",
-            LOCALE_NL => $"{DATE_NL}      | {DESCRIPTION_NL}              | {CHANGE_NL}  ",
-            _ => throw new ArgumentException("Invalid locale")
-        };
+        var sb = new StringBuilder(
+            locale switch
+            {
+                LOCALE_US => $"{DATE_US}       | {DESCRIPTION_US}               | {CHANGE_US}       ",
+                LOCALE_NL => $"{DATE_NL}      | {DESCRIPTION_NL}              | {CHANGE_NL}  ",
+                _ => throw new ArgumentException("Invalid locale")
+            });
 
         var culture = CreateCulture(currency, locale);
 
@@ -101,10 +103,10 @@ public static class Ledger
 
             for (var i = 0; i < entriesForOutput.Count(); i++)
             {
-                formatted += "\n" + PrintEntry(culture, entriesForOutput.Skip(i).First());
+                sb.Append("\n").Append(PrintEntry(culture, entriesForOutput.Skip(i).First()));
             }
         }
 
-        return formatted;
+        return sb.ToString();
     }
 }
