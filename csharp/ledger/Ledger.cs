@@ -37,7 +37,7 @@ public static class Ledger
     public static LedgerEntry CreateEntry(string date, string desc, int chng) =>
         new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
 
-    private static CultureInfo CreateCulture(string cur, string loc)
+    private static void CreateCulture(string cur, string loc)
     {
         if (cur != CURRENCY_USD && cur != CURRENCY_EUR || loc != LOCALE_NL && loc != LOCALE_US)
         {
@@ -48,8 +48,8 @@ public static class Ledger
         culture.NumberFormat.CurrencySymbol = GetCultureInfo(cur).NumberFormat.CurrencySymbol;
         culture.NumberFormat.CurrencyNegativePattern = loc == LOCALE_US ? 0 : culture.NumberFormat.CurrencyNegativePattern;
         culture.DateTimeFormat.ShortDatePattern = loc == LOCALE_US ? DATE_FORMAT_US : DATE_FORMAT_NL;
+
         Thread.CurrentThread.CurrentCulture = culture;
-        return culture;
     }
 
     private static CultureInfo GetCultureInfo(string cur) =>
@@ -87,7 +87,7 @@ public static class Ledger
                 _ => throw new ArgumentException("Invalid locale")
             });
 
-        var culture = CreateCulture(currency, locale);
+        CreateCulture(currency, locale);
 
         if (entries.Length > 0)
         {
