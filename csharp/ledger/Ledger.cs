@@ -92,9 +92,7 @@ public static class Ledger
 
         CreateCulture(currency, locale);
 
-        var negatives = entries.Where(e => e.Change < 0).OrderBy(x => x.Date).ThenBy(x => x.Description).ThenBy(x => x.Change);
-        var positives = entries.Where(e => e.Change >= 0).OrderBy(x => x.Date).ThenBy(x => x.Description).ThenBy(x => x.Change);
-        var entriesForOutput = negatives.Union(positives).ToArray();
+        var entriesForOutput = entries.OrderBy(x => x.Date).ThenBy(x => x.Description).ThenBy(x => x.Change).ToArray();
 
         for (var index = 0; index < entriesForOutput.Count(); index++)
         {
