@@ -21,55 +21,51 @@ public static class Ledger
 {
     private const string LOCALE_US = "en-US";
     private const string LOCALE_NL = "nl-NL";
+    private const string CURRENCY_USD = "USD";
+    private const string CURRENCY_EUR = "EUR";
 
     public static LedgerEntry CreateEntry(string date, string desc, int chng) =>
         new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
 
     private static CultureInfo CreateCulture(string cur, string loc)
     {
-        string curSymb = null;
-        int curNeg = 0;
-        string datPat = null;
 
-        if (cur != "USD" && cur != "EUR")
+        if (cur != CURRENCY_USD && cur != CURRENCY_EUR || loc != LOCALE_NL && loc != LOCALE_US)
         {
             throw new ArgumentException("Invalid currency");
         }
-        else
+
+        string datPat = null;
+        int curNeg = 0;
+        string curSymb = string.Empty;
+
+        if (cur == CURRENCY_USD)
         {
-            if (loc != LOCALE_NL && loc != LOCALE_US)
+            if (loc == LOCALE_US)
             {
-                throw new ArgumentException("Invalid currency");
+                curSymb = "$";
+                datPat = "MM/dd/yyyy";
             }
-
-            if (cur == "USD")
+            else if (loc == LOCALE_NL)
             {
-                if (loc == LOCALE_US)
-                {
-                    curSymb = "$";
-                    datPat = "MM/dd/yyyy";
-                }
-                else if (loc == LOCALE_NL)
-                {
-                    curSymb = "$";
-                    curNeg = 12;
-                    datPat = "dd/MM/yyyy";
-                }
+                curSymb = "$";
+                curNeg = 12;
+                datPat = "dd/MM/yyyy";
             }
+        }
 
-            if (cur == "EUR")
+        if (cur == CURRENCY_EUR)
+        {
+            if (loc == LOCALE_US)
             {
-                if (loc == LOCALE_US)
-                {
-                    curSymb = "€";
-                    datPat = "MM/dd/yyyy";
-                }
-                else if (loc == LOCALE_NL)
-                {
-                    curSymb = "€";
-                    curNeg = 12;
-                    datPat = "dd/MM/yyyy";
-                }
+                curSymb = "€";
+                datPat = "MM/dd/yyyy";
+            }
+            else if (loc == LOCALE_NL)
+            {
+                curSymb = "€";
+                curNeg = 12;
+                datPat = "dd/MM/yyyy";
             }
         }
 
