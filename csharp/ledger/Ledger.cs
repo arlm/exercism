@@ -65,9 +65,6 @@ public static class Ledger
             }
         }).First();
 
-    private static string Date(IFormatProvider culture, DateTime date) =>
-        date.ToString("d", culture);
-
     private static string Description(string desc) =>
         desc.Length > 25 ? $"{desc.Substring(0, 22)}..." : desc;
 
@@ -101,7 +98,10 @@ public static class Ledger
             for (var i = 0; i < entriesForOutput.Count(); i++)
             {
                 var entry = entriesForOutput.Skip(i).First();
-                sb.AppendFormat("\n{0} | {1,-25} | {2,13}", Date(culture, entry.Date), Description(entry.Desc), Change(culture, entry.Chg));
+                sb.AppendFormat("\n{0} | {1,-25} | {2,13}",
+                    entry.Date.ToString("d", culture),
+                    Description(entry.Desc),
+                    Change(culture, entry.Chg));
             }
         }
 
