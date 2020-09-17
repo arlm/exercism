@@ -74,9 +74,6 @@ public static class Ledger
     private static string Change(IFormatProvider culture, decimal cgh) =>
         cgh < 0.0m ? cgh.ToString("C", culture) : cgh.ToString("C", culture) + " ";
 
-    private static string PrintEntry(IFormatProvider culture, LedgerEntry entry) =>
-        $"{Date(culture, entry.Date)} | {Description(entry.Desc),-25} | { Change(culture, entry.Chg),13}";
-
     private static IEnumerable<LedgerEntry> sort(LedgerEntry[] entries)
     {
         var neg = entries.Where(e => e.Chg < 0).OrderBy(x => x.Date).ThenBy(x => x.Desc).ThenBy(x => x.Chg);
@@ -103,7 +100,8 @@ public static class Ledger
 
             for (var i = 0; i < entriesForOutput.Count(); i++)
             {
-                sb.Append("\n").Append(PrintEntry(culture, entriesForOutput.Skip(i).First()));
+                var entry = entriesForOutput.Skip(i).First();
+                sb.AppendFormat("\n{0} | {1,-25} | {2,13}", Date(culture, entry.Date), Description(entry.Desc), Change(culture, entry.Chg));
             }
         }
 
