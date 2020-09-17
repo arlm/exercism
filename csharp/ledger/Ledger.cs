@@ -140,11 +140,7 @@ public static class Ledger
        var neg = entries.Where(e => e.Chg < 0).OrderBy(x => x.Date + "@" + x.Desc + "@" + x.Chg);
        var post = entries.Where(e => e.Chg >= 0).OrderBy(x => x.Date + "@" + x.Desc + "@" + x.Chg);
 
-       var result = new List<LedgerEntry>();
-       result.AddRange(neg);
-       result.AddRange(post);
-
-       return result;
+       return neg.Union(post);
    }
 
    public static string Format(string currency, string locale, LedgerEntry[] entries)
