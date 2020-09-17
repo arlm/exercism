@@ -69,8 +69,8 @@ public static class Ledger
             }
         }).First();
 
-    private static string Description(string description) =>
-        description.Length > 25 ? $"{description.Substring(0, 22)}..." : description;
+    private static string TrimWithEllipsis(this string description) =>
+        description.Length <= 25 ? $"{description,-25}" : $"{description.Substring(0, 22)}...";
 
     public static string Format(string currency, string locale, LedgerEntry[] entries)
     {
@@ -96,10 +96,10 @@ public static class Ledger
         for (var index = 0; index < entriesForOutput.Count(); index++)
         {
             var entry = entriesForOutput.Skip(index).First();
-            sb.AppendFormat("\n{0:d} | {1,-25} | {2,13}",
+            sb.AppendFormat("\n{0:d} | {1} | {2}",
                 entry.Date,
-                Description(entry.Description),
-                $"{entry.Change:C}{(entry.Change < 0.0m ? string.Empty : " ")}"
+                entry.Description.TrimWithEllipsis(),
+                entry.Change < 0.0m ? $"{entry.Change,13:C}": $"{entry.Change,12:C} "
             );
         }
 
