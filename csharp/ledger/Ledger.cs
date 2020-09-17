@@ -23,6 +23,12 @@ public static class Ledger
     private const string LOCALE_NL = "nl-NL";
     private const string CURRENCY_USD = "USD";
     private const string CURRENCY_EUR = "EUR";
+    private const string DATE_US = "Date";
+    private const string DATE_NL = "Datum";
+    private const string DESCRIPTION_US = "Description";
+    private const string DESCRIPTION_NL = "Omschrijving";
+    private const string CHANGE_US = "Change";
+    private const string CHANGE_NL = "Verandering";
 
     public static LedgerEntry CreateEntry(string date, string desc, int chng) =>
         new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
@@ -45,25 +51,14 @@ public static class Ledger
         return culture;
     }
 
-    private static string PrintHead(string loc)
-    {
-        if (loc == LOCALE_US)
-        {
-            return "Date       | Description               | Change       ";
-        }
 
-        else
+    private static string PrintHead(string loc) =>
+        loc switch
         {
-            if (loc == LOCALE_NL)
-            {
-                return "Datum      | Omschrijving              | Verandering  ";
-            }
-            else
-            {
-                throw new ArgumentException("Invalid locale");
-            }
-        }
-    }
+            LOCALE_US => $"{DATE_US}       | {DESCRIPTION_US}               | {CHANGE_US}       ",
+            LOCALE_NL => $"{DATE_NL}      | {DESCRIPTION_NL}              | {CHANGE_NL}  ",
+            _ => throw new ArgumentException("Invalid locale")
+        };
 
     private static string Date(IFormatProvider culture, DateTime date) =>
         date.ToString("d", culture);
