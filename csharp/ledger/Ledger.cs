@@ -13,6 +13,13 @@ public class LedgerEntry
         Chg = chg;
     }
 
+    public LedgerEntry(string date, string desc, int chg)
+    {
+        Date = DateTime.Parse(date, CultureInfo.InvariantCulture);
+        Desc = desc;
+        Chg = chg / 100.0m;
+    }
+
     public DateTime Date { get; }
     public string Desc { get; }
     public decimal Chg { get; }
@@ -34,7 +41,7 @@ public static class Ledger
     private const string DATE_FORMAT_NL = "dd/MM/yyyy";
 
     public static LedgerEntry CreateEntry(string date, string desc, int chng) =>
-        new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
+        new LedgerEntry(date, desc, chng);
 
     private static void CreateCulture(string currency, string locale)
     {
