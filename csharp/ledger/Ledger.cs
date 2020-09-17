@@ -6,23 +6,23 @@ using System.Threading;
 
 public class LedgerEntry
 {
-    public LedgerEntry(DateTime date, string desc, decimal chg)
+    public LedgerEntry(DateTime date, string description, decimal change)
     {
         Date = date;
-        Desc = desc;
-        Chg = chg;
+        Description = description;
+        Change = change;
     }
 
-    public LedgerEntry(string date, string desc, int chg)
+    public LedgerEntry(string date, string description, int change)
     {
         Date = DateTime.Parse(date, CultureInfo.InvariantCulture);
-        Desc = desc;
-        Chg = chg / 100.0m;
+        Description = description;
+        Change = change / 100.0m;
     }
 
     public DateTime Date { get; }
-    public string Desc { get; }
-    public decimal Chg { get; }
+    public string Description { get; }
+    public decimal Change { get; }
 }
 
 public static class Ledger
@@ -89,8 +89,8 @@ public static class Ledger
 
         CreateCulture(currency, locale);
 
-        var negatives = entries.Where(e => e.Chg < 0).OrderBy(x => x.Date).ThenBy(x => x.Desc).ThenBy(x => x.Chg);
-        var positives = entries.Where(e => e.Chg >= 0).OrderBy(x => x.Date).ThenBy(x => x.Desc).ThenBy(x => x.Chg);
+        var negatives = entries.Where(e => e.Change < 0).OrderBy(x => x.Date).ThenBy(x => x.Description).ThenBy(x => x.Change);
+        var positives = entries.Where(e => e.Change >= 0).OrderBy(x => x.Date).ThenBy(x => x.Description).ThenBy(x => x.Change);
         var entriesForOutput = negatives.Union(positives).ToArray();
 
         for (var index = 0; index < entriesForOutput.Count(); index++)
@@ -98,8 +98,8 @@ public static class Ledger
             var entry = entriesForOutput.Skip(index).First();
             sb.AppendFormat("\n{0:d} | {1,-25} | {2,13}",
                 entry.Date,
-                Description(entry.Desc),
-                $"{entry.Chg:C}{(entry.Chg < 0.0m ? string.Empty : " ")}"
+                Description(entry.Description),
+                $"{entry.Change:C}{(entry.Change < 0.0m ? string.Empty : " ")}"
             );
         }
 
