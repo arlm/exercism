@@ -92,11 +92,8 @@ public static class Ledger
 
         CreateCulture(currency, locale);
 
-        var entriesForOutput = entries.OrderBy(x => x.Date).ThenBy(x => x.Description).ThenBy(x => x.Change).ToArray();
-
-        for (var index = 0; index < entriesForOutput.Count(); index++)
+        foreach (var entry in entries.OrderBy(x => x.Date).ThenBy(x => x.Description).ThenBy(x => x.Change))
         {
-            var entry = entriesForOutput.Skip(index).First();
             sb.AppendFormat("\n{0:d} | {1} | {2}", entry.Date, entry.Description.TrimWithEllipsis(), entry.Change.Pad());
         }
 
