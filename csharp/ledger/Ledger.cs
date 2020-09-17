@@ -29,25 +29,24 @@ public static class Ledger
     private const string DESCRIPTION_NL = "Omschrijving";
     private const string CHANGE_US = "Change";
     private const string CHANGE_NL = "Verandering";
+    private const string DATE_FORMAT_US = "MM/dd/yyyy";
+    private const string DATE_FORMAT_NL = "dd/MM/yyyy";
 
     public static LedgerEntry CreateEntry(string date, string desc, int chng) =>
         new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
 
     private static CultureInfo CreateCulture(string cur, string loc)
     {
-
         if (cur != CURRENCY_USD && cur != CURRENCY_EUR || loc != LOCALE_NL && loc != LOCALE_US)
         {
             throw new ArgumentException("Invalid currency");
         }
 
-        var currency = new CultureInfo(cur == CURRENCY_EUR ? LOCALE_NL : LOCALE_US);
-        var locale = new CultureInfo(loc);
         var culture = new CultureInfo(loc);
+        culture.NumberFormat.CurrencySymbol = GetCultureInfo(cur).NumberFormat.CurrencySymbol;
+        culture.NumberFormat.CurrencyNegativePattern = loc == LOCALE_US ? 0 : culture.NumberFormat.CurrencyNegativePattern;
+        culture.DateTimeFormat.ShortDatePattern = loc == LOCALE_US ? DATE_FORMAT_US : DATE_FORMAT_NL;
 
-        culture.NumberFormat.CurrencySymbol = currency.NumberFormat.CurrencySymbol;
-        culture.NumberFormat.CurrencyNegativePattern = loc == LOCALE_US ? 0 : locale.NumberFormat.CurrencyNegativePattern;
-        culture.DateTimeFormat.ShortDatePattern = loc == LOCALE_US ? "MM/dd/yyyy" : "dd/MM/yyyy";
         return culture;
     }
 
