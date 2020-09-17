@@ -125,8 +125,8 @@ public static class Ledger
 
     private static IEnumerable<LedgerEntry> sort(LedgerEntry[] entries)
     {
-        var neg = entries.Where(e => e.Chg < 0).OrderBy(x => x.Date + "@" + x.Desc + "@" + x.Chg);
-        var post = entries.Where(e => e.Chg >= 0).OrderBy(x => x.Date + "@" + x.Desc + "@" + x.Chg);
+        var neg = entries.Where(e => e.Chg < 0).OrderBy(x => x.Date).ThenBy(x => x.Desc).ThenBy(x => x.Chg);
+        var post = entries.Where(e => e.Chg >= 0).OrderBy(x => x.Date).ThenBy(x => x.Desc).ThenBy(x => x.Chg);
 
         return neg.Union(post);
     }
