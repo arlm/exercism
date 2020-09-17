@@ -99,11 +99,7 @@ public static class Ledger
         for (var index = 0; index < entriesForOutput.Count(); index++)
         {
             var entry = entriesForOutput.Skip(index).First();
-            sb.AppendFormat("\n{0:d} | {1} | {2}",
-                entry.Date,
-                entry.Description.TrimWithEllipsis(),
-                entry.Change.Pad()
-            );
+            sb.AppendFormat("\n{0:d} | {1} | {2}", entry.Date, entry.Description.TrimWithEllipsis(), entry.Change.Pad());
         }
 
         return sb.ToString();
