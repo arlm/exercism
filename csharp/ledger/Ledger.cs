@@ -77,8 +77,8 @@ public static class Ledger
         var sb = new StringBuilder(
             locale switch
             {
-                LOCALE_US => $"{DATE_US}       | {DESCRIPTION_US}               | {CHANGE_US}       ",
-                LOCALE_NL => $"{DATE_NL}      | {DESCRIPTION_NL}              | {CHANGE_NL}  ",
+                LOCALE_US => $"{DATE_US,-10} | {DESCRIPTION_US,-25} | {CHANGE_US,-13}",
+                LOCALE_NL => $"{DATE_NL,-10} | {DESCRIPTION_NL,-25} | {CHANGE_NL,-13}",
                 _ => throw new ArgumentException("Invalid locale")
             });
 
