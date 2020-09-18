@@ -40,6 +40,7 @@ public class ComputeCell : Cell
 {
     private readonly IEnumerable<Cell> producers;
     private readonly Func<int[], int> compute;
+    private List<InputCell> subscribed = new List<InputCell>();
 
     public ComputeCell(IEnumerable<Cell> producers, Func<int[], int> compute) : base (0)
     {
@@ -55,9 +56,10 @@ public class ComputeCell : Cell
     {
         foreach (var producer in from producer in producers select producer)
         {
-            if (producer is InputCell)
+            if (producer is InputCell inputCell && !subscribed.Contains(inputCell))
             {
-                producer.Changed += Producer_Changed;
+                inputCell.Changed += Producer_Changed;
+                subscribed.Add(inputCell);
             }
             else if (producer is ComputeCell computeCell)
             {
