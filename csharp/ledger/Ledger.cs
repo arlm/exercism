@@ -117,7 +117,7 @@ public static class Ledger
         }
 
         var items = entries
-            .OrderBy(entry => entry.Date).ThenBy(entry => entry.Description).ThenBy(entry => entry.Change)
+            .OrderBy(entry => entry.Change < 0 ? -1 : 1).ThenBy(entry => entry.Date).ThenBy(entry => entry.Description).ThenBy(entry => entry.Change)
             .Select(entry => $"\n{entry.Date:d} | {entry.Description.TrimWithEllipsis()} | {entry.Change.Pad()}");
 
         return sb.AppendJoin(string.Empty, items).ToString();

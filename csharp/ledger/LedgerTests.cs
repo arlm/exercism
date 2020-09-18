@@ -87,6 +87,33 @@ public class LedgerTests
     }
 
     [Fact]
+    public void Final_order_tie_breaker_is_change_with_many_dates()
+    {
+        var currency = "USD";
+        var locale = "en-US";
+        var entries = new[]
+        {
+            new LedgerEntry("2015-01-01", "Something", 0),
+            new LedgerEntry("2015-01-01", "Something", -1),
+            new LedgerEntry("2015-01-01", "Something", 1),
+            new LedgerEntry("2015-01-02", "Something", 0),
+            new LedgerEntry("2015-01-02", "Something", -1),
+            new LedgerEntry("2015-01-03", "Something", 1)
+        };
+
+        var expected =
+             "Date       | Description               | Change       \n" +
+             "01/01/2015 | Something                 |       ($0.01)\n" +
+             "01/02/2015 | Something                 |       ($0.01)\n" +
+             "01/01/2015 | Something                 |        $0.00 \n" +
+             "01/01/2015 | Something                 |        $0.01 \n" +
+             "01/02/2015 | Something                 |        $0.00 \n" +
+             "01/03/2015 | Something                 |        $0.01 ";
+
+        Assert.Equal(expected, Ledger.Format(currency, locale, entries));
+    }
+
+    [Fact]
     public void Overlong_descriptions()
     {
         var currency = "USD";
