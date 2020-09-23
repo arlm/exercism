@@ -1,24 +1,31 @@
 using System;
+using System.Collections.Generic;
 
 public class Deque<T>
 {
+    private readonly LinkedList<T> list = new LinkedList<T>();
+
     public void Push(T value)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        list.AddLast(value);
     }
 
     public T Pop()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var item = list.Last;
+        list.RemoveLast();
+        return item.Value;
     }
 
     public void Unshift(T value)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        list.AddFirst(value);
     }
 
     public T Shift()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var item = list.First;
+        list.RemoveFirst();
+        return item.Value;
     }
 }

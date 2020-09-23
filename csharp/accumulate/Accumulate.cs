@@ -3,8 +3,29 @@ using System.Collections.Generic;
 
 public static class AccumulateExtensions
 {
-    public static IEnumerable<U> Accumulate<T, U>(this IEnumerable<T> collection, Func<T, U> func)
+    public static IEnumerable<TResult> Accumulate<TSource, TResult>(
+        this IEnumerable<TSource> collection,
+        Func<TSource, TResult> func
+    )
     {
-        throw new NotImplementedException("You need to implement this function.");
+        foreach (TSource item in collection)
+        {
+            yield return func(item);
+        }
+    }
+
+    public static IEnumerable<TResult> AccumulateNonLazy<TSource, TResult>(
+        this IEnumerable<TSource> collection,
+        Func<TSource, TResult> func
+    )
+    {
+        var result = new List<TResult>();
+        
+        foreach(TSource item in collection)
+        {
+            result.Add(func(item));
+        }
+
+        return result;    
     }
 }
