@@ -13,9 +13,9 @@ public static class NucleotideCount
             { 'T' , 0 }
         };
 
-        foreach (var nucleotid in sequence)
+        foreach (var nucleotide in sequence)
         {
-            switch(nucleotid)
+            switch(nucleotide)
             {
                 case 'A':
                     result['A']++;
@@ -34,7 +34,7 @@ public static class NucleotideCount
                     break;
 
                 default:
-                    throw new ArgumentException($"Invalid nucleotid: {nucleotid}");
+                    throw new ArgumentException($"Invalid nucleotid: {nucleotide}");
             }
         }
 

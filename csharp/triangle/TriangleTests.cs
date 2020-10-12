@@ -117,4 +117,22 @@ public class TriangleTests
     {
         Assert.True(Triangle.IsScalene(0.5, 0.4, 0.6));
     }
+
+    [Fact]
+    public void Degenerate_triangle_two_sides_are_equal()
+    {
+        Assert.True(Triangle.IsScalene(5, 4, 1));
+    }
+
+    [Fact]
+    public void Degenerate_triangle_may_not_violate_triangle_inequality()
+    {
+        Assert.False(Triangle.IsScalene(7, 3, 2));
+    }
+
+    [Fact]
+    public void Degenerate_triangle_sides_may_be_floats()
+    {
+        Assert.True(Triangle.IsScalene(0.5, 0.4, 0.1));
+    }
 }
