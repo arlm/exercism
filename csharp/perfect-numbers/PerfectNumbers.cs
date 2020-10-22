@@ -15,7 +15,7 @@ public static class PerfectNumbers
     {
         if (number <= 0)
         {
-            throw new ArgumentOutOfRangeException("The number must be greater than zero.", nameof(number));
+            throw new ArgumentOutOfRangeException($"The number ({number}) must be greater than zero.", nameof(number));
         }
 
         var sum = number.GetDivisors().Sum();

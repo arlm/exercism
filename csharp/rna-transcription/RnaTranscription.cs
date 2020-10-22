@@ -28,7 +28,7 @@ public static class RnaTranscription
                     break;
 
                 default:
-                    throw new ArgumentException($"Invalid nucleotid: {nucleotide}");
+                    throw new ArgumentException($"Invalid nucleotid ({nucleotide}) in sequence: {sequence}", nameof(sequence));
             }
         }
 

@@ -34,7 +34,7 @@ public static class NucleotideCount
                     break;
 
                 default:
-                    throw new ArgumentException($"Invalid nucleotid: {nucleotide}");
+                    throw new ArgumentException($"Invalid nucleotid ({nucleotide}) in sequence: {sequence}", nameof(sequence));
             }
         }
 

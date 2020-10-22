@@ -9,6 +9,6 @@ public class PhoneNumber
 
         return Regex.IsMatch(cleanNumber, @"^[2-9][0-9]{2}[2-9][0-9]{6}$")
             ? cleanNumber
-            : throw new ArgumentException($"Invalid NANP Number '{phoneNumber}'");
+            : throw new ArgumentException($"Invalid NANP Number '{phoneNumber}'", nameof(phoneNumber));
     }
 }

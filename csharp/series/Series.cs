@@ -8,7 +8,7 @@ public static class Series
     {
         if (sliceLength > numbers.Length || sliceLength <= 0)
         {
-            throw new ArgumentException("Invalid slice length, should be equal or lesser than the numbers length, but also bigger than zero.", nameof(sliceLength));
+            throw new ArgumentException($"Invalid slice length ({numbers.Length}), should be equal or lesser than the numbers length ({sliceLength}), but also bigger than zero.", nameof(sliceLength));
         }
 
         if (string.IsNullOrWhiteSpace(numbers))
@@ -31,7 +31,7 @@ public static class Series
 
             yield return int.TryParse(slice, out _)
                 ? slice
-                : throw new ArgumentException("There should be only numbers inside the string.", nameof(numbers));
+                : throw new ArgumentException($"There should be only numbers inside the string: '{numbers}'.", nameof(numbers));
         }
     }
 }

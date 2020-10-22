@@ -8,7 +8,7 @@ public static class Hamming
 
         if (firstStrand.Length != secondStrand.Length)
         {
-            throw new ArgumentException("Strands have different sizes.");
+            throw new ArgumentException($"Strands have different sizes (firstStrand={firstStrand.Length}, secondStrand={secondStrand.Length}).");
         }
 
         for (int index = 0; index < firstStrand.Length; index++)

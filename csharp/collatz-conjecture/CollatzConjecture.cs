@@ -6,7 +6,7 @@ public static class CollatzConjecture
     {
         if (number <= 0)
         {
-            throw new ArgumentOutOfRangeException("The number should be bigger than zero.", nameof(number));
+            throw new ArgumentOutOfRangeException(nameof(number), number, "The number should be bigger than zero.");
         }
 
         var result = number;

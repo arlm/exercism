@@ -1,9 +1,19 @@
 ﻿using System;
+using System.Linq;
 
 public static class Isogram
 {
     public static bool IsIsogram(string word)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var distinctCount = word
+            .ToLower()
+            .Where(@char => char.IsLetter(@char))
+            .Distinct().Count();
+
+        var originalCount = word.
+            Where(@char => char.IsLetter(@char))
+            .Count();
+
+        return distinctCount == originalCount;
     }
 }
