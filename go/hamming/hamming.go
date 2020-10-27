@@ -12,10 +12,13 @@ func Distance(a, b string) (int, error) {
 	}
 
 	count := 0
+	aRunes := []rune(a)
+	bRunes := []rune(b)
 
-	for index, aRuneValue := range a {
+	for index, aRuneValue := range aRunes {
+		bRuneValue := bRunes[index]
 		aWidth := utf8.RuneLen(aRuneValue)
-		bRuneValue, bWidth := utf8.DecodeRuneInString(b[index:])
+		bWidth := utf8.RuneLen(bRuneValue)
 
 		if aRuneValue != bRuneValue || aWidth != bWidth {
 			count++
