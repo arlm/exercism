@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Go",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}",
+            "env": {},
+            "args": []
+        },
+        {
+            "name": "Launch Go test package",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Go file",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${file}"
+        },
+        {
+            "name": "Debug Busted CLI",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "busted"
+            },
+            "args": [
+                "test/start-cli.lua"
+            ]
+        },
+        {
+            "name": "Debug Busted via Lua Interpreter",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "command": "lua"
+            },
+            "args": [
+                "test/start-interpreter.lua"
+            ]
+        },
+        {
+            "name": "Lua LocalDebug",
+            "type": "lua",
+            "request": "launch",
+            "program": {
+                "lua": "lua",
+                "file": "main.lua"
+            }
+        },
+        {
+            "name": "launch-lua",
+            "type": "lua",
+            "request": "launch",
+            "workingDirectory": "${workspaceRoot}",
+            "sourceBasePath": "${workspaceRoot}",
+            "executable": "lua",
+            "arguments": "main.lua",
+            "listenPublicly": false,
+            "listenPort": 56789,
+            "encoding": "UTF-8",
+            "env": {}
+        },
+        {
+            "name": "launch-gideros",
+            "type": "lua",
+            "request": "launch",
+            "workingDirectory": "${workspaceRoot}",
+            "giderosPath": "C:/Program Files (x86)/Gideros",
+            "gprojPath": "${workspaceRoot}/GPROJ.gproj",
+            "jumpToGiderosErrorPosition": false,
+            "stopGiderosWhenDebuggerStops": true,
+            "listenPublicly": false,
+            "listenPort": 56789,
+            "encoding": "UTF-8"
+        },
+        {
+            "name": "lua-wait",
+            "type": "lua",
+            "request": "attach",
+            "workingDirectory": "${workspaceRoot}",
+            "sourceBasePath": "${workspaceRoot}",
+            "listenPublicly": false,
+            "listenPort": 56789,
+            "encoding": "UTF-8"
+        }
+    ]
+}

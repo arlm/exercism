@@ -1,0 +1,57 @@
+// Available variables which can be used inside of strings.
+// ${workspaceRoot}: the root folder of the team
+// ${file}: the current opened file
+// ${fileBasename}: the current opened file's basename
+// ${fileDirname}: the current opened file's dirname
+// ${fileExtname}: the current opened file's extension
+// ${cwd}: the current working directory of the spawned process
+
+{
+    "version": "2.0.0",
+    "command": "sh",
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+    },
+    "tasks": [
+        {
+            "label": "busted-test",
+            "args": [
+                "/usr/local/bin/busted",
+                "-- ${file}"
+            ],
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "lua-lint",
+            "args": [
+                "/usr/local/bin/luacheck",
+                "${fileDirname}",
+                "--formatter",
+                "plain"
+            ],
+            "problemMatcher": {
+                "owner": "lua",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+): (.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "message": 4
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
