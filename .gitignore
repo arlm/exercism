@@ -128,3 +128,4 @@ project/plugins/project/
 bin
 obj
 teams
+*.stats.out
