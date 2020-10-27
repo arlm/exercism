@@ -13,10 +13,9 @@ func Distance(a, b string) (int, error) {
 
 	count := 0
 
-	for index, width := 0, 0; index < len(a); index += width {
-		aRuneValue, aWidth := utf8.DecodeRuneInString(a[index:])
+	for index, aRuneValue := range a {
+		aWidth := utf8.RuneLen(aRuneValue)
 		bRuneValue, bWidth := utf8.DecodeRuneInString(b[index:])
-		width = aWidth
 
 		if aRuneValue != bRuneValue || aWidth != bWidth {
 			count++
