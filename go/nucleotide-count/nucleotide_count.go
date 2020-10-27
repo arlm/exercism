@@ -1,11 +1,16 @@
 package dna
 
+import (
+	"fmt"
+	"strings"
+)
+
 // Histogram is a mapping from nucleotide to its count in given DNA.
 // Choose a suitable data type.
-type Histogram
+type Histogram map[rune]int
 
 // DNA is a list of nucleotides. Choose a suitable data type.
-type DNA
+type DNA string
 
 // Counts generates a histogram of valid nucleotides in the given DNA.
 // Returns an error if d contains an invalid nucleotide.
@@ -14,6 +19,17 @@ type DNA
 // The receiver appears in its own argument list between the func keyword and the method name.
 // Here, the Counts method has a receiver of type DNA named d.
 func (d DNA) Counts() (Histogram, error) {
-	var h Histogram
+	var h Histogram = map[rune]int{'A': 0, 'C': 0, 'G': 0, 'T': 0}
+	runes := []rune(strings.ToUpper(string(d)))
+
+	for _, runeValue := range runes {
+		switch runeValue {
+		case 'A', 'C', 'G', 'T':
+			h[runeValue]++
+		default:
+			return map[rune]int{}, fmt.Errorf("Invalid nucleotid: %x", runeValue)
+		}
+	}
+
 	return h, nil
 }
