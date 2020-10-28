@@ -1,4 +1,3 @@
-
 ---Checks if a table is used as an array. That is: the keys start with one and are sequential numbers
 -- @param t table
 -- @return nil,error string if t is not a table
