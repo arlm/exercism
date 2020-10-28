@@ -3,5 +3,5 @@
         "describe",
         "it"
     ],
-    "Lua.runtime.version": "Lua 5.1"
+    "Lua.runtime.version": "Lua 5.4"
 }
