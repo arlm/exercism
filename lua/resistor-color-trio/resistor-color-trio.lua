@@ -34,7 +34,7 @@ return {
     local value2=resistorColors[c2:lower()]
     local value3=resistorColors[c3:lower()]
 
-    local number =  value1 .. value2 .. string.rep("0", value3, "")
+    local number =  (value1 * 10 + value2) *  10 ^ value3
     local value, unit = scientificNumber(number)
 
     return value, unit
