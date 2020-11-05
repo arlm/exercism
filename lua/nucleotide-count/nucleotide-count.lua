@@ -2,21 +2,19 @@ local DNA = {}
 
 DNA.__index = DNA
 
-local function count(strand, nucleotide)
-    local valid = string.match(nucleotide, '[ATCGatcg]')
+local function countNucleotides(strand)
+    local result = {
+        A = 0,
+        T = 0,
+        C = 0,
+        G = 0
+    }
 
-    if not valid then
-        error("Invalid Nucleotide")
-    end
-
-    local result = 0
     local uppercaseStrand = string.upper(strand)
-    local uppercaseNucleotide = string.upper(nucleotide)
 
     for index = 1, #strand do
-        if uppercaseStrand:sub(index,index) == uppercaseNucleotide then
-            result = result + 1
-        end
+        local char = uppercaseStrand:sub(index,index)
+        result[char] = result[char] + 1
     end
 
     return result
@@ -29,18 +27,21 @@ function DNA:new(strand)
         error("Invalid nucleotide on strand: " .. strand)
     end
 
-    self.strand = strand
-    self.nucleotideCounts = {
-            A = count(strand, 'A'),
-            T = count(strand, 'T'),
-            C = count(strand, 'C'),
-            G = count(strand, 'G')
-        }
-    return self
+    local object = setmetatable({}, self)
+
+    object.strand = strand
+    object.nucleotideCounts = countNucleotides(strand)
+    return object
 end
 
 function DNA:count(nucleotide)
-    return count(self.strand, nucleotide)
+    local value = self.nucleotideCounts[nucleotide]
+
+    if value == nil then
+        error("Invalid Nucleotide")
+    end
+
+    return value
 end
 
 return DNA
