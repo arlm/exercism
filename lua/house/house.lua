@@ -18,39 +18,28 @@ local parts = {
     { "house that Jack built.", "lay in" }
 }
 
-local function generate (n)
-    assert(n <= #parts, "Invalid number of stanzas")
+house.verse = function(which)
+    assert(which <= #parts, "Invalid number of stanzas")
 
-    local stanzas = {}
-    if n == #parts then
-        table.move(parts, 1, #parts, 1, stanzas)
-    else
-        table.move(parts, #parts - n + 1, #parts, 1, stanzas)
+    local first = #parts - which + 1
+    local last = #parts
+
+    if which == #parts then
+        first = 1
+        last = #parts
     end
 
-    local last = #stanzas
+    local result  = {}
 
-    return coroutine.wrap(function()
-        for index, value in pairs(stanzas) do
-            local result
+    for index = first, last do
+        local stanza
 
-            if index == 1 then
-                result  = string.format(thisIsThe, value[1])
-            elseif index == last then
-                result = string.format(that, value[2], value[1])
-            else
-                result = string.format(that, value[2], value[1])
-            end
-
-            coroutine.yield(result)
+        if index == first then
+            stanza  = string.format(thisIsThe, parts[index][1])
+        else
+            stanza = string.format(that, parts[index][2], parts[index][1])
         end
-    end)
-end
 
-house.verse = function(which)
-    local result = {}
-
-    for stanza in generate(which) do
         table.insert(result, stanza)
     end
 
