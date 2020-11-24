@@ -7,7 +7,7 @@ local function isArray(t)
   if type(t)~="table" then return nil,"Argument is not a table! It is: "..type(t) end
   --check if all the table keys are numerical and count their number
   local count=0
-  for k,v in pairs(t) do
+  for k,_ in pairs(t) do
       if type(k)~="number" then return false else count=count+1 end
   end
   --all keys are numerical. now let's see if they are sequential and start with 1
@@ -45,9 +45,7 @@ local function default(f)
 end
 
 local function translate_codon(codon)
-  if #codon ~= 3 then
-    error("Codon must have exactly three nucleotides.")
-  end
+  assert(#codon == 3, "Codon must have exactly three nucleotides.")
 
   local result = ""
 
@@ -66,9 +64,7 @@ local function translate_codon(codon)
 end
 
 local function translate_rna_strand(rna_strand)
-  if #rna_strand % 3 ~= 0 then
-    error("Strand length must be multiple of three.")
-  end
+  assert(#rna_strand  % 3 == 0, "Codon must have multiple of three nucleotides.")
 
   local result = {}
 
