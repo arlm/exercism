@@ -1,10 +1,7 @@
-local inspect = require('inspect')
-
 local house = {}
 
 local thisIsThe = "This is the %s"
 local that = "that %s the %s"
-local houseThatJackBuilt = "house that Jack built."
 
 local parts = {
     { "horse and the hound and the horn" },
@@ -18,10 +15,12 @@ local parts = {
     { "cat", "worried" },
     { "rat", "killed" },
     { "malt", "ate"  },
-    { houseThatJackBuilt, "lay in" }
+    { "house that Jack built.", "lay in" }
 }
 
 local function generate (n)
+    assert(n <= #parts, "Invalid number of stanzas")
+
     local stanzas = {}
     if n == #parts then
         table.move(parts, 1, #parts, 1, stanzas)
