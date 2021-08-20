@@ -9,44 +9,41 @@ export const age = (planet, ageInSeconds) => {
   const earthAge = ageInSeconds / earthYear;
   var factor;
 
-  if (planet === "earth")
-  {
-    factor = 1;
-  }
+  switch (planet) {
+    case "earth":
+      factor = 1;
+      break;
 
-  if (planet === "mercury")
-  {
-    factor =  0.2408467;
-  }
+    case "mercury":
+      factor = 0.2408467;
+      break;
 
-  if (planet === "venus")
-  {
-    factor =  0.61519726;
-  }
+    case "venus":
+      factor = 0.61519726;
+      break;
 
-  if (planet === "mars")
-  {
-    factor =  1.8808158;
-  }
+    case "mars":
+      factor = 1.8808158;
+      break;
 
-  if (planet === "jupiter")
-  {
-    factor =  11.862615;
-  }
+    case "jupiter":
+      factor = 11.862615;
+      break;
 
-  if (planet === "saturn")
-  {
-    factor =  29.447498;
-  }
+    case "saturn":
+      factor = 29.447498;
+      break;
 
-  if (planet === "uranus")
-  {
-    factor =  84.016846;
-  }
+    case "uranus":
+      factor = 84.016846;
+      break;
 
-  if (planet === "neptune")
-  {
-    factor =  164.79132;
+    case "neptune":
+      factor = 164.79132;
+      break;
+
+    default:
+      throw "Parâmetro inválido";
   }
 
   const age = earthAge / factor;

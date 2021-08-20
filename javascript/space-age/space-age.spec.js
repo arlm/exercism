@@ -5,6 +5,22 @@ describe('Space Age', () => {
     expect(age('earth', 1000000000)).toEqual(31.69);
   });
 
+  test('age on trololo', () => {
+    expect(() => age('trololo', 2134835688)).toThrow();
+  });
+
+  test('age on null', () => {
+    expect(() => age(null, 2134835688)).toThrow();
+  });
+
+  test('age on undefined', () => {
+    expect(() => age(undefined, 2134835688)).toThrow();
+  });
+
+  test('age on empty string', () => {
+    expect(() => age('', 2134835688)).toThrow();
+  });
+
   test('age on Mercury', () => {
     expect(age('mercury', 2134835688)).toEqual(280.88);
   });
