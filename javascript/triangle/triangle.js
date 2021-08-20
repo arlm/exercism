@@ -4,19 +4,46 @@
 //
 
 export class Triangle {
+  sides;
+  isValid;
+
   constructor(...sides) {
-    throw new Error('Remove this statement and implement this function');
+    this.sides = sides;
+
+    this.isValid = this.sides[0] > 0 
+                && this.sides[1] > 0 
+                && this.sides[2] > 0
+                && this.sides[0] + this.sides[1] >= this.sides[2]
+                && this.sides[0] + this.sides[2] >= this.sides[1]
+                && this.sides[1] + this.sides[2] >= this.sides[0];
   }
 
   get isEquilateral() {
-    throw new Error('Remove this statement and implement this function');
+    return this.isValid
+        && this.sides[0] == this.sides[1]
+        && this.sides[0] == this.sides[2];
+  }
+
+  get isDegenerate() {
+    return (this.sides[0] + this.sides[1]) == this.sides[2] 
+        || (this.sides[0] + this.sides[2]) == this.sides[1]
+        || (this.sides[1] + this.sides[2]) == this.sides[0]
+;
   }
 
   get isIsosceles() {
-    throw new Error('Remove this statement and implement this function');
+    return this.isValid 
+    && (
+           this.sides[0] == this.sides[1]
+        || this.sides[0] == this.sides[2]
+        || this.sides[1] == this.sides[2]
+    );
   }
 
   get isScalene() {
-    throw new Error('Remove this statement and implement this function');
+    return this.isValid
+        && this.sides[0] != this.sides[1]
+        && this.sides[0] != this.sides[2]
+        && this.sides[1] != this.sides[2];
   }
 }
