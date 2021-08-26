@@ -11,32 +11,62 @@ describe('Resistor Color Trio', () => {
     );
   });
 
-  xtest('Blue and grey and brown', () => {
+  test('Blue and grey and brown', () => {
     expect(new ResistorColorTrio(['blue', 'grey', 'brown']).label).toEqual(
       makeLabel({ value: 680, unit: 'ohms' })
     );
   });
 
-  xtest('Red and black and red', () => {
+  test('Red and black and red', () => {
     expect(new ResistorColorTrio(['red', 'black', 'red']).label).toEqual(
       makeLabel({ value: 2, unit: 'kiloohms' })
     );
   });
 
-  xtest('Green and brown and orange', () => {
+  test('Green and brown and orange', () => {
     expect(new ResistorColorTrio(['green', 'brown', 'orange']).label).toEqual(
       makeLabel({ value: 51, unit: 'kiloohms' })
     );
   });
 
-  xtest('Yellow and violet and yellow', () => {
+  test('Yellow and violet and yellow', () => {
     expect(new ResistorColorTrio(['yellow', 'violet', 'yellow']).label).toEqual(
       makeLabel({ value: 470, unit: 'kiloohms' })
     );
   });
 
+  test('Yellow and violet and green', () => {
+    expect(new ResistorColorTrio(['yellow', 'violet', 'green']).label).toEqual(
+      makeLabel({ value: 4.7, unit: 'megaohms' })
+    );
+  });
+
+  test('Yellow and violet and blue', () => {
+    expect(new ResistorColorTrio(['yellow', 'violet', 'blue']).label).toEqual(
+      makeLabel({ value: 47, unit: 'megaohms' })
+    );
+  });
+
+  test('Yellow and violet and violet', () => {
+    expect(new ResistorColorTrio(['yellow', 'violet', 'violet']).label).toEqual(
+      makeLabel({ value: 470, unit: 'megaohms' })
+    );
+  });
+
+  test('Yellow and violet and grey', () => {
+    expect(new ResistorColorTrio(['yellow', 'violet', 'grey']).label).toEqual(
+      makeLabel({ value: 4.7, unit: 'gigaohms' })
+    );
+  });
+
+  test('Yellow and violet and white', () => {
+    expect(new ResistorColorTrio(['yellow', 'violet', 'white']).label).toEqual(
+      makeLabel({ value: 47, unit: 'gigaohms' })
+    );
+  });
+
   // optional: error
-  xtest('Invalid color', () => {
+  test('Invalid color', () => {
     expect(
       () => new ResistorColorTrio(['yellow', 'purple', 'black']).label
     ).toThrowError(/invalid color/);
