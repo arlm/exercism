@@ -4,23 +4,39 @@
 //
 
 const codons = {
-  AUG: "Methionine",
-  UUU: "Phenylalanine",
-  UUC: "Phenylalanine",
-  UUA: "Leucine",
-  UUG: "Leucine",
-  UCU: "Serine",
-  UCC: "Serine",
-  UCA: "Serine",
-  UCG: "Serine",
-  UAU: "Tyrosine",
-  UAC: "Tyrosine",
-  UGU: "Cysteine",
-  UGC: "Cysteine",
-  UGG: "Tryptophan",
-  UAA: "STOP",
-  UAG: "STOP",
-  UGA: "STOP",
+  A: {U: {G: "Methionine"}},
+  U: {
+    U: {
+      U: "Phenylalanine",
+      C: "Phenylalanine",
+      A: "Leucine",
+      G: "Leucine"
+    },
+    C: {
+      U: "Serine",
+      C: "Serine",
+      A: "Serine",
+      G: "Serine"
+    },
+    A: { 
+      A: "STOP",
+      G: "STOP",
+      U: "Tyrosine",
+      C: "Tyrosine"   
+    },
+    C: {
+      U: "Serine",
+      C: "Serine",
+      A: "Serine",
+      G: "Serine"
+    },
+    G: {
+      A: "STOP",
+      U: "Cysteine",
+      C: "Cysteine",
+      G: "Tryptophan"
+    },
+  }
 }
 
 export const translate = (rna) => {
@@ -30,14 +46,24 @@ export const translate = (rna) => {
 
   var result = new Array();
 
-  for (let index = 0; index < rna.length; index+=3) {
-    const codon = rna.substring(index, index+3);
-    const protein = codons[codon];
+  for (let index = 0; index < rna.length; index++) {
+    let nucleodid = rna[index];
+    let token = codons[nucleodid];
 
-    if (!protein) {
+    if (!token) {
       throw new Error("Invalid codon");
-    }    
+    }  
+
+    nucleodid = rna[++index];
+    token = token[nucleodid];
+
+    if (!token) {
+      throw new Error("Invalid codon");
+    }  
     
+    nucleodid = rna[++index];
+    const protein = token[nucleodid];
+
     if (protein === "STOP") {
       break;
     }
