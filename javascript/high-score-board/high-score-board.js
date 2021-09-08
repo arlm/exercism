@@ -7,7 +7,7 @@
  * @returns {Record<string, number>} new score board
  */
 export function createScoreBoard() {
-  throw new Error('Please implement the createScoreBoard function');
+  return { "The Best Ever" : 1000000 };
 }
 
 /**
@@ -19,7 +19,9 @@ export function createScoreBoard() {
  * @returns {Record<string, number>} updated score board
  */
 export function addPlayer(scoreBoard, player, score) {
-  throw new Error('Please implement the addPlayer function');
+  scoreBoard[player] = score;
+
+  return scoreBoard;
 }
 
 /**
@@ -30,7 +32,9 @@ export function addPlayer(scoreBoard, player, score) {
  * @returns {Record<string, number>} updated score board
  */
 export function removePlayer(scoreBoard, player) {
-  throw new Error('Please implement the removePlayer function');
+  delete scoreBoard[player];
+
+  return scoreBoard;
 }
 
 /**
@@ -42,7 +46,9 @@ export function removePlayer(scoreBoard, player) {
  * @returns {Record<string, number>} updated score board
  */
 export function updateScore(scoreBoard, player, points) {
-  throw new Error('Please implement the addToScore function');
+  scoreBoard[player] = (scoreBoard[player] ?? 0) + points;
+
+  return scoreBoard;
 }
 
 /**
@@ -52,7 +58,9 @@ export function updateScore(scoreBoard, player, points) {
  * @returns {Record<string, number>} updated score board
  */
 export function applyMondayBonus(scoreBoard) {
-  throw new Error('Please implement the applyMondayBonus function');
+  Object.keys(scoreBoard).forEach( item => scoreBoard[item] += 100 );
+
+  return scoreBoard;
 }
 
 /**
@@ -61,6 +69,6 @@ export function applyMondayBonus(scoreBoard) {
  * @param {Params} params the parameters for performing the normalization
  * @returns {number} normalized score
  */
-export function normalizeScore(params) {
-  throw new Error('Please implement the normalizeScore function');
+export function normalizeScore(params) { 
+  return params?.normalizeFunction(params.score ?? 0) ?? 0;
 }

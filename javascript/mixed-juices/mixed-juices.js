@@ -16,12 +16,12 @@ export function timeToMixJuice(name) {
       return 0.5;
     case 'Energizer':
     case 'Green Garden':
-      return 0.5;
+      return 1.5;
     case 'Tropical Island':
       return 3;
     case 'All or Nothing':
       return 5;
-    deault:
+    default:
       return 2.5;
   }
 }
@@ -40,6 +40,7 @@ export function limesToCut(wedgesNeeded, limes) {
 
   while (wedges > 0) {
     let lime = limes [index++];
+
     switch(lime) {
       case 'small':
         wedges -= 6;
@@ -48,8 +49,10 @@ export function limesToCut(wedgesNeeded, limes) {
         wedges -= 8;
         break;
       case 'large':
-        wedges -= 6;
+        wedges -= 10;
         break;
+      default:
+        return index - 1;
     }
   }
 
@@ -72,5 +75,5 @@ export function remainingOrders(timeLeft, orders) {
     workingTime -= timeToMixJuice(order)
   }
 
-  return index;
+  return orders.slice(index);
 }
