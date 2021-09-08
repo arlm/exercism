@@ -5,6 +5,128 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "command": "npm start",
+            "name": "Run npm start",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "name": "Launch via NPM",
+            "request": "launch",
+            "runtimeArgs": [
+                "run-script",
+                "debug"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "Attach by Process ID",
+            "processId": "${command:PickProcess}",
+            "request": "attach",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "Attach",
+            "port": 9229,
+            "request": "attach",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "(lldb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "processId": "${command:pickProcess}",
+            "MIMode": "lldb"
+        },
+        {
+            "name": "Launch Edge",
+            "request": "launch",
+            "type": "pwa-msedge",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Attach to Edge",
+            "port": 9222,
+            "request": "attach",
+            "type": "pwa-msedge",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "pwa-chrome",
+            "webRoot": "${workspaceFolder}"
+        },
+
+        {
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+
+
+        {
             "name": "Launch Go",
             "type": "go",
             "request": "launch",
@@ -50,7 +172,7 @@
             ]
         },
         {
-            "name": "Lua LocalDebug",
+            "name": "Lua Local Debug",
             "type": "lua",
             "request": "launch",
             "program": {
@@ -59,7 +181,7 @@
             }
         },
         {
-            "name": "launch-lua",
+            "name": "Launch lua",
             "type": "lua",
             "request": "launch",
             "workingDirectory": "${workspaceRoot}",
@@ -72,7 +194,7 @@
             "env": {}
         },
         {
-            "name": "launch-gideros",
+            "name": "Launch gideros",
             "type": "lua",
             "request": "launch",
             "workingDirectory": "${workspaceRoot}",
@@ -85,7 +207,7 @@
             "encoding": "UTF-8"
         },
         {
-            "name": "lua-wait",
+            "name": "Lua Wait",
             "type": "lua",
             "request": "attach",
             "workingDirectory": "${workspaceRoot}",
@@ -93,6 +215,22 @@
             "listenPublicly": false,
             "listenPort": 56789,
             "encoding": "UTF-8"
-        }
+        },
+        {
+            "name": "Debug Jest Tests",
+            "type": "node",
+            "request": "launch",
+            "workingDirectory": "${fileDirname}",
+            "sourceBasePath": "${fileDirname}",
+            "cwd": "${fileDirname}",
+            "runtimeArgs": [
+                "--inspect-brk",
+                "${fileDirname}/node_modules/.bin/jest",
+                "--runInBand"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229
+          }
     ]
 }
