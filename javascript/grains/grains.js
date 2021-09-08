@@ -9,10 +9,12 @@
 // This is only a SKELETON file for the 'Grains' exercise. It's been provided as a
 // convenience to get you started writing code faster.
 //
-export const square = () => {
-  throw new Error('Remove this statement and implement this function');
+export const square = (number) => {
+  if (number <= 0 || number > 64) {
+    throw new Error("square must be between 1 and 64");
+  }
+
+  return 1n << BigInt(number - 1);
 };
 
-export const total = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const total = () => 2n ** 64n - 1n;
