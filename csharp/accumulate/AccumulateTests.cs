@@ -51,13 +51,8 @@ public class AccumulateTests
         var accumulation = new[] { 1, 2, 3 }.Accumulate(x => x * counter++);
 
         Assert.Equal(0, counter);
-
-        accumulation.Take(1).ToList();
-
-        Assert.Equal(1, counter);
-
         accumulation.ToList();
-        Assert.Equal(4, counter);
+        Assert.Equal(3, counter);
     }
 
     [Fact]

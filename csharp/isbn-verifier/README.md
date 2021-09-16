@@ -1,4 +1,9 @@
-# ISBN Verifier
+# Isbn Verifier
+
+Welcome to Isbn Verifier on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 The [ISBN-10 verification process](https://en.wikipedia.org/wiki/International_Standard_Book_Number) is used to validate book identification
 numbers. These normally contain dashes and look like: `3-598-21508-8`
@@ -40,21 +45,20 @@ Now, it's even trickier since the check digit of an ISBN-10 may be 'X' (represen
 * Generate a valid ISBN-13 from the input ISBN-10 (and maybe verify it again with a derived verifier).
 
 * Generate valid ISBN, maybe even from a given starting ISBN.
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit IsbnVerifier.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
 
 ## Source
 
-Converting a string into a number and some basic processing utilizing a relatable real world example. [https://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation](https://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation)
+### Created by
 
+- @jenlouie
+
+### Contributed to by
+
+- @ErikSchierboom
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Converting a string into a number and some basic processing utilizing a relatable real world example. - https://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation

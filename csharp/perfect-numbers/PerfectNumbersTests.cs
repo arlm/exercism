@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 1.1.0 of the canonical data.
-
 using System;
 using Xunit;
 
@@ -72,13 +70,13 @@ public class PerfectNumbersTests
     }
 
     [Fact]
-    public void Zero_is_rejected_not_a_natural_number_()
+    public void Zero_is_rejected_as_it_is_not_a_positive_integer_()
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => PerfectNumbers.Classify(0));
     }
 
     [Fact]
-    public void Negative_integer_is_rejected_not_a_natural_number_()
+    public void Negative_integer_is_rejected_as_it_is_not_a_positive_integer_()
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => PerfectNumbers.Classify(-1));
     }

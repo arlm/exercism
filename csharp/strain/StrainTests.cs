@@ -29,21 +29,6 @@ public class StrainTests
     }
 
     [Fact]
-    public void Keep_neither_first_nor_last2()
-    {
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
-        IEnumerable<int> result = numbers.Keep(x => x % 2 == 0);
-        numbers.Add(8);
-        numbers.Add(10);
-
-        var pairs = numbers.Where(x => x % 2 == 0);
-        numbers.Clear();
-        numbers.AddRange(pairs);
-
-        Assert.Equal(new List<int> { }, result);
-    }
-
-    [Fact]
     public void Keep_strings()
     {
         var words = "apple zebra banana zombies cherimoya zelot".Split(' ');
