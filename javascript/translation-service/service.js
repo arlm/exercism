@@ -1,4 +1,7 @@
 /// <reference path="./global.d.ts" />
+
+import { NotAvailable } from "./errors";
+
 // @ts-check
 //
 // The lines above enable type checking for this file. Various IDEs interpret
@@ -27,7 +30,12 @@ export class TranslationService {
    * @returns {Promise<string>}
    */
   free(text) {
-    throw new Error('Implement the free function');
+    return this.api.fetch(text)
+    .then(
+      translation => translation.translation, 
+      reason => { throw new Error(reason); } 
+    )
+    .catch(reason => { throw new Error(reason); } );
   }
 
   /**
@@ -41,7 +49,22 @@ export class TranslationService {
    * @returns {Promise<string[]>}
    */
   batch(texts) {
-    throw new Error('Implement the batch function');
+    return new Promise((resolve, reject) => {
+      if (!texts || texts.length == 0) {
+        reject(new BatchIsEmpty());
+      }
+
+      const promises = [];
+      const resut = [];
+      
+      for (const text of texts) {
+        promises.push(this.api.fetch(text));        
+      }
+
+      return Promise.all(promises)
+        .then(result => result.map(translation => translation.translation))
+        .catch(reason => { throw new reason; })
+    })
   }
 
   /**
@@ -54,7 +77,15 @@ export class TranslationService {
    * @returns {Promise<void>}
    */
   request(text) {
-    throw new Error('Implement the request function');
+    return new Promise((resolve, reject) => { 
+      this.api.request(text, error => {
+        if (error) {
+          reject(error);
+        }
+
+        resolve();
+      });
+    })
   }
 
   /**
@@ -68,7 +99,24 @@ export class TranslationService {
    * @returns {Promise<string>}
    */
   premium(text, minimumQuality) {
-    throw new Error('Implement the premium function');
+    return this.api.fetch(text)
+    .then(
+      translation => {
+        if (translation.quality <= minimumQuality){
+          return translation.translation;
+        }
+
+        throw new QualityThresholdNotMet(text);
+      }, 
+      reason => { 
+        if (reason instanceof NotAvailable) {
+          this.request(text);
+        }
+
+        throw new Error(reason); 
+      } 
+    )
+    .catch(reason => { throw new Error(reason); } );
   }
 }
 

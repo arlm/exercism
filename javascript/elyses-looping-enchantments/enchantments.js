@@ -9,7 +9,7 @@
  * @returns {number} number of cards of a single type there are in the deck
  */
 export function cardTypeCheck(stack, card) {
-  throw new Error('Implement the cardTypeCheck function');
+  return stack.filter((value, _index_, _array) => value == card).length;
 }
 
 /**
@@ -20,5 +20,6 @@ export function cardTypeCheck(stack, card) {
  * @returns {number} number of cards that are either odd or even (depending on `type`)
  */
 export function determineOddEvenCards(stack, type) {
-  throw new Error('Implement the determineOddEvenCards function');
+  return stack.filter((value, _index_, _array) =>
+    type ? value % 2 == 0 :  value % 2 != 0).length;
 }
