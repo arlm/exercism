@@ -29,13 +29,13 @@ export class TranslationService {
    * @param {string} text
    * @returns {Promise<string>}
    */
-  free(text) {
-    return this.api.fetch(text)
-    .then(
-      translation => translation.translation, 
-      reason => { throw new Error(reason); } 
-    )
-    .catch(reason => { throw new Error(reason); } );
+  async free(text) {
+    try {
+      const translation = await this.api.fetch(text);
+      return translation.translation;
+    } catch (reason) {
+      throw new Error(reason);
+    }
   }
 
   /**
@@ -48,23 +48,18 @@ export class TranslationService {
    * @param {string[]} texts
    * @returns {Promise<string[]>}
    */
-  batch(texts) {
-    return new Promise((resolve, reject) => {
-      if (!texts || texts.length == 0) {
-        reject(new BatchIsEmpty());
-      }
+  async batch(texts) {
+    if (!texts || texts.length == 0) {
+      throw new BatchIsEmpty();
+    }
 
-      const promises = [];
-      const resut = [];
-      
-      for (const text of texts) {
-        promises.push(this.api.fetch(text));        
-      }
+    const translations = [];
 
-      return Promise.all(promises)
-        .then(result => result.map(translation => translation.translation))
-        .catch(reason => { throw new reason; })
-    })
+    for (const text of texts) {
+      translations.push(await this.api.fetch(text));        
+    }
+
+    return translations;
   }
 
   /**
@@ -98,25 +93,25 @@ export class TranslationService {
    * @param {number} minimumQuality
    * @returns {Promise<string>}
    */
-  premium(text, minimumQuality) {
-    return this.api.fetch(text)
-    .then(
-      translation => {
-        if (translation.quality <= minimumQuality){
+  async premium(text, minimumQuality) {
+    try {
+      try {
+        const translation = await this.api.fetch(text);
+        if (translation.quality <= minimumQuality) {
           return translation.translation;
         }
 
         throw new QualityThresholdNotMet(text);
-      }, 
-      reason => { 
+      } catch (reason) {
         if (reason instanceof NotAvailable) {
-          this.request(text);
+          await this.request(text);
         }
 
-        throw new Error(reason); 
-      } 
-    )
-    .catch(reason => { throw new Error(reason); } );
+        throw reason;
+      }
+    } catch (reason) {
+      throw new Error(reason);
+    }
   }
 }
 
