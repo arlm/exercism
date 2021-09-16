@@ -11,7 +11,9 @@
  * @returns {string[]} new playlist with unique entries
  */
 export function removeDuplicates(playlist) {
-  throw new Error('Please implement the removeDuplicates function');
+  let set = new Set(playlist);
+  let values = set.values();
+  return Array.from(values);
 }
 
 /**
@@ -22,7 +24,7 @@ export function removeDuplicates(playlist) {
  * @returns {boolean} whether the track is in the playlist
  */
 export function hasTrack(playlist, track) {
-  throw new Error('Please implement the hasTrack function');
+  return playlist.findIndex(value => track === value) >= 0;
 }
 
 /**
@@ -33,7 +35,13 @@ export function hasTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function addTrack(playlist, track) {
-  throw new Error('Please implement the addTrack function');
+  const newPlaylist =  Array.from(playlist);
+
+  if (!hasTrack(playlist, track)){
+    newPlaylist.push(track);
+  }
+
+  return newPlaylist;
 }
 
 /**
@@ -44,7 +52,16 @@ export function addTrack(playlist, track) {
  * @returns {string[]} new playlist
  */
 export function deleteTrack(playlist, track) {
-  throw new Error('Please implement the deleteTrack function');
+  const newPlaylist =  Array.from(playlist);
+
+  if (!hasTrack(playlist, track)){
+    newPlaylist.push(track);
+  }
+
+  const index = playlist.findIndex(value => track === value);
+  newPlaylist.splice(index, 1);
+  
+  return newPlaylist;
 }
 
 /**
@@ -54,5 +71,7 @@ export function deleteTrack(playlist, track) {
  * @returns {string[]} list of artists
  */
 export function listArtists(playlist) {
-  throw new Error('Please implement the listArtists function');
+  const artists =  playlist.map(track => track.split(" - ")[1]);
+
+  return removeDuplicates(artists);
 }
