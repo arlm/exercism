@@ -3,5 +3,6 @@
         "describe",
         "it"
     ],
-    "Lua.runtime.version": "Lua 5.4"
+    "Lua.runtime.version": "Lua 5.4",
+    "cmake.configureOnOpen": false
 }
