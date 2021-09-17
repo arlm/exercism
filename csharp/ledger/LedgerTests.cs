@@ -20,9 +20,9 @@ public class LedgerTests
         var currency = "USD";
         var locale = "en-US";
         var entries = new[] 
-        {
-            Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
-        };
+            {
+                Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
+            };
         var expected =
             "Date       | Description               | Change       \n" +
             "01/01/2015 | Buy present               |      ($10.00)";

@@ -8,9 +8,14 @@ public static class Sieve
 
     public static IEnumerable<int> EratosthenesSieve(int limit)
     {
+        if (limit < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(limit), "Limit must be bigger than zero.");
+        }
+
         if (limit < 2)
         {
-            throw new ArgumentOutOfRangeException(nameof(limit), limit, $"Value should not be below 2.");
+            yield break;
         }
 
         var sieve = new int[limit + 1];

@@ -40,7 +40,7 @@ public static class TreeBuilder
 
         if (!records.Any())
         {
-            throw new ArgumentException();
+            throw new ArgumentException("Records cannot be empty", nameof(records));
         }
 
         var orderedRecords = records.OrderBy(record => record.RecordId);

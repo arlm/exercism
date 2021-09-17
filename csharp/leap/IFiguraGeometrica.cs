@@ -1,9 +1,5 @@
-﻿using System;
-namespace Leap
+﻿public interface IFiguraGeometrica
 {
-    public interface IFiguraGeometrica
-    {
-        double Area { get; }
-        double Perimetro { get; }
-    }
+    double Area { get; }
+    double Perimetro { get; }
 }

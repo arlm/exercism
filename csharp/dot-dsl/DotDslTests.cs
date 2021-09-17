@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 public class DotDslTests
@@ -82,9 +81,24 @@ public class DotDslTests
             { "bar", "true" }
         };
 
-        Assert.Equal(new[] { new Node("a") { { "color", "green" } }, new Node("b") { { "label", "Beta!" } }, new Node("c") }, g.Nodes, EnumerableEqualityComparer<Node>.Instance);
-        Assert.Equal(new[] { new Edge("a", "b") { { "color", "blue" } }, new Edge("b", "c") }, g.Edges, EnumerableEqualityComparer<Edge>.Instance);
-        Assert.Equal(new[] { new Attr("bar", "true"), new Attr("foo", "1"), new Attr("title", "Testing Attrs") }, g.Attrs, EnumerableEqualityComparer<Attr>.Instance);
+        Node[] expectedNodes = new[] {
+            new Node("a") { { "color", "green" } },
+            new Node("b") { { "label", "Beta!" } },
+            new Node("c")
+        };
+        Edge[] expectedEdges = new[] {
+            new Edge("a", "b") { { "color", "blue" } },
+            new Edge("b", "c")
+        };
+        Attr[] expectedAttrs = new[] {
+            new Attr("bar", "true"),
+            new Attr("foo", "1"),
+            new Attr("title", "Testing Attrs")
+        };
+
+        Assert.Equal(expectedAttrs, g.Attrs, EnumerableEqualityComparer<Attr>.Instance);
+        Assert.Equal(expectedEdges, g.Edges, EnumerableEqualityComparer<Edge>.Instance);
+        Assert.Equal(expectedNodes, g.Nodes, EnumerableEqualityComparer<Node>.Instance);
     }
 
     private class EnumerableEqualityComparer<T> : IEqualityComparer<IEnumerable<T>>
