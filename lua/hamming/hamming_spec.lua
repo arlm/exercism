@@ -1,5 +1,4 @@
 local compute = require('hamming').compute
-require "busted"
 
 describe('hamming', function ()
   it('identical strands', function ()

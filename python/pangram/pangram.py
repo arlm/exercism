@@ -14,4 +14,3 @@ def is_pangram(sentence):
             return False
 
     return True
-

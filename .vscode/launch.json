@@ -140,7 +140,7 @@
             "type": "go",
             "request": "launch",
             "mode": "test",
-            "program": "${workspaceFolder}"
+            "program": "${fileDirname}"
         },
         {
             "name": "Launch Go file",
