@@ -1,10 +1,10 @@
 class Lasagna
 {
-    // TODO: define the 'ExpectedMinutesInOven()' method
+    internal int ExpectedMinutesInOven() => 40;
 
-    // TODO: define the 'RemainingMinutesInOven()' method
+    internal int RemainingMinutesInOven(int timeInOven) => ExpectedMinutesInOven() - timeInOven;
 
-    // TODO: define the 'PreparationTimeInMinutes()' method
+    internal int PreparationTimeInMinutes(int layers) => layers * 2;
 
-    // TODO: define the 'ElapsedTimeInMinutes()' method
+    internal int ElapsedTimeInMinutes(int layers, int timeInOven) => PreparationTimeInMinutes(layers) + timeInOven;
 }
