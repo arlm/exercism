@@ -4,6 +4,13 @@ static class Badge
 {
     public static string Print(int? id, string name, string? department)
     {
-        throw new NotImplementedException("Please implement the (static) Badge.Print() method");
+        var departmentText = department?.ToUpper() ?? "OWNER";
+
+        if (id.HasValue)
+        {
+            return $"{name} - {departmentText}";
+        }
+
+        return $"[{id}] - {name} - {departmentText}";
     }
 }
