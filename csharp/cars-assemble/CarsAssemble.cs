@@ -6,27 +6,17 @@ static class AssemblyLine
 
     public static double ProductionRatePerHour(int speed)
     {
-        var successRate = 0.0;
 
-        if (speed >= 1 && speed <= 4)
-        {
-            successRate = 1;
-        } else if (speed >= 5 && speed <= 8)
-        {
-            successRate = 0.9;
-        }
-        else if (speed == 9)
-        {
-            successRate = 0.8;
-
-        }
-        else if (speed == 10)
-        {
-            successRate = 0.77;
-
-        }
-
-        return RATE_PER_HOUR * speed * successRate;
+        return RATE_PER_HOUR
+            * speed
+            * speed switch
+            {
+                >= 1 and <= 4 => 1,
+                >= 5 and <= 8 => 0.9,
+                9 => 0.8,
+                10 => 0.77,
+                _ => 0.0,
+            };
     }
 
     public static int WorkingItemsPerMinute(int speed) => (int)Math.Floor(ProductionRatePerHour(speed) / 60);
