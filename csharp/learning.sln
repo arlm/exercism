@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Done", "Done", "{DF5D9A73-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogLevels", "log-levels\LogLevels.csproj", "{4A20B43A-80C7-479D-A46E-F52E5F301EDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsAssemble", "cars-assemble\CarsAssemble.csproj", "{67ADE9F8-ADCC-46CA-BF0F-18CB75D2693E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneNumberAnalysis", "phone-number-analysis\PhoneNumberAnalysis.csproj", "{C8A4C88F-9148-4FC5-B50F-9A0AB5FF51E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{4A20B43A-80C7-479D-A46E-F52E5F301EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A20B43A-80C7-479D-A46E-F52E5F301EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A20B43A-80C7-479D-A46E-F52E5F301EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67ADE9F8-ADCC-46CA-BF0F-18CB75D2693E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67ADE9F8-ADCC-46CA-BF0F-18CB75D2693E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67ADE9F8-ADCC-46CA-BF0F-18CB75D2693E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67ADE9F8-ADCC-46CA-BF0F-18CB75D2693E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A4C88F-9148-4FC5-B50F-9A0AB5FF51E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A4C88F-9148-4FC5-B50F-9A0AB5FF51E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A4C88F-9148-4FC5-B50F-9A0AB5FF51E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A4C88F-9148-4FC5-B50F-9A0AB5FF51E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
