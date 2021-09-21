@@ -8,9 +8,9 @@ static class Badge
 
         if (id.HasValue)
         {
-            return $"{name} - {departmentText}";
+            return $"[{id}] - {name} - {departmentText}";
         }
 
-        return $"[{id}] - {name} - {departmentText}";
+        return $"{name} - {departmentText}";
     }
 }
