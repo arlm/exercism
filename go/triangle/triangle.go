@@ -34,17 +34,9 @@ func KindFromSides(a, b, c float64) Kind {
 		}
 	}
 
-	abLengthDegenerate := a+b == c
-	acLengthDegenerate := a+c == b
-	bcLengthDegenerate := b+c == a
-
-	if abLengthDegenerate || acLengthDegenerate || bcLengthDegenerate {
-		return Dgn
-	}
-
-	abLengthValid := a+b > c
-	acLengthValid := a+c > b
-	bcLengthValid := b+c > a
+	abLengthValid := a+b >= c
+	acLengthValid := a+c >= b
+	bcLengthValid := b+c >= a
 
 	if !(abLengthValid && acLengthValid && bcLengthValid) {
 		return NaT
@@ -61,6 +53,16 @@ func KindFromSides(a, b, c float64) Kind {
 	if ab || ac || bc {
 		return Iso
 	}
+
+	/* No Degenerate tests for now
+	abLengthDegenerate := a+b == c
+	acLengthDegenerate := a+c == b
+	bcLengthDegenerate := b+c == a
+
+	if abLengthDegenerate || acLengthDegenerate || bcLengthDegenerate {
+		return Dgn
+	}
+	*/
 
 	return Sca
 }
