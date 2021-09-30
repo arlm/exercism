@@ -2,11 +2,14 @@
 Welcome to a Spago project!
 You can edit this file as you like.
 -}
-{ name = "hello-world"
+{ name = "pangram"
 , dependencies =
   [ "effect"
+  , "arrays"
   , "prelude"
   , "psci-support"
+   , "ordered-collections"
+  , "strings"
   , "test-unit"
   ]
 , packages = ./packages.dhall
