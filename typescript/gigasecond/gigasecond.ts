@@ -1,5 +1,11 @@
 export class Gigasecond {
-  public date(/* Parameters go here */) {
-    throw new Error('Remove this statement and implement this function')
+  private readonly secondsFromEpoch: number;
+
+  constructor (date: Date) {
+    this.secondsFromEpoch = date.getTime();
+  }
+
+  public date(): Date {
+    return new Date(this.secondsFromEpoch + 1e12); // 1e9 * 1000 = 1e12
   }
 }

@@ -1,17 +1,26 @@
 export class Squares {
-  constructor(count: unknown) {
-    throw new Error('Remove this statement and implement this function')
+  private readonly sequence: number[];
+
+  constructor(count: number) {
+    this.sequence = Array.from(this.generator(count));
   }
 
-  get sumOfSquares(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  get sumOfSquares(): number {
+    return this.sequence.reduce((sum, value) => sum + value**2);
   }
 
-  get squareOfSum(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  get squareOfSum(): number {
+    return this.sequence.reduce((sum, value) => sum + value)**2;
   }
 
-  get difference(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  get difference(): number {
+    return this.squareOfSum - this.sumOfSquares;
+  }
+
+  private *generator(count: number): Iterable<number>  {
+    var index = 1;
+    while(index <= count){
+      yield index++;
+    }
   }
 }
