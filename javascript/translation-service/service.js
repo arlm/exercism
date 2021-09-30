@@ -1,6 +1,6 @@
 /// <reference path="./global.d.ts" />
 
-import { NotAvailable } from "./errors";
+import { NotAvailable, Untranslatable } from "./errors";
 
 // @ts-check
 //
@@ -34,7 +34,7 @@ export class TranslationService {
       const translation = await this.api.fetch(text);
       return translation.translation;
     } catch (reason) {
-      throw new Error(reason);
+      throw reason;
     }
   }
 
@@ -48,6 +48,7 @@ export class TranslationService {
    * @param {string[]} texts
    * @returns {Promise<string[]>}
    */
+  
   async batch(texts) {
     if (!texts || texts.length == 0) {
       throw new BatchIsEmpty();
@@ -56,10 +57,16 @@ export class TranslationService {
     const translations = [];
 
     for (const text of texts) {
-      translations.push(await this.api.fetch(text));        
+      translations.push((await this.api.fetch(text)).translation);        
     }
 
     return translations;
+  }
+
+  requestAsync(text) {
+    return new Promise((resolve, reject) => {
+      this.api.request(text, error => error ? reject(error) : resolve());
+    });
   }
 
   /**
@@ -71,16 +78,24 @@ export class TranslationService {
    * @param {string} text
    * @returns {Promise<void>}
    */
-  request(text) {
-    return new Promise((resolve, reject) => { 
-      this.api.request(text, error => {
-        if (error) {
-          reject(error);
-        }
+  async request(text) {
+    await this.fetchAndRequest(text);
+  }
 
-        resolve();
-      });
-    })
+  async fetchAndRequest(text) {
+    try {
+      return await this.api.fetch(text);
+    } catch (error) {
+      if (error instanceof NotAvailable) {
+        await this.requestAsync(text)
+          .catch(_ => this.requestAsync(text))
+          .catch(_ => this.requestAsync(text));
+
+        return null;
+      }
+
+      throw error;
+    }
   }
 
   /**
@@ -94,24 +109,17 @@ export class TranslationService {
    * @returns {Promise<string>}
    */
   async premium(text, minimumQuality) {
-    try {
-      try {
-        const translation = await this.api.fetch(text);
-        if (translation.quality <= minimumQuality) {
-          return translation.translation;
-        }
+    const translation = await this.fetchAndRequest(text);
 
-        throw new QualityThresholdNotMet(text);
-      } catch (reason) {
-        if (reason instanceof NotAvailable) {
-          await this.request(text);
-        }
-
-        throw reason;
-      }
-    } catch (reason) {
-      throw new Error(reason);
+    if (translation == null) {
+      return (await this.api.fetch(text)).translation;
     }
+
+    if (translation.quality >= minimumQuality) {
+      return translation.translation;
+    }
+
+    throw new QualityThresholdNotMet(text);
   }
 }
 
