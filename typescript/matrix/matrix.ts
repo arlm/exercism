@@ -1,13 +1,21 @@
 export class Matrix {
-  constructor() {
-    throw new Error('Remove this statement and implement this function')
+  private readonly _rows: number[][];
+  private readonly _columns: number[][] = [];
+
+  constructor(matrix: string) {
+    const rows = matrix.split("\n");
+    this._rows = rows.map(row => row.split(" ").map(item => +item));
+    
+    for (let index = 0; index < this._rows[0].length; index++) {
+      this._columns.push(this._rows.map(row => row[index]));
+    }
   }
 
-  get rows(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  get rows(): number[][] {
+    return this._rows;
   }
 
-  get columns(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  get columns(): number[][] {
+    return this._columns;
   }
 }
