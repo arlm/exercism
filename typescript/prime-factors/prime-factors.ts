@@ -1,36 +1,39 @@
 export function calculatePrimeFactors(toFactor: number): number[] {
-  return Array.from(primeFactors(toFactor));
+  return [...generatePrimes(toFactor)];
 }
 
-function *primeFactors(toFactor: number): Iterable<number> {
-  var result = toFactor;
-
-  for (const prime of generatePrimes(toFactor)) {
-    while (result > 1 && result % prime == 0) {
-      result /= prime;
-      yield prime;
-    }
-
-    if (result == 1) {
-      result;
-    }
-  }
-}
-
-function *generatePrimes(count: number): Iterable<number> {
+function *generatePrimes(toFactor: number): Iterable<number> {
   var candidate = 3;
   var primes = [2];
+  var result = toFactor;
 
-  if (count >= 2) yield 2;
+  if (toFactor >= 2) {
+    yield *makeFactors(toFactor, 2);
+  }
 
-  const limite = count**0.5 * 3;
+  if (result == 1) {
+    result;
+  }
+
+  const limite = toFactor**0.5 * 3;
 
   while (candidate <= limite) {
     if (primes.every(prime => candidate % prime != 0)) {
       primes.push(candidate);
-      yield candidate;
+      yield *makeFactors(toFactor, candidate);
     } 
 
+    if (result == 1) {
+      result;
+    }
+
     candidate += 2;
+  }
+}
+
+function *makeFactors(toFactor: number, prime: number) {
+  while (toFactor > 1 && toFactor % prime == 0) {
+    toFactor /= prime;
+    yield prime;
   }
 }
