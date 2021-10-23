@@ -14,9 +14,7 @@ public partial class Clock
     /// Creates a clock from a given number of minutes.
     /// </summary>
     /// <param name="minutes">Given minutes to set the clock.</param>
-    public Clock(int minutes):this(0, minutes)
-    {
-    }
+    public Clock(int minutes):this(0, minutes) { }
 
     /// <summary>
     /// Creates a clock from hours and minutes.

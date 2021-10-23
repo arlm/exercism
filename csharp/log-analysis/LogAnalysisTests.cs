@@ -23,6 +23,12 @@ public class LogAnalysisTests
     }
 
     [Fact]
+    public void SubstringBetweenLongerDelimiters()
+    {
+        Assert.Equal("SOMETHING", "FIND >>> SOMETHING <===< HERE".SubstringBetween(">>> ", " <===<"));
+    }
+    
+    [Fact]
     public void Message()
     {
         var log = "[WARNING]: Library is deprecated.";

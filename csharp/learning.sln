@@ -51,6 +51,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalysis", "log-analysis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperOptimizedTelemetry", "hyper-optimized-telemetry\HyperOptimizedTelemetry.csproj", "{60ACF68B-3C4D-4F53-82B9-691686E788AC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9CE7C2C6-60D4-493E-A284-63239BC4BE44}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,5 +175,6 @@ Global
 		{61C2C626-E166-42F2-8CE0-D8D0DD191B13} = {DF5D9A73-39F5-4669-9C33-1FCBA4B3BA73}
 		{5D5EE40F-D7B4-4A34-BC08-C448A5E37E28} = {DF5D9A73-39F5-4669-9C33-1FCBA4B3BA73}
 		{5A695050-742D-4E72-AACA-524DCC871CF4} = {DF5D9A73-39F5-4669-9C33-1FCBA4B3BA73}
+		{4D6D042C-1138-4B3B-8828-6EB473144BAC} = {DF5D9A73-39F5-4669-9C33-1FCBA4B3BA73}
 	EndGlobalSection
 EndGlobal

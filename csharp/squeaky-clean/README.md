@@ -62,7 +62,7 @@ Modify the (_static_) `Identifier.Clean()` method to convert kebab-case to camel
 
 ```csharp
 Identifier.Clean("à-ḃç");
-// => "àḂç"
+// => "àḂç"exercism download --exercise=zipper --track=csharpexercism download --exercise=zipper --track=csharp
 ```
 
 ## 4. Omit Greek lower case letters

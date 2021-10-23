@@ -13,6 +13,13 @@ public class LedgerEntry
         Change = change;
     }
 
+    public LedgerEntry(string date, string description, int change)
+    {
+        Date = DateTime.Parse(date, CultureInfo.InvariantCulture);
+        Description = description;
+        Change = change / 100.0m;
+    }
+
     public DateTime Date { get; }
     public string Description { get; }
     public decimal Change { get; }

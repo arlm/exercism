@@ -73,7 +73,7 @@ public static class BinarySearch
 
         return count >= 0
             ? new ArraySegment<T>(array, index, count)
-            : throw new ArgumentOutOfRangeException(nameof(range), count, "Range should not be negative.");
+            : throw new ArgumentOutOfRangeException(nameof(range), $"Range should not be negative ({count}).");
     }
 
     public static ArraySegment<T> GetSegment<T>(this ArraySegment<T> array, Range range)
@@ -83,6 +83,6 @@ public static class BinarySearch
 
         return count >= 0
             ? array.Slice(index, count)
-            : throw new ArgumentOutOfRangeException(nameof(range), count, "Range should not be negative.");
+            : throw new ArgumentOutOfRangeException(nameof(range), $"Range should not be negative ({count}).");
     }
 }

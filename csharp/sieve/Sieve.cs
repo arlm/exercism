@@ -10,7 +10,7 @@ public static class Sieve
     {
         if (limit < 0)
         {
-            throw new ArgumentOutOfRangeException(nameof(limit), "Limit must be bigger than zero.");
+            throw new ArgumentOutOfRangeException(nameof(limit), $"Value {limit} should not be below 0.");
         }
 
         if (limit < 2)

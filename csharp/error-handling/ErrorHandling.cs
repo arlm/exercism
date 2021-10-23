@@ -84,7 +84,7 @@ public static class ErrorHandling
 
     public static int DisposableResourcesAreDisposedWhenExceptionIsThrown3(string input, IDisposable disposableObject)
     {
-        using(disposableObject)
+        using (disposableObject)
         {
             return int.Parse(input);
         }

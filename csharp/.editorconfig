@@ -1,0 +1,5 @@
+﻿# CA2208: Instantiate argument exceptions correctly
+dotnet_diagnostic.CA2208.severity = none
+
+# CA1050: Declare types in namespaces
+dotnet_diagnostic.CA1050.severity = none
