@@ -1,14 +1,5 @@
-# General Ignores + IDE
-.DS_Store
-settings.xml
-
-# Localized Servers
-.engine/**
-WEB-INF
-
 # Logs
 logs
-logs/**
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -18,9 +9,6 @@ lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-
-# Code Coverage and Test Results
-tests/results/**
 
 # Runtime data
 pids
@@ -50,6 +38,10 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
+# Dependency directories
+**/node_modules/*
+jspm_packages/
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -78,11 +70,9 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+env
 .env.development.local
-.env.test
 .env.test.local
-.env.production
 .env.production.local
 .env.local
 
@@ -189,11 +179,3 @@ mup.js
 
 # Docusaurus cache and generated files
 .docusaurus
-
-# NPM Modules
-**/node_modules/*
-npm-debug.log
-yarn-error.log
-
-# Dependency directories
-jspm_packages/

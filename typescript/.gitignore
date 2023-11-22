@@ -1,5 +1,14 @@
+# General Ignores + IDE
+.DS_Store
+settings.xml
+
+# Localized Servers
+.engine/**
+WEB-INF
+
 # Logs
 logs
+logs/**
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -9,6 +18,9 @@ lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Code Coverage and Test Results
+tests/results/**
 
 # Runtime data
 pids
@@ -37,10 +49,6 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
-
-# Dependency directories
-node_modules/
-jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
@@ -71,8 +79,12 @@ web_modules/
 
 # dotenv environment variables file
 .env
+.env.development.local
 .env.test
+.env.test.local
 .env.production
+.env.production.local
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -87,7 +99,6 @@ out
 dist
 
 # Gatsby files
-.cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
@@ -116,3 +127,73 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# gitignore template for Vue.js projects
+
+# TODO: where does this rule come from?
+docs/_book
+test/
+
+# gitignore template for NW.js projects
+# website: https://nwjs.io/
+
+# Seen in standard and sdk versions
+credits.html
+locales/
+libEGL.dll
+libGLEv2.dll
+node.dll
+nw.dll
+nw.exe
+natives_blob.bin
+nw_100_percent.pak
+nw_200_percent.pak
+nw_elf.dll
+snapshot_blob.bin
+resources.pak
+
+# Seen only in standard
+d3dcompiler_47.dll
+ffmpeg.dll
+icudtl.dat
+
+# Seen only in sdk
+pnacl/
+chromedriver.exe
+nacl_irt_x86_64.nexe
+nwjc.exe
+payload.exe
+
+# gitignore template for the Meteor framework
+# website: https://www.meteor.com/
+
+# protect api keys in setting json
+settings-production.json
+settings.json
+
+# protect your mup.json settings
+mup.json
+mup.js
+
+# gitignore template for the Cordova framework
+# website: https://cordova.apache.org/
+
+# App platform binaries and built files
+/platforms
+
+# Optional to ignore plugin Git clones
+#/plugins
+
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
+
+# NPM Modules
+**/node_modules/**
+npm-debug.log
+yarn-error.log
+
+# Dependency directories
+jspm_packages/

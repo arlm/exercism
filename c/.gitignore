@@ -2,6 +2,7 @@
 *.d
 
 # Object files
+*.slo
 *.o
 *.ko
 *.obj
@@ -16,25 +17,16 @@
 *.gch
 *.pch
 
+# Fortran module files
+*.mod
+*.smod
+
 # Libraries
+*.lai
 *.lib
 *.a
 *.la
 *.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
 # Debug files
 *.dSYM/
@@ -50,3 +42,18 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# CMake
+
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
