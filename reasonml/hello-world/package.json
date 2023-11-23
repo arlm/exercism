@@ -13,6 +13,13 @@
   ],
   "author": "",
   "license": "MIT",
+  "jest": {
+    "verbose": true,
+    "bail": 2,
+    "workerThreads": true,
+    "maxConcurrency": 2,
+    "maxWorkers": 1
+  },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.5.1",
     "bs-platform": "^7.3.2"

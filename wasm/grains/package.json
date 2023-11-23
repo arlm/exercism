@@ -11,6 +11,10 @@
     "directory": "exercises/practice/grains"
   },
   "jest": {
+    "verbose": true,
+    "bail": 2,
+    "workerThreads": true,
+    "maxConcurrency": 2,
     "maxWorkers": 1
   },
   "devDependencies": {

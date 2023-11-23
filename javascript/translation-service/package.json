@@ -4,6 +4,13 @@
   "author": "Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>",
   "private": true,
   "license": "MIT",
+  "jest": {
+    "verbose": true,
+    "bail": 2,
+    "workerThreads": true,
+    "maxConcurrency": 2,
+    "maxWorkers": 1
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/javascript",
