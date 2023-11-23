@@ -191,7 +191,7 @@ mup.js
 .docusaurus
 
 # NPM Modules
-**/node_modules/*
+**/node_modules/
 npm-debug.log
 yarn-error.log
 

@@ -1,6 +1,6 @@
 # Dependencies
 .psci_modules
-**/node_modules/*
+**/node_modules/
 
 # Generated files
 /bower_components/
