@@ -398,8 +398,5 @@ FodyWeavers.xsd
 .DS_Store
 nupkg/
 
-# Visual Studio Code
-.vscode
-
 # Rider
 .idea

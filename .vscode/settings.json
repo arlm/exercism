@@ -1,8 +1,24 @@
 {
-    "Lua.diagnostics.globals": [
-        "describe",
-        "it"
-    ],
-    "Lua.runtime.version": "Lua 5.4",
-    "cmake.configureOnOpen": false
+  "Lua.diagnostics.globals": [
+    "describe",
+    "it"
+  ],
+  "Lua.runtime.version": "Lua 5.4",
+  "cmake.configureOnOpen": false,
+  "jest.runMode": "on-demand",
+  "jest.jestCommandLine": "npm run test --",
+  "testing.openTesting": "openOnTestFailure",
+  "jest.outputConfig": {
+    "revealOn": "error",
+    "clearOnRun": "terminal",
+    "revealWithFocus": "test-results"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    ".gitignore": false,
+  },
+  "files.exclude": {
+    ".gitignore": false,
+  },
+  "editor.formatOnSave": true,
 }

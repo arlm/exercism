@@ -1,0 +1,17 @@
+{
+    "jest.runMode": "on-demand",
+    "jest.jestCommandLine": "npm run test --",
+    "testing.openTesting": "openOnTestFailure",
+    "jest.outputConfig": {
+        "revealOn": "error",
+        "clearOnRun": "terminal",
+        "revealWithFocus": "test-results"
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+    },
+    "files.exclude": {
+        "**/node_modules": true,
+        ".gitignore": false,
+    },
+}

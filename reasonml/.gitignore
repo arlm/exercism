@@ -158,8 +158,8 @@ payload.exe
 # website: https://www.meteor.com/
 
 # protect api keys in setting json
-settings-production.json
-settings.json
+/settings-production.json
+/settings.json
 
 # protect your mup.json settings
 mup.json
