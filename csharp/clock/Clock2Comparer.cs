@@ -13,11 +13,11 @@ public static class ClockComparer
 /// <summary>
 /// 00:00 01:00 01:30 01:45 02:00 02:30
 /// </summary>
-public class AscendingTimeComparer : IComparer<Clock>, IComparer
+public class AscendingTimeComparer : IComparer<Clock2>, IComparer
 {
     public int Compare(object x, object y)
     {
-        if (!(x is Clock one && y is Clock two))
+        if (!(x is Clock2 one && y is Clock2 two))
         {
             throw new ArgumentException("Cannot compare objects that are not Clocks.");
         }
@@ -25,7 +25,7 @@ public class AscendingTimeComparer : IComparer<Clock>, IComparer
         return Compare(one, two);
     }
 
-    public int Compare([AllowNull] Clock one, [AllowNull] Clock two)
+    public int Compare([AllowNull] Clock2 one, [AllowNull] Clock2 two)
     {
         if (one > two)
         {
@@ -44,11 +44,11 @@ public class AscendingTimeComparer : IComparer<Clock>, IComparer
 /// <summary>
 /// 02:30 02:00 01:45 01:30 01:00 00:00
 /// </summary>
-public class DescendingTimeComparer : IComparer<Clock>, IComparer
+public class DescendingTimeComparer : IComparer<Clock2>, IComparer
 {
     public int Compare(object x, object y)
     {
-        if (!(x is Clock one && y is Clock two))
+        if (!(x is Clock2 one && y is Clock2 two))
         {
             throw new ArgumentException("Cannot compare objects that are not Clocks.");
         }
@@ -56,7 +56,7 @@ public class DescendingTimeComparer : IComparer<Clock>, IComparer
         return Compare(one, two);
     }
 
-    public int Compare([AllowNull] Clock one, [AllowNull] Clock two)
+    public int Compare([AllowNull] Clock2 one, [AllowNull] Clock2 two)
     {
         if (one > two)
         {
@@ -75,11 +75,11 @@ public class DescendingTimeComparer : IComparer<Clock>, IComparer
 /// <summary>
 /// 02:00 02:30 01:00 01:30 01:45 00:00
 /// </summary>
-public class DescendingHourAscendingMinutesComparer : IComparer<Clock>, IComparer
+public class DescendingHourAscendingMinutesComparer : IComparer<Clock2>, IComparer
 {
     public int Compare(object x, object y)
     {
-        if (!(x is Clock one && y is Clock two))
+        if (!(x is Clock2 one && y is Clock2 two))
         {
             throw new ArgumentException("Cannot compare objects that are not Clocks.");
         }
@@ -87,7 +87,7 @@ public class DescendingHourAscendingMinutesComparer : IComparer<Clock>, ICompare
         return Compare(one, two);
     }
 
-    public int Compare([AllowNull] Clock one, [AllowNull] Clock two)
+    public int Compare([AllowNull] Clock2 one, [AllowNull] Clock2 two)
     {
         if (one.Hours > two.Hours)
         {

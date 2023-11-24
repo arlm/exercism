@@ -1,28 +1,27 @@
 using System;
 using System.Runtime.CompilerServices;
-using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 /// <summary>
 /// Class that represents a clock.
 /// </summary>
-public class Clock : IEquatable<Clock>
+public partial class Clock2
 {
-    internal int Hours { get; } = 0;
-    internal int Minutes { get; } = 0;
+    internal int Hours { get; }
+    internal int Minutes { get; }
 
     /// <summary>
     /// Creates a clock from a given number of minutes.
     /// </summary>
     /// <param name="minutes">Given minutes to set the clock.</param>
-    public Clock(int minutes):this(0, minutes) { }
+    public Clock2(int minutes):this(0, minutes) { }
 
     /// <summary>
     /// Creates a clock from hours and minutes.
     /// </summary>
     /// <param name="hours">Given hours to create the clock.</param>
     /// <param name="minutes">Given minutes to create the clock.</param>
-    public Clock(int hours, int minutes)
+    public Clock2(int hours, int minutes)
     {
         Hours = (hours + (minutes / 60)) % 24;
         Minutes = minutes % 60;
@@ -39,9 +38,9 @@ public class Clock : IEquatable<Clock>
         }
     }
 
-    public Clock Add(int minutesToAdd) => new Clock(Hours, Minutes + minutesToAdd);
+    public Clock2 Add(int minutesToAdd) => new Clock2(Hours, Minutes + minutesToAdd);
 
-    public Clock Subtract(int minutesToSubtract) => new Clock(Hours, Minutes - minutesToSubtract);
+    public Clock2 Subtract(int minutesToSubtract) => new Clock2(Hours, Minutes - minutesToSubtract);
 
     public int ToMinutes() => Hours * 60 + Minutes;
 
@@ -57,25 +56,7 @@ public class Clock : IEquatable<Clock>
             return true;
         }
 
-        return obj is Clock clock && Equals(clock);
-    }
-
-    /// <summary>
-    /// Compares the value of two different clocks.
-    /// </summary>
-    public bool Equals([AllowNull] Clock other)
-    {
-        if (other is null)
-        {
-            return false;
-        }
-
-        if (ReferenceEquals(this, other))
-        {
-            return true;
-        }
-
-        return Hours == other.Hours && Minutes == other.Minutes;
+        return obj is Clock2 clock && Equals(clock);
     }
 
     ///<summary>
@@ -114,5 +95,8 @@ public class Clock : IEquatable<Clock>
     /// <returns></returns>
     public override int GetHashCode() => HashCode.Combine(Hours, Minutes);
 
-    public override string ToString() => $"{Hours:D2}:{Minutes:D2}";
+    public override string ToString()
+    {
+        return $"{Hours:D2}:{Minutes:D2}";
+    }
 }

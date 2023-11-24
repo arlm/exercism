@@ -38,12 +38,15 @@ public static class ProteinTranslation
         { "UGA", Protein.Stop}
     };
 
-    public static string[] Proteins(string strand) =>
-        string.IsNullOrEmpty(strand)
-            ? throw new ArgumentNullException("Invalid strand. Should not be null or empty.", nameof(strand)) :
-        strand.Length % 3 != 0
-            ? throw new ArgumentException($"Invalid strand. Length ({strand.Length}) should be multiple of three (3)", nameof(strand)) :
-        strand.GetProteins().Select(protein => protein.ToString("G")).ToArray();
+    public static string[] Proteins(string strand) {
+        if (string.IsNullOrEmpty(strand)) {
+            return new string[] {};
+        }
+
+        return strand.Length % 3 != 0
+            ? throw new ArgumentException($"Invalid strand. Length ({strand.Length}) should be multiple of three (3)", nameof(strand)) 
+            : strand.GetProteins().Select(protein => protein.ToString("G")).ToArray();
+    }
 
     public static (Protein, string) GetCodon(this string strand)
     {

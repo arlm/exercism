@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-public partial class Clock : IComparable, IComparable<Clock>,
+public partial class Clock2 : IComparable, IComparable<Clock2>,
     IComparable<int>, IComparable<long>, IComparable<short>,
     IComparable<decimal>, IComparable<double>, IComparable<float>
 {
@@ -12,7 +12,7 @@ public partial class Clock : IComparable, IComparable<Clock>,
             return 0;
         }
 
-        if (other is Clock clock)
+        if (other is Clock2 clock)
         {
             return CompareTo(clock);
         }
@@ -20,7 +20,7 @@ public partial class Clock : IComparable, IComparable<Clock>,
         throw new ArgumentException("Cannot compare objects that are not Clocks.");
     }
 
-    public int CompareTo([AllowNull] Clock other)
+    public int CompareTo([AllowNull] Clock2 other)
     {
         if (ReferenceEquals(this, other))
         {

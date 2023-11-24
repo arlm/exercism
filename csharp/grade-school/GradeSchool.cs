@@ -13,12 +13,19 @@ public class GradeSchool
 
     private List<Entry> entries = new List<Entry>();
 
-    public void Add(string student, int grade) =>
+    public bool Add(string student, int grade) {
+        if (entries.Any(entry => entry.Name == student)) {
+            return false;
+        }
+
         entries.Add(new Entry
-            {
-                Name = student,
-                Grade = grade
-            });
+        {
+            Name = student,
+            Grade = grade
+        });
+
+        return true;
+    }
 
     public IEnumerable<string> Roster() =>
         entries

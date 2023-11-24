@@ -20,9 +20,9 @@ public class LedgerEntry
         Change = change / 100.0m;
     }
 
-    public DateTime Date { get; }
-    public string Description { get; }
-    public decimal Change { get; }
+    public DateTime Date { get; } = DateTime.MinValue;
+    public string Description { get; } = string.Empty;
+    public decimal Change { get; } = 0m;
 }
 
 public class Locale
@@ -43,10 +43,10 @@ public class Locale
     private const string DATE_FORMAT_US = "MM/dd/yyyy";
     private const string DATE_FORMAT_NL = "dd/MM/yyyy";
 
-    public string Date { get; }
-    public string Description { get; }
-    public string Change { get; }
-    public string DateFormat { get; }
+    public string Date { get; } = string.Empty;
+    public string Description { get; } = string.Empty;
+    public string Change { get; } = string.Empty;
+    public string DateFormat { get; } = string.Empty;
 
     public Locale(string currency, string locale)
     {
@@ -77,14 +77,8 @@ public class Locale
 
         var culture = new CultureInfo(locale);
         culture.NumberFormat.CurrencySymbol = GetCultureInfo(currency).NumberFormat.CurrencySymbol;
-
-        culture.NumberFormat.CurrencyNegativePattern = locale == LOCALE_US
-            ? 0
-            : culture.NumberFormat.CurrencyNegativePattern;
-
-        culture.DateTimeFormat.ShortDatePattern = locale == LOCALE_US
-            ? DATE_FORMAT_US
-            : DATE_FORMAT_NL;
+        culture.NumberFormat.CurrencyNegativePattern = locale == LOCALE_US ? 0 : culture.NumberFormat.CurrencyNegativePattern;
+        culture.DateTimeFormat.ShortDatePattern = locale == LOCALE_US ? DATE_FORMAT_US : DATE_FORMAT_NL;
 
         Thread.CurrentThread.CurrentCulture = culture;
     }
@@ -106,6 +100,13 @@ public class Locale
 
 public static class Ledger
 {
+
+    public static LedgerEntry CreateEntry(DateTime date, string description, decimal change) =>
+        new LedgerEntry(date, description, change);
+
+    public static LedgerEntry CreateEntry(string date, string description, int change) =>
+        new LedgerEntry(date, description, change);
+
     private static string TrimWithEllipsis(this string description) =>
         description.Length <= 25 ? $"{description,-25}" : $"{description.Substring(0, 22)}...";
 
@@ -129,15 +130,4 @@ public static class Ledger
         return sb.AppendJoin(string.Empty, items).ToString();
     }
 
-    public static LedgerEntry CreateEntry(string date, string description, int change) =>
-        new LedgerEntry(
-            DateTime.Parse(date, CultureInfo.InvariantCulture),
-            description,
-            change / 100.0m);
-
-    public static LedgerEntry CreateEntry(string date, string description, decimal change) =>
-        new LedgerEntry(
-            DateTime.Parse(date, CultureInfo.InvariantCulture),
-            description,
-            change);
 }
