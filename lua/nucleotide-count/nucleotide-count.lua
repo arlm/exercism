@@ -19,7 +19,7 @@ end
 
 function DNA:new(strand)
     local valid = string.match(strand, '[ATCGatcg]*')
-    assert(valid and #valid == #strand, "Invalid nucleotide on strand: " .. strand)
+    assert(valid and #valid == #strand, "Invalid Sequence")
 
     local object = setmetatable({}, self)
 
