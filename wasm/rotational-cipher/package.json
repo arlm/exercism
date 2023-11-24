@@ -11,10 +11,6 @@
     "directory": "exercises/practice/rotational-cipher"
   },
   "jest": {
-    "verbose": true,
-    "bail": 2,
-    "workerThreads": true,
-    "maxConcurrency": 2,
     "maxWorkers": 1
   },
   "devDependencies": {

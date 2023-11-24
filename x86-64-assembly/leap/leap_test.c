@@ -47,6 +47,7 @@ void test_year_divisible_by_200_not_divisible_by_400_in_common_year(void) {
 }
 
 int main(void) {
+    UNITY_BEGIN();
     RUN_TEST(test_year_not_divisible_by_4_in_common_year);
     RUN_TEST(test_year_divisible_by_2_not_divisible_by_4_in_common_year);
     RUN_TEST(test_year_divisible_by_4_not_divisible_by_100_in_leap_year);

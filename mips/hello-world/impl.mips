@@ -2,7 +2,7 @@
 
 .data
 
-msg: .asciiz "Goodbye, Mars!"
+msg: .asciiz "Hello, World!"
 
 .text
 
