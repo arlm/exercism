@@ -5,7 +5,7 @@
 To run the tests:
 
 ```sh
-$ pub run test
+$ dart test
 ```
 
 ## Submitting your solution
@@ -23,15 +23,16 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Dart track's documentation](https://exercism.org/docs/tracks/dart)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Dart track's programming category on the forum](https://forum.exercism.org/c/programming/dart)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
 To get help if you're having trouble, you can use one of the following resources:
 
-- [Dart API Documentation](https://api.dartlang.org/)
+- [Dart API Documentation](https://api.dart.dev/)
 - [Dart Gitter Chat](https://gitter.im/dart-lang/home)
-- [Community Information](https://www.dartlang.org/community)
+- [Community Information](https://www.dart.dev/community)
 - [/r/dartlang](https://www.reddit.com/r/dartlang) is the Dart subreddit.
-- [StackOverflow](http://stackoverflow.com/questions/tagged/dart) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.
+- [StackOverflow](https://stackoverflow.com/questions/tagged/dart) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.

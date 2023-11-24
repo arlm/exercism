@@ -5,7 +5,9 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
-Your task is to convert a number into a string that contains raindrop sounds corresponding to certain potential factors. A factor is a number that evenly divides into another number, leaving no remainder. The simplest way to test if a one number is a factor of another is to use the [modulo operation](https://en.wikipedia.org/wiki/Modulo_operation).
+Your task is to convert a number into a string that contains raindrop sounds corresponding to certain potential factors.
+A factor is a number that evenly divides into another number, leaving no remainder.
+The simplest way to test if one number is a factor of another is to use the [modulo operation][modulo].
 
 The rules of `raindrops` are that if a given number:
 
@@ -20,13 +22,7 @@ The rules of `raindrops` are that if a given number:
 - 30 has both 3 and 5 as factors, but not 7, so the result would be "PlingPlang".
 - 34 is not factored by 3, 5, or 7, so the result would be "34".
 
-The raindrops.go "stub file" contains only one line with the correct
-package name and nothing more.  This will be the usual pattern for future
-exercises.  You will need to figure out the function signature(s).
-
-One way to figure out the function signature(s) is to look
-at the corresponding \*\_test.go file. It will show the package level
-functions(s) that the test will use to verify the solution.
+[modulo]: https://en.wikipedia.org/wiki/Modulo_operation
 
 ## Source
 
@@ -48,6 +44,7 @@ functions(s) that the test will use to verify the solution.
 - @sebito91
 - @soniakeys
 - @tleen
+- @eklatzer
 
 ### Based on
 

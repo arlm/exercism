@@ -15,18 +15,16 @@ on every year that is evenly divisible by 4
     unless the year is also evenly divisible by 400
 ```
 
-For example, 1997 is not a leap year, but 1996 is.  1900 is not a leap
-year, but 2000 is.
+For example, 1997 is not a leap year, but 1996 is.
+1900 is not a leap year, but 2000 is.
 
 ## Notes
 
-Though our exercise adopts some very simple rules, there is more to
-learn!
+Though our exercise adopts some very simple rules, there is more to learn!
 
-For a delightful, four minute explanation of the whole leap year
-phenomenon, go watch [this youtube video][video].
+For a delightful, four minute explanation of the whole leap year phenomenon, go watch [this youtube video][video].
 
-[video]: http://www.youtube.com/watch?v=xX96xng7sAE
+[video]: https://www.youtube.com/watch?v=xX96xng7sAE
 
 You will see a `cases_test.go` file in this exercise. This holds the test
 cases used in the `leap_test.go`. You can mostly ignore this file.
@@ -41,7 +39,7 @@ file. The Go specific transformation of that data lives in the `cases_test.go` f
 
 [problem-specifications-leap]: https://github.com/exercism/problem-specifications/tree/master/exercises/leap
 [problem-specifications-leap-json]: https://github.com/exercism/problem-specifications/blob/master/exercises/leap/canonical-data.json
-[local-leap-gen]: https://github.com/exercism/go/blob/master/exercises/leap/.meta/gen.go
+[local-leap-gen]: https://github.com/exercism/go/blob/main/exercises/practice/leap/.meta/gen.go
 
 ## Source
 
@@ -67,7 +65,8 @@ file. The Go specific transformation of that data lives in the `cases_test.go` f
 - @tleen
 - @tompao
 - @zabawaba99
+- @eklatzer
 
 ### Based on
 
-JavaRanch Cattle Drive, exercise 3 - http://www.javaranch.com/leap.jsp
+CodeRanch Cattle Drive, Assignment 3 - https://coderanch.com/t/718816/Leap

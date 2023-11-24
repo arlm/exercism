@@ -14,7 +14,7 @@ For transforming arrays, see [Concept Array Transformations][concept-array-trans
 
 ## The `for` Loop
 
-The most basic to iterate over an array is to use a `for` loop, see [Concept For Loops][concept-for-loops].
+The most basic way to iterate over an array is to use a `for` loop, see [Concept For Loops][concept-for-loops].
 
 ```javascript
 const numbers = [6.0221515, 10, 23];
@@ -29,9 +29,9 @@ for (let i = 0; i < numbers.length; i++) {
 
 ## The `for...of` Loop
 
-When you want to work with the value directly in each iteration and do not require the index at all, you can use a `for .. of` loop.
+When you want to work with the value directly in each iteration and do not require the index at all, you can use a `for...of` loop.
 
-`for...of` works like the basic `for` loop shown above, but instead of having to deal with the _index_ as variable in the loop, you are provided directly with the _value_.
+`for...of` works like the basic `for` loop shown above, but instead of having to deal with the _index_ as a variable in the loop, you are provided with the _value_ directly.
 
 ```javascript
 const numbers = [6.0221515, 10, 23];
@@ -46,16 +46,16 @@ for (const number of numbers) {
 // => 23
 ```
 
-Just like in regular `for` loops, you can use `continue` stop the current iteration and `break` to stop the execution of the loop entirely.
+Just like in regular `for` loops, you can use `continue` to stop the current iteration and `break` to stop the execution of the loop entirely.
 
 ## The `forEach` Method
 
-Every array includes a `forEach` method that can also be used to loop over it.
+Every array includes a `forEach` method that can be used to loop over the elements in the array.
 
-`forEach` accepts a [callback][concept-callbacks] as parameter.
+`forEach` accepts a [callback][concept-callbacks] as a parameter.
 The callback function is called once for each element in the array.
 The current element, its index and the full array are provided to the callback as arguments.
-Often, only the first or the first two are used.
+Often, only the current element or the index are used.
 
 ```javascript
 const numbers = [6.0221515, 10, 23];
@@ -67,7 +67,7 @@ numbers.forEach((number, index) => console.log(number, index));
 ```
 
 There is no way to stop the iteration once the `forEach` loop was started.
-The statements `break` and `continue` do not exist it this context.
+The statements `break` and `continue` do not exist in this context.
 
 [concept-array-transformations]: /tracks/javascript/concepts/array-transformations
 [concept-for-loops]: /tracks/javascript/concepts/for-loops
@@ -75,15 +75,15 @@ The statements `break` and `continue` do not exist it this context.
 
 ## Instructions
 
-As a budding magician, Elyse needs to be able to analyze her deck in lots of different ways.
-To keep things a simple, she only uses cards with values 1-10.
+As a budding magician, Elyse needs to analyze her deck in lots of different ways.
+To keep things simple, she only uses cards with values 1-10.
 
 ## 1. Determine how many cards of a certain type are in the deck
 
-Elyse wants to know how many cards of a certain type she has in her deck.
+Elyse wants to know how many cards of a particular type she has in her deck.
 
-Write a function `cardTypeCheck` that takes two parameters: an array of cards (Elyse's deck), and the card type that should be counted.
-The function should use `forEach` and return the number of cards in the deck that are of a given type.
+Write a function `cardTypeCheck` that takes two parameters: an array of cards (Elyse's deck) and the type of card to count.
+The function should use `forEach` and return the number of cards in the deck of the specified type.
 
 ```javascript
 const cardType = 3;

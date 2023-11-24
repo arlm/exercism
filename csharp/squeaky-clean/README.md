@@ -31,7 +31,7 @@ character by character and manipulated. At the end of the process
 In this exercise you will implement a partial set of utility routines to help a developer
 clean up identifier names.
 
-In the 4 tasks you will gradually build up the routine `Clean` A valid identifier comprises
+In the 5 tasks you will gradually build up the routine `Clean` A valid identifier comprises
 zero or more letters and underscores.
 
 In all cases the input string is guaranteed to be non-null. If an empty string is passed to the `Clean` function, an empty string should be returned.
@@ -62,10 +62,19 @@ Modify the (_static_) `Identifier.Clean()` method to convert kebab-case to camel
 
 ```csharp
 Identifier.Clean("à-ḃç");
-// => "àḂç"exercism download --exercise=zipper --track=csharpexercism download --exercise=zipper --track=csharp
+// => "àḂç"
 ```
 
-## 4. Omit Greek lower case letters
+## 4. Omit characters that are not letters
+
+Modify the (_static_) `Identifier.Clean()` method to omit any characters that are not letters.
+
+```csharp
+Identifier.Clean("1😀2😀3😀");
+// => ""
+```
+
+## 5. Omit Greek lower case letters
 
 Modify the (_static_) `Identifier.Clean()` method to omit any Greek letters in the range 'α' to 'ω'.
 

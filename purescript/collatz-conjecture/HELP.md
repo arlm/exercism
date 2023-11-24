@@ -21,14 +21,14 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [PureScript track's documentation](https://exercism.org/docs/tracks/purescript)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [PureScript track's programming category on the forum](https://forum.exercism.org/c/programming/purescript)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
 Please refer to the [installation](https://exercism.io/tracks/purescript/installation)
 and [learning](https://exercism.io/tracks/purescript/learning) help pages.
-
 
 The [exercism/purescript repository](https://github.com/exercism/purescript/)
 is the primary source finding answers to common questions regarding

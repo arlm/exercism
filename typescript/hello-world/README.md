@@ -5,26 +5,27 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
-The classical introductory exercise. Just say "Hello, World!".
+The classical introductory exercise.
+Just say "Hello, World!".
 
-["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
-the traditional first program for beginning programming in a new language
-or environment.
+["Hello, World!"][hello-world] is the traditional first program for beginning programming in a new language or environment.
 
 The objectives are simple:
 
-- Write a function that returns the string "Hello, World!".
+- Modify the provided code so that it produces the string "Hello, World!".
 - Run the test suite and make sure that it succeeds.
 - Submit your solution and check it at the website.
 
 If everything goes well, you will be ready to fetch your first real exercise.
+
+[hello-world]: https://en.wikipedia.org/wiki/%22Hello,_world!%22_program
 
 ## Setup
 
 Go through the setup instructions for TypeScript to
 install the necessary dependencies:
 
-http://exercism.io/languages/typescript
+[https://exercism.org/docs/tracks/typescript/installation](https://exercism.org/docs/tracks/typescript/installation)
 
 ## Requirements
 
@@ -91,7 +92,7 @@ The failure looks like this:
     expect(received).toEqual(expected) // deep equality
 
     Expected: "Hello, World!"
-    Received: "What's up doc 👋🏽?"
+    Received: "Goodbye, Mars!"
 
       4 |
       5 |   it('says hello world', () => {
@@ -114,13 +115,13 @@ the 6th line:
 ```
 
 Hence the problem is with the `hello()` function call.
-We can see that the test is expecting `'Hello, World!'` as output, but instead is getting `"What's up doc 👋🏽?"`.
+We can see that the test is expecting `'Hello, World!'` as output, but instead is getting `"Goodbye, Mars!"`.
 
 So let's check now this function in the `hello-worlds.ts` file:
 
 ```typescript
 export function hello(): string {
-  return "What's up doc 👋🏽?"
+  return 'Goodbye, Mars!'
 }
 ```
 
@@ -159,4 +160,4 @@ And it passes!
 
 ### Based on
 
-This is an exercise to introduce users to using Exercism - http://en.wikipedia.org/wiki/%22Hello,_world!%22_program
+This is an exercise to introduce users to using Exercism - https://en.wikipedia.org/wiki/%22Hello,_world!%22_program

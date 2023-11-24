@@ -8,11 +8,13 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 JavaScript is a dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.
 
+## (Re-)Assignment
+
 There are a few primary ways to assign values to names in JavaScript - using variables or constants. On Exercism, variables are always written in [camelCase][wiki-camel-case]; constants are written in [SCREAMING_SNAKE_CASE][wiki-snake-case]. There is no official guide to follow, and various companies and organizations have various style guides. _Feel free to write variables any way you like_. The upside from writing them the way the exercises are prepared is that they'll be highlighted differently in the web interface and most IDEs.
 
-## (Re-)assignment
+Variables in JavaScript can be defined using the [`const`][mdn-const], [`let`][mdn-let] or [`var`][mdn-var] keyword.
 
-Variables in JavaScript can be defined using the [`const`][mdn-const], [`let`][mdn-let] or [`var`][mdn-var] keyword. A variable can reference different objects over its lifetime when using `let` or `var`, but can not be reassigned when using `const`. For example, `myFirstVariable` can be defined and redefined many times using the `=` operator:
+A variable can reference different values over its lifetime when using `let` or `var`. For example, `myFirstVariable` can be defined and redefined many times using the assignment operator `=`:
 
 ```javascript
 let myFirstVariable = 1;
@@ -20,21 +22,19 @@ myFirstVariable = 'Some string';
 myFirstVariable = new SomeComplexClass();
 ```
 
-## Constant assignment
-
-Constants in JavaScript can only be defined using `const`. These are meant to be assigned only once. For clarity, on Excercism please start constants with capital letters and continue writing the rest of the name using capitals with words separated by underscores. For example:
+In contrast to `let` and `var`, variables that are defined with `const` can only be assigned once. This is used to define constants in JavaScript.
 
 ```javascript
 const MY_FIRST_CONSTANT = 10;
 
-// Can not be re-assigned
+// Can not be re-assigned.
 MY_FIRST_CONSTANT = 20;
 // => TypeError: Assignment to constant variable.
 ```
 
-> 💡 In a later Concept exercise the difference between _constant_ assignment / binding and _constant_ value is explored and explained.
+> 💡 In a later Concept Exercise the difference between _constant_ assignment / binding and _constant_ value is explored and explained.
 
-## Function declarations
+## Function Declarations
 
 In JavaScript, units of functionality are encapsulated in _functions_, usually grouping functions together in the same file if they belong together. These functions can take parameters (arguments), and can _return_ a value using the `return` keyword. Functions are invoked using `()` syntax.
 
@@ -47,11 +47,11 @@ add(1, 3);
 // => 4
 ```
 
-> 💡 In JavaScript there are _many_ different ways to declare a function. These other ways look different than using the `function` keyword. The track tries to gradually introduce them, but if you already know about them, feel free to use any of them. In most cases, using one of the other isn't better or worse.
+> 💡 In JavaScript there are _many_ different ways to declare a function. These other ways look different than using the `function` keyword. The track tries to gradually introduce them, but if you already know about them, feel free to use any of them. In most cases, using one or the other isn't better or worse.
 
-## Exposing to other files
+## Exposing to Other Files
 
-To make a `function`, a constant, or a variable available in _other files_, they need to be [exported][mdn-export] using the `export` keyword. Another file may then [import][mdn-import] these using the `import` keyword. This is also known as the module system. A great example is how all the tests work. Each exercise has at least one file, for example `lasagna.js`, which has the _implementation_. There is then at least one other file, for example `lasagna.spec.js`, which _imports_ the public API in order to test the implementation:
+To make a `function`, a constant, or a variable available in _other files_, they need to be [exported][mdn-export] using the `export` keyword. Another file may then [import][mdn-import] these using the `import` keyword. This is also known as the module system. A great example is how all the tests work. Each exercise has at least one file, for example `lasagna.js`, which contains the _implementation_. Additionally there is at least one other file, for example `lasagna.spec.js`, that contains the _tests_. This file _imports_ the public (i.e. exported) entities in order to test the implementation:
 
 ```javascript
 // file.js
@@ -78,18 +78,15 @@ add(MY_VALUE, 5);
 
 ## Instructions
 
-In this exercise you're going to write some code to help you cook a brilliant lasagna from your favorite cooking book.
+Lucian's girlfriend is on her way home, and he hasn't cooked their anniversary dinner!
 
-You have four tasks, all related to the time spent cooking the lasagna.
+In this exercise, you're going to write some code to help Lucian cook an exquisite lasagna from his favorite cookbook.
+
+You have four tasks related to the time spent cooking the lasagna.
 
 ## 1. Define the expected oven time in minutes
 
-Define the `EXPECTED_MINUTES_IN_OVEN` constant that returns how many minutes the lasagna should be in the oven. It must be exported. According to the cooking book, the expected oven time in minutes is 40:
-
-```javascript
-EXPECTED_MINUTES_IN_OVEN;
-// => 40
-```
+Define the `EXPECTED_MINUTES_IN_OVEN` constant that represents how many minutes the lasagna should be in the oven. It must be exported. According to the cooking book, the expected oven time in minutes is `40`.
 
 ## 2. Calculate the remaining oven time in minutes
 
@@ -123,3 +120,7 @@ totalTimeInMinutes(3, 20);
 ### Created by
 
 - @SleeplessByte
+
+### Contributed to by
+
+- @junedev

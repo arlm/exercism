@@ -2,8 +2,13 @@
 
 ## Running the tests
 
-You can run the test suite for the exercise by executing the command
-`prove6 .` in the exercise directory.
+You can run the test suite for the exercise by executing the appropriate command:
+
+If the `rakutest` file is contained in the `t/` directory:
+`prove6 --lib`
+
+If the `rakutest` file is in the top-level directory:
+`prove6 {exercise-name}.rakutest`
 
 ## Submitting your solution
 
@@ -20,7 +25,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Raku track's documentation](https://exercism.org/docs/tracks/raku)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Raku track's programming category on the forum](https://forum.exercism.org/c/programming/raku)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.

@@ -1,6 +1,6 @@
-# Etl
+# ETL
 
-Welcome to Etl on Exercism's PureScript Track.
+Welcome to ETL on Exercism's PureScript Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

@@ -3,7 +3,7 @@
 ## Running the tests
 
 In order to run the tests for this track, you will need to install
-DUnitX. Please see the [installation](http://www.exercism.io/languages/delphi/installation) instructions for more information.
+DUnitX. Please see the [installation](http://www.exercism.org/docs/tracks/delphi/installation) instructions for more information.
 
 ### Loading Exercises into Delphi
 
@@ -26,9 +26,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Delphi Pascal track's documentation](https://exercism.org/docs/tracks/delphi)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Delphi Pascal track's programming category on the forum](https://forum.exercism.org/c/programming/delphi)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
-
-We monitor the [Pascal-Delphi](https://gitter.im/exercism/Pascal-Delphi) support room on [gitter.im](https://gitter.im) to help you with any questions that might arise.

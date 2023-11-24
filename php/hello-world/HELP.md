@@ -21,9 +21,9 @@
 
    For example, to run the tests for the Hello World exercise, you would run:
 
-       ➜ ./phpunit hello-world_test.php
+       ➜ ./phpunit HelloWorldTest.php
 
-[PHPUnit]: http://phpunit.de
+[PHPUnit]: https://phpunit.de
 
 ## Submitting your solution
 
@@ -40,7 +40,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [PHP track's documentation](https://exercism.org/docs/tracks/php)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [PHP track's programming category on the forum](https://forum.exercism.org/c/programming/php)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
