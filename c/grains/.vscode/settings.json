@@ -1,0 +1,24 @@
+{
+  "jest.enable": false,
+  "search.exclude": {
+  },
+  "files.exclude": {
+      ".gitignore": false,
+  },
+  "unityExplorer.debugConfiguration": "Unity Test Explorer Debug",
+  "unityExplorer.preBuildCommand": "make clean",
+  "unityExplorer.testSourceFileRegex": "test_[A-Za-z0-9_]+\\.c",
+  "unityExplorer.prettyTestFileRegex": "test_([A-Za-z0-9_]+)\\.c",
+    "unityExplorer.testCaseRegex": "void\\s+test_([A-Za-z0-9_]+)\\s*\\(.*\\)",
+  "unityExplorer.prettyTestCaseRegex": "test_([A-Za-z0-9_]+)",
+  "unityExplorer.unitUnderTestFileRegex": "test_[A-Za-z0-9_]+\\.[ch]",
+  "unityExplorer.testExecutableRegex": "tests.out",
+  "unityExplorer.testExecutableArgs": "test",
+  "unityExplorer.testBuildApplication": "make",
+  "unityExplorer.testBuildTargetRegex": "",
+  //"unityExplorer.testBuildArgs": "-std=c99 -v -DTEST -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR -fno-omit-frame-pointer -fsanitize=address -fno-common -Itest-framework/ -lm test-framework/unity.c",
+  "unityExplorer.testBuildArgs": "tests.out",
+  "unityExplorer.unitUnderTestFolder": ".",
+  "unityExplorer.testBuildCwdPath": ".",
+  "unityExplorer.testSourceFolder": ".",
+}

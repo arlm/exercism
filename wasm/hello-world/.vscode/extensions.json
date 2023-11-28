@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "edonet.vscode-command-runner",
+        "orta.vscode-jest",
+        "christian-kohler.npm-intellisense",
+        "wasm-fmt.wasm-fmt",
+        "dtsvet.vscode-wasm"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "jest.enable": false,
+    "search.exclude": {
+    },
+    "files.exclude": {
+        ".gitignore": false,
+    },
+}

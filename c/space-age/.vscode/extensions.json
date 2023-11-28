@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "carlos-algms.make-task-provider",
+        "ms-vscode.cpptools",
+        "ms-vscode.makefile-tools"
+    ]
+}

@@ -5,6 +5,8 @@
   ],
   "Lua.runtime.version": "Lua 5.4",
   "cmake.configureOnOpen": false,
+  "unityExplorer.enable": false,
+  "jest.enable": false,
   "jest.runMode": "on-demand",
   "jest.jestCommandLine": "npm run test --",
   "testing.openTesting": "openOnTestFailure",
