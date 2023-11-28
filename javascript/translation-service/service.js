@@ -69,20 +69,6 @@ export class TranslationService {
     });
   }
 
-  promisify(callback) {
-    return (param) => new Promise((resolve, reject) => {
-        const funcCallbak = (error) => {
-          if (error) {
-            return reject(error);
-          } else {
-            return resolve();
-          }
-        };
-
-        callback.apply(this.api, [param, funcCallbak]);
-      });
-  }
-
   /**
    * Requests the service for some text to be translated.
    *
@@ -101,10 +87,9 @@ export class TranslationService {
       return await this.api.fetch(text);
     } catch (error) {
       if (error instanceof NotAvailable) {
-        const requestPromise = this.promisify(this.api.request);
-        await requestPromise(text)
-          .catch(_ => requestPromise(text))
-          .catch(_ => requestPromise(text));
+        await this.requestAsync(text)
+          .catch(_ => this.requestAsync(text))
+          .catch(_ => this.requestAsync(text));
 
         return null;
       }

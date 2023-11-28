@@ -19,6 +19,9 @@
 //
 // Get those rates calculated!
 
+let hoursPerDay = 8;
+let daysPerMonth = 22;
+
 /**
  * The day rate, given a rate per hour
  *
@@ -26,7 +29,7 @@
  * @returns {number} the rate per day
  */
 export function dayRate(ratePerHour) {
-  return ratePerHour * 8;
+  return ratePerHour * hoursPerDay;
 };
 
 /**
@@ -37,7 +40,7 @@ export function dayRate(ratePerHour) {
  * @returns {number} the rounded up monthly rate
  */
 export function monthRate(ratePerHour, discount) {
-  return Math.ceil(22 * applyDiscount(dayRate(ratePerHour), discount));
+  return Math.ceil(daysPerMonth * applyDiscount(dayRate(ratePerHour), discount));
 };
 
 /**
@@ -45,11 +48,25 @@ export function monthRate(ratePerHour, discount) {
  *
  * @param {number} budget the total budget
  * @param {number} ratePerHour the rate per hour
+ * @returns {number} the number of days
+ */
+export function daysInBudget(budget, ratePerHour) {
+  return Math.floor(budget / applyDiscount(dayRate(ratePerHour), 0));
+};
+
+/**
+ * Calculates the number of days in a budget, rounded down
+ *
+ * @param {number} ratePerHour the rate per hour
+ * @param {number} days the bumber of worked days
  * @param {number} discount to apply, example 20% written as 0.2
  * @returns {number} the number of days
  */
-export function daysInBudget(budget, ratePerHour, discount) {
-  return Math.floor(budget / applyDiscount(dayRate(ratePerHour), discount));
+export function priceWithMonthlyDiscount(ratePerHour, days, discount) {
+  let remainingDays =days % daysPerMonth;
+  let fullMonths = days - remainingDays;
+  let dailyRate = dayRate(ratePerHour);
+  return Math.ceil(fullMonths * applyDiscount(dailyRate, discount)) + remainingDays * dailyRate;
 };
 
 /**

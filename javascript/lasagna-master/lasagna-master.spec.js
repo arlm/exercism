@@ -50,7 +50,7 @@ describe('preparationTime', () => {
     expect(preparationTime(fewLayers, 3.5)).toBe(7);
   });
 
-  test('uses the default if no customer time was passed', () => {
+  test('uses the default if no custom time was passed', () => {
     const manyLayers = [
       'sauce',
       'noodles',
@@ -223,6 +223,21 @@ describe('scaleRecipe', () => {
   test('works for an empty recipe', () => {
     expect(scaleRecipe({})).toEqual({});
   });
+
+  test('does not modify the original recipe', () => {
+    const recipe = {
+      sauce: 1,
+      noodles: 250,
+      meat: 150,
+      tomatoes: 3,
+      onion: 2,
+    };
+
+    const copy = { ...recipe };
+
+    scaleRecipe(recipe, 4);
+    expect(recipe).toEqual(copy);
+  });
 });
 
 /**
@@ -234,7 +249,7 @@ function expectObjectsToBeEqual(actualObj, expectedObj) {
   for (const key in expectedObj) {
     expect(actualObj[key]).toBeCloseTo(
       expectedObj[key],
-      DIFFERENCE_PRECISION_IN_DIGITS
+      DIFFERENCE_PRECISION_IN_DIGITS,
     );
   }
   expect(Object.keys(actualObj).length).toBe(Object.keys(expectedObj).length);
