@@ -46,6 +46,11 @@ const year = float64(31557600)
 
 // Age function calculates the age in another planet years
 func Age(seconds float64, planet Planet) float64 {
-	age := float64(seconds) / (year * planet.float64())
-	return age
+    factor := planet.float64()
+
+    if factor < 0 {
+    	return factor
+    }
+
+	return float64(seconds) / (year * factor)
 }
