@@ -1,7 +1,7 @@
 using Xunit;
 using Exercism.Tests;
 
-public class QuestLogicTests
+public class AnnalynsInfiltrationTests
 {
     [Fact]
     [Task(1)]
@@ -55,8 +55,6 @@ public class QuestLogicTests
     {
         var knightIsAwake = false;
         var archerIsAwake = false;
-
-
         var prisonerIsAwake = true;
         Assert.True(QuestLogic.CanSpy(knightIsAwake, archerIsAwake, prisonerIsAwake));
     }

@@ -1,7 +1,7 @@
 using Xunit;
 using Exercism.Tests;
 
-public class LasagnaTests
+public class LuciansLusciousLasagnaTests
 {
     [Fact]
     [Task(1)]
@@ -12,9 +12,16 @@ public class LasagnaTests
 
     [Fact]
     [Task(2)]
-    public void Remaining_minutes_in_oven()
+    public void Remaining_minutes_in_oven_after_twenty_five_minutes()
     {
         Assert.Equal(15, new Lasagna().RemainingMinutesInOven(25));
+    }
+
+    [Fact]
+    [Task(2)]
+    public void Remaining_minutes_in_oven_after_thirty_three_minutes()
+    {
+        Assert.Equal(7, new Lasagna().RemainingMinutesInOven(33));
     }
 
     [Fact]

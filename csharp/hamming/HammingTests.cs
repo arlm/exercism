@@ -9,50 +9,50 @@ public class HammingTests
         Assert.Equal(0, Hamming.Distance("", ""));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Single_letter_identical_strands()
     {
         Assert.Equal(0, Hamming.Distance("A", "A"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Single_letter_different_strands()
     {
         Assert.Equal(1, Hamming.Distance("G", "T"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Long_identical_strands()
     {
         Assert.Equal(0, Hamming.Distance("GGACTGAAATCTG", "GGACTGAAATCTG"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Long_different_strands()
     {
         Assert.Equal(9, Hamming.Distance("GGACGGATTCTG", "AGGACGGATTCT"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Disallow_first_strand_longer()
     {
         Assert.Throws<ArgumentException>(() => Hamming.Distance("AATG", "AAA"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Disallow_second_strand_longer()
     {
         Assert.Throws<ArgumentException>(() => Hamming.Distance("ATA", "AGTG"));
     }
 
-    [Fact]
-    public void Disallow_left_empty_strand()
+    [Fact(Skip = "Remove this Skip property to run this test")]
+    public void Disallow_empty_first_strand()
     {
         Assert.Throws<ArgumentException>(() => Hamming.Distance("", "G"));
     }
 
-    [Fact]
-    public void Disallow_right_empty_strand()
+    [Fact(Skip = "Remove this Skip property to run this test")]
+    public void Disallow_empty_second_strand()
     {
         Assert.Throws<ArgumentException>(() => Hamming.Distance("G", ""));
     }

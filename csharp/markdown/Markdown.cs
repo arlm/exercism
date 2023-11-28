@@ -37,8 +37,8 @@ public static class Markdown
 
         if (markdown.StartsWith(MARKDOWN_HEADER))
         {
-            var count = markdown.TakeWhile(@char => @char == MARKDOWN_HEADER).Count();
-            var headerHtml = markdown.Substring(count + 1).Wrap($"h{count}");
+            var count = markdown.TakeWhile(@char => @char == MARKDOWN_HEADER).Count(); 
+            var headerHtml = count >= 7 ? markdown.Wrap("p") : markdown.Substring(count + 1).Wrap($"h{count}");
 
             result = headerHtml.MaybeCloseList(isInList);
             isInList = false;

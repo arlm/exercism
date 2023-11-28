@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 
 public static class ErrorHandling
 {
@@ -7,10 +6,8 @@ public static class ErrorHandling
         throw new Exception("You need to implement this function.");
 
     public static int? HandleErrorByReturningNullableType(string input) =>
-        int.TryParse(input, out int result) ? result : null;
+        int.TryParse(input, out int result) ? result : (int?)null;
 
-    [SuppressMessage("Style", "IDE0046:Convert to conditional expression",
-        Justification = "Second implementation to show other options")]
     public static int? HandleErrorByReturningNullableType1(string input)
     {
         if (int.TryParse(input, out int result))
@@ -20,8 +17,9 @@ public static class ErrorHandling
 
         return null;
     }
-
-    public static bool HandleErrorWithOutParam(string input, out int result)
+    public static bool HandleErrorWithOutParam(string input, out int result) => TryHandleErrorWithOutParam(input, out result);
+    
+    public static bool TryHandleErrorWithOutParam(string input, out int result)
     {
         result = 0;
 
@@ -84,7 +82,7 @@ public static class ErrorHandling
 
     public static int DisposableResourcesAreDisposedWhenExceptionIsThrown3(string input, IDisposable disposableObject)
     {
-        using (disposableObject)
+        using(disposableObject)
         {
             return int.Parse(input);
         }

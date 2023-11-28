@@ -8,7 +8,7 @@ public class PascalsTriangleTests
         Assert.Empty(PascalsTriangle.Calculate(0));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Single_row()
     {
         var expected = new[]
@@ -18,7 +18,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(1));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Two_rows()
     {
         var expected = new[]
@@ -29,7 +29,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(2));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Three_rows()
     {
         var expected = new[]
@@ -41,7 +41,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(3));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Four_rows()
     {
         var expected = new[]
@@ -54,7 +54,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(4));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Five_rows()
     {
         var expected = new[]
@@ -68,7 +68,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(5));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Six_rows()
     {
         var expected = new[]
@@ -83,7 +83,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(6));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Ten_rows()
     {
         var expected = new[]

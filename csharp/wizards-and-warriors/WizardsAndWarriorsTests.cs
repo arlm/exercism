@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 using Exercism.Tests;
 
 public class RolePlayingGameTests
