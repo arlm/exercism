@@ -1,10 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/isogram/canonical-data.json
+# File last updated on 2023-07-19
+
 import unittest
 
 from isogram import (
     is_isogram,
 )
-
-# Tests adapted from `problem-specifications//canonical-data.json`
 
 
 class IsogramTest(unittest.TestCase):
@@ -47,6 +49,5 @@ class IsogramTest(unittest.TestCase):
     def test_same_first_and_last_characters(self):
         self.assertIs(is_isogram("angola"), False)
 
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_word_with_duplicated_character_and_with_two_hyphens(self):
+        self.assertIs(is_isogram("up-to-date"), False)
