@@ -1,16 +1,25 @@
-{-
-Welcome to a Spago project!
-You can edit this file as you like.
--}
 { name = "pangram"
 , dependencies =
-  [ "effect"
-  , "arrays"
+  [ "arrays"
+  , "console"
+  , "datetime"
+  , "effect"
+  , "either"
+  , "enums"
+  , "foldable-traversable"
+  , "integers"
+  , "lists"
+  , "math"
+  , "maybe"
+  , "ordered-collections"
+  , "partial"
   , "prelude"
   , "psci-support"
-   , "ordered-collections"
   , "strings"
   , "test-unit"
+  , "tuples"
+  , "unfoldable"
+  , "unicode"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
