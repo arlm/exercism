@@ -6,15 +6,12 @@ export class Robot {
     this.generateName();
   }
   
-  private generateName() {
-    var name = "";
-
-    while (name == "" || Robot.names.has(name)) {
-      name = this.randomLetter(2) + this.randomNumber(3);
+  private generateName(): void {
+    while (this._name == "" || Robot.names.has(this._name)) {
+      this._name = this.randomLetter(2) + this.randomNumber(3);
     }
     
-    Robot.names.add(name);
-    this._name = name;
+    Robot.names.add(this._name);
   }
 
   private randomLetter(count: number): string { 

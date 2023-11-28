@@ -3,13 +3,6 @@
   "version": "1.0.0",
   "description": "Exercism practice exercise on dnd-character",
   "private": true,
-  "jest": {
-    "verbose": true,
-    "bail": 2,
-    "workerThreads": true,
-    "maxConcurrency": 2,
-    "maxWorkers": 1
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/typescript"

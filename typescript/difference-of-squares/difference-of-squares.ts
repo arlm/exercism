@@ -1,25 +1,35 @@
 export class Squares {
-  private readonly sequence: number[];
+  private count: number;
 
   constructor(count: number) {
-    this.sequence = Array.from(this.generator(count));
+    this.count = count;
   }
 
   get sumOfSquares(): number {
-    return this.sequence.reduce((sum, value) => sum + value**2);
+    var sum = 0;
+    for (const value of this.generator()) {
+      sum += value**2;
+    }
+
+    return sum;
   }
 
   get squareOfSum(): number {
-    return this.sequence.reduce((sum, value) => sum + value)**2;
+    var sum = 0;
+    for (const value of this.generator()) {
+      sum += value;
+    }
+
+    return sum**2;
   }
 
   get difference(): number {
     return this.squareOfSum - this.sumOfSquares;
   }
 
-  private *generator(count: number): Iterable<number>  {
+  private *generator(): Iterable<number>  {
     var index = 1;
-    while(index <= count){
+    while(index <= this.count){
       yield index++;
     }
   }
