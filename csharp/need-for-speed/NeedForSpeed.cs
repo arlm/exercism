@@ -40,7 +40,7 @@ class RaceTrack
         this.distance = distance;
     }
 
-    public bool CarCanFinish(RemoteControlCar car)
+    public bool TryFinishTrack(RemoteControlCar car)
     {
         var runs = 100 / car.batteryDrain;
         var distance = runs * car.speed;

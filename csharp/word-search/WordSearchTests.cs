@@ -18,7 +18,7 @@ public class WordSearchTests
         Assert.Null(expected["clojure"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_one_word_written_left_to_right()
     {
         var wordsToSearchFor = new[] { "clojure" };
@@ -32,7 +32,7 @@ public class WordSearchTests
         Assert.Equal(expected["clojure"], actual["clojure"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_the_same_word_written_left_to_right_in_a_different_position()
     {
         var wordsToSearchFor = new[] { "clojure" };
@@ -46,7 +46,7 @@ public class WordSearchTests
         Assert.Equal(expected["clojure"], actual["clojure"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_a_different_left_to_right_word()
     {
         var wordsToSearchFor = new[] { "coffee" };
@@ -60,7 +60,7 @@ public class WordSearchTests
         Assert.Equal(expected["coffee"], actual["coffee"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_that_different_left_to_right_word_in_a_different_position()
     {
         var wordsToSearchFor = new[] { "coffee" };
@@ -74,11 +74,11 @@ public class WordSearchTests
         Assert.Equal(expected["coffee"], actual["coffee"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_a_left_to_right_word_in_two_line_grid()
     {
         var wordsToSearchFor = new[] { "clojure" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "tclojurerm";
         var sut = new WordSearch(grid);
@@ -90,11 +90,11 @@ public class WordSearchTests
         Assert.Equal(expected["clojure"], actual["clojure"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_a_left_to_right_word_in_three_line_grid()
     {
         var wordsToSearchFor = new[] { "clojure" };
-        var grid = 
+        var grid =
             "camdcimgtc\n" +
             "jefblpepre\n" +
             "clojurermt";
@@ -107,11 +107,11 @@ public class WordSearchTests
         Assert.Equal(expected["clojure"], actual["clojure"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_a_left_to_right_word_in_ten_line_grid()
     {
         var wordsToSearchFor = new[] { "clojure" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -131,11 +131,11 @@ public class WordSearchTests
         Assert.Equal(expected["clojure"], actual["clojure"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_that_left_to_right_word_in_a_different_position_in_a_ten_line_grid()
     {
         var wordsToSearchFor = new[] { "clojure" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -155,11 +155,11 @@ public class WordSearchTests
         Assert.Equal(expected["clojure"], actual["clojure"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_a_different_left_to_right_word_in_a_ten_line_grid()
     {
         var wordsToSearchFor = new[] { "fortran" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -179,11 +179,11 @@ public class WordSearchTests
         Assert.Equal(expected["fortran"], actual["fortran"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_multiple_words()
     {
         var wordsToSearchFor = new[] { "fortran", "clojure" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -205,7 +205,7 @@ public class WordSearchTests
         Assert.Equal(expected["fortran"], actual["fortran"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_a_single_word_written_right_to_left()
     {
         var wordsToSearchFor = new[] { "elixir" };
@@ -219,11 +219,11 @@ public class WordSearchTests
         Assert.Equal(expected["elixir"], actual["elixir"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_multiple_words_written_in_different_horizontal_directions()
     {
         var wordsToSearchFor = new[] { "elixir", "clojure" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -245,11 +245,11 @@ public class WordSearchTests
         Assert.Equal(expected["elixir"], actual["elixir"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_words_written_top_to_bottom()
     {
         var wordsToSearchFor = new[] { "clojure", "elixir", "ecmascript" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -273,11 +273,11 @@ public class WordSearchTests
         Assert.Equal(expected["ecmascript"], actual["ecmascript"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_words_written_bottom_to_top()
     {
         var wordsToSearchFor = new[] { "clojure", "elixir", "ecmascript", "rust" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -303,11 +303,11 @@ public class WordSearchTests
         Assert.Equal(expected["rust"], actual["rust"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_words_written_top_left_to_bottom_right()
     {
         var wordsToSearchFor = new[] { "clojure", "elixir", "ecmascript", "rust", "java" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -335,11 +335,11 @@ public class WordSearchTests
         Assert.Equal(expected["java"], actual["java"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_words_written_bottom_right_to_top_left()
     {
         var wordsToSearchFor = new[] { "clojure", "elixir", "ecmascript", "rust", "java", "lua" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -369,11 +369,11 @@ public class WordSearchTests
         Assert.Equal(expected["lua"], actual["lua"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_words_written_bottom_left_to_top_right()
     {
         var wordsToSearchFor = new[] { "clojure", "elixir", "ecmascript", "rust", "java", "lua", "lisp" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -405,11 +405,11 @@ public class WordSearchTests
         Assert.Equal(expected["lisp"], actual["lisp"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_locate_words_written_top_right_to_bottom_left()
     {
         var wordsToSearchFor = new[] { "clojure", "elixir", "ecmascript", "rust", "java", "lua", "lisp", "ruby" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +
@@ -443,11 +443,11 @@ public class WordSearchTests
         Assert.Equal(expected["ruby"], actual["ruby"]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Should_fail_to_locate_a_word_that_is_not_in_the_puzzle()
     {
         var wordsToSearchFor = new[] { "clojure", "elixir", "ecmascript", "rust", "java", "lua", "lisp", "ruby", "haskell" };
-        var grid = 
+        var grid =
             "jefblpepre\n" +
             "camdcimgtc\n" +
             "oivokprjsm\n" +

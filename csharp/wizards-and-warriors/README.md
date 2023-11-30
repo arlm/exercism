@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Inheritance
+
 In C#, a _class_ hierarchy can be defined using _inheritance_, which allows a derived class (`Car`) to inherit the behavior and data of its parent class (`Vehicle`). If no parent is specified, the class inherits from the `object` class.
 
 Parent classes can provide functionality to derived classes in three ways:
@@ -122,7 +124,7 @@ For a Warrior, these are the rules:
 
 For a Wizard, these are the rules:
 
-- Deal 12 points of damage if the Wizard prepared a spell in advanced
+- Deal 12 points of damage if the Wizard prepared a spell in advance
 - Deal 3 points of damage if the Wizard did not prepare a spell in advance
 
 In general, characters are never vulnerable. However, Wizards _are_ vulnerable if they haven't prepared a spell.

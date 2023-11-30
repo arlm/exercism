@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Integral Numbers
+
 C#, like many statically typed languages, provides a number of types that represent integers, each with its own range of values. At the low end, the `sbyte` type has a minimum value of -128 and a maximum value of 127. Like all the integer types these values are available as `<type>.MinValue` and `<type>.MaxValue`. At the high end, the `long` type has a minimum value of -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807. In between lie the `short` and `int` types.
 
 The ranges are determined by the storage width of the type as allocated by the system. For example, a `byte` uses 8 bits and a `long` uses 64 bits.
@@ -37,7 +39,7 @@ short s = 42;
 uint ui = (uint)s;
 ```
 
-## Bit conversion
+### Bit conversion
 
 The `BitConverter` class provides a convenient way of converting integer types to and from arrays of bytes.
 
@@ -88,7 +90,7 @@ TelemetryBuffer.FromBuffer(new byte[] {0xfc, 0xff, 0xff, 0xff, 0x7f, 0x0, 0x0, 0
 // => 2147483647
 ```
 
-If the prefix byte is not one of `-8`, `-4`, `-2`, `2` or `4` then `0` should be returned.
+If the prefix byte is of unexpected value then `0` should be returned.
 
 ## Source
 

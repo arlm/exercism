@@ -8,7 +8,7 @@ public class GoCountingTests
     public void Black_corner_territory_on_5x5_board()
     {
         var coordinate = (0, 1);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -21,11 +21,11 @@ public class GoCountingTests
         Assert.Equal(expected.Item2, actual.Item2);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void White_center_territory_on_5x5_board()
     {
         var coordinate = (2, 3);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -38,11 +38,11 @@ public class GoCountingTests
         Assert.Equal(expected.Item2, actual.Item2);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Open_corner_territory_on_5x5_board()
     {
         var coordinate = (1, 4);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -55,11 +55,11 @@ public class GoCountingTests
         Assert.Equal(expected.Item2, actual.Item2);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void A_stone_and_not_a_territory_on_5x5_board()
     {
         var coordinate = (1, 1);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -72,11 +72,11 @@ public class GoCountingTests
         Assert.Equal(expected.Item2, actual.Item2);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Invalid_because_x_is_too_low_for_5x5_board()
     {
         var coordinate = (-1, 1);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -86,11 +86,11 @@ public class GoCountingTests
         Assert.Throws<ArgumentException>(() => sut.Territory(coordinate));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Invalid_because_x_is_too_high_for_5x5_board()
     {
         var coordinate = (5, 1);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -100,11 +100,11 @@ public class GoCountingTests
         Assert.Throws<ArgumentException>(() => sut.Territory(coordinate));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Invalid_because_y_is_too_low_for_5x5_board()
     {
         var coordinate = (1, -1);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -114,11 +114,11 @@ public class GoCountingTests
         Assert.Throws<ArgumentException>(() => sut.Territory(coordinate));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Invalid_because_y_is_too_high_for_5x5_board()
     {
         var coordinate = (1, 5);
-        var board = 
+        var board =
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -128,7 +128,7 @@ public class GoCountingTests
         Assert.Throws<ArgumentException>(() => sut.Territory(coordinate));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void One_territory_is_the_whole_board()
     {
         var board = " ";
@@ -146,10 +146,10 @@ public class GoCountingTests
         Assert.Equal(expected[Owner.None], actual[Owner.None]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Two_territory_rectangular_board()
     {
-        var board = 
+        var board =
             " BW \n" +
             " BW ";
         var sut = new GoCounting(board);
@@ -166,7 +166,7 @@ public class GoCountingTests
         Assert.Equal(expected[Owner.None], actual[Owner.None]);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Two_region_rectangular_board()
     {
         var board = " B ";

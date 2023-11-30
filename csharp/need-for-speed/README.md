@@ -6,12 +6,14 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Constructors
+
 Creating an instance of a _class_ is done by calling its _constructor_ through the `new` operator. A constructor is a special type of method whose goal is to initialize a newly created instance. Constructors look like regular methods, but without a return type and with a name that matches the classes' name.
 
 ```csharp
 class Library
 {
-    private books;
+    private int books;
 
     public Library()
     {
@@ -114,7 +116,7 @@ car.DistanceDriven();
 ```
 ## 6. Check if a remote control car can finish a race
 
-To finish a race, a car has to be able to drive the race's distance. This means not draining its battery before having crossed the finish line. Implement the `Race.CarCanFinish()` method that takes a `RemoteControlCar` instance as its parameter and returns `true` if the car can finish the race; otherwise, return `false`:
+To finish a race track, a car has to be able to drive the track's distance. This means not draining its battery before having crossed the finish line. Implement the `RaceTrack.TryFinishTrack()` method that takes a `RemoteControlCar` instance as its parameter and returns `true` if the car can finish the race track; otherwise, return `false`:
 
 ```csharp
 int speed = 5;
@@ -122,9 +124,9 @@ int batteryDrain = 2;
 var car = new RemoteControlCar(speed, batteryDrain);
 
 int distance = 100;
-var race = new Race(distance);
+var raceTrack = new RaceTrack(distance);
 
-race.CarCanFinish(car);
+raceTrack.TryFinishTrack(car);
 // => true
 ```
 

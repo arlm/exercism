@@ -14,12 +14,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void One_entry()
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
         };
@@ -30,12 +30,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Credit_and_debit()
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-02", "Get present", 1000),
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
@@ -48,12 +48,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Multiple_entries_on_same_date_ordered_by_description()
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000),
             Ledger.CreateEntry("2015-01-01", "Get present", 1000)
@@ -66,12 +66,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Final_order_tie_breaker_is_change()
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Something", 0),
             Ledger.CreateEntry("2015-01-01", "Something", -1),
@@ -86,12 +86,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Overlong_descriptions()
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Freude schoner Gotterfunken", -123456)
         };
@@ -102,12 +102,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Euros()
     {
         var currency = "EUR";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
         };
@@ -118,12 +118,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Dutch_locale()
     {
         var currency = "USD";
         var locale = "nl-NL";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-03-12", "Buy present", 123456)
         };
@@ -134,12 +134,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Dutch_negative_number_with_3_digits_before_decimal_point()
     {
         var currency = "USD";
         var locale = "nl-NL";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-03-12", "Buy present", -12345)
         };
@@ -150,12 +150,12 @@ public class LedgerTests
         Assert.Equal(expected, Ledger.Format(currency, locale, entries));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void American_negative_number_with_3_digits_before_decimal_point()
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries =   new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-03-12", "Buy present", -12345)
         };
