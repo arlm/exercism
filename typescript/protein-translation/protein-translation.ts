@@ -16,10 +16,15 @@ export function translate(rna: string): Protein[] {
     throw new Error("Invalid RNA chain");
   }
 
-  const codons = rna.match(/[AGUC]{3}/g)!;
   const result: Protein[] = [];
-
-  for (const codon of codons) {
+  var codon = rna.substring(0, 3);
+  rna = rna.substring(3);
+  
+  if (codon.length != 3) {
+     throw new Error(`Invalid codon ${codon.length}`);
+  }
+  
+  while (codon.length == 3) {
     const protein = translateCodon(codon);
 
     if (protein == Proteins.STOP) {
@@ -27,8 +32,30 @@ export function translate(rna: string): Protein[] {
     }
 
     result.push(protein);
+    
+    codon = rna.substring(0, 3);
+    
+    if (codon.length == 0) {
+      break;
+    }
+    
+    if (codon.length != 3) {
+       throw new Error(`Invalid codon ${codon.length}`);
+    }
+
+    rna = rna.substring(3);
   }
 
+  return result;
+}
+
+function takeNextThree(str: string): string[] {
+  let result: string[] = [];
+  
+  for (let i = 0; i < str.length; i += 3) {
+    result.push();
+  }
+  
   return result;
 }
 

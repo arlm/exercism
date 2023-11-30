@@ -9,7 +9,8 @@
 //
 // In your own projects, files, and code, you can play with @ts-check as well.
 
-import { checkStatus, checkInventory } from './grocer';
+import { order } from './grocer';
+import { notify } from './notifier';
 
 /**
  * Returns the service status as a boolean value
@@ -19,41 +20,19 @@ export function isServiceOnline() {
   return checkStatus(status => status == 'ONLINE');
 }
 
-/**
- * Pick a fruit using the checkInventory API
- *
- * @param {string} variety
- * @param {number} quantity
- * @param {InventoryCallback} callback
- * @return {AvailabilityAction} the result from checkInventory
- */
-export function pickFruit(variety, quantity, callback) {
-  /** @type {GrocerQuery} **/ const query = { variety, quantity };
-  return checkInventory(query, callback);
+export function onSuccess() {
+  notify({ message: 'SUCCESS' });
 }
 
-/**
- * This is a callback function to be passed to the checkInventory API
- * handles the next step once the inventory is known
- * @param {string | null} err
- * @param {boolean} isAvailable
- * @return {AvailabilityAction} whether the fruit was purchased 'PURCHASE' or 'NOOP'
- */
-export function purchaseInventoryIfAvailable(err, isAvailable) {
-  if (err != null || typeof isAvailable === 'undefined') {
-    throw new Error(err);
-  }
-
-  return isAvailable ? "PURCHASE" : "NOOP";
+export function onError() {
+  notify({ message: 'ERROR' });
 }
 
-/**
- * Pick a fruit, and if it is available, purchase it
- *
- * @param {string} variety
- * @param {number} quantity
- * @return {AvailabilityAction} whether the fruit was purchased 'PURCHASE' or 'NOOP'
- */
-export function pickAndPurchaseFruit(variety, quantity) {
-  return pickFruit(variety, quantity, purchaseInventoryIfAvailable);
+export function postOrder(variety, quantity) {
+  orderFromGrocer({ variety: variety, quantity: quantity }, onSuccess, onError);
 }
+
+export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
+  order(query, onSuccessCallback, onErrorCallback);
+}
+
