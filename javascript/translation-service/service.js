@@ -118,8 +118,11 @@ export class TranslationService {
     if (translation.quality >= minimumQuality) {
       return translation.translation;
     }
-
-    throw new QualityThresholdNotMet(text);
+    
+    const timeout = Math.random() * 100;
+    return new Promise((_, reject) => {
+      setTimeout(() => reject(new QualityThresholdNotMet(text)), timeout);
+    });
   }
 }
 

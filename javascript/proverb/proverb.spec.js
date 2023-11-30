@@ -1,20 +1,20 @@
-import { proverb } from './proverb';
+import { proverb } from "./proverb";
 
-describe('Proverb', () => {
-  test('zero pieces', () => {
+describe("Proverb", () => {
+  test("zero pieces", () => {
     const result = proverb();
 
-    expect(result).toEqual('');
+    expect(result).toEqual("");
   });
 
-  xtest('one piece', () => {
-    const result = proverb('nail');
+  test("one piece", () => {
+    const result = proverb("nail");
 
-    expect(result).toEqual('And all for the want of a nail.');
+    expect(result).toEqual("And all for the want of a nail.");
   });
 
-  xtest('two pieces', () => {
-    const result = proverb('nail', 'shoe');
+  test("two pieces", () => {
+    const result = proverb("nail", "shoe");
 
     expect(result).toEqual(
       `For want of a nail the shoe was lost.
@@ -22,8 +22,8 @@ And all for the want of a nail.`
     );
   });
 
-  xtest('three pieces', () => {
-    const result = proverb('nail', 'shoe', 'horse');
+  test("three pieces", () => {
+    const result = proverb("nail", "shoe", "horse");
 
     expect(result).toEqual(
       `For want of a nail the shoe was lost.
@@ -32,16 +32,8 @@ And all for the want of a nail.`
     );
   });
 
-  xtest('the whole proverb', () => {
-    const result = proverb(
-      'nail',
-      'shoe',
-      'horse',
-      'rider',
-      'message',
-      'battle',
-      'kingdom'
-    );
+  test("the whole proverb", () => {
+    const result = proverb("nail", "shoe", "horse", "rider", "message", "battle", "kingdom");
 
     expect(result).toEqual(
       `For want of a nail the shoe was lost.
@@ -54,12 +46,12 @@ And all for the want of a nail.`
     );
   });
 
-  xtest('proverb is the same each time', () => {
-    expect(proverb('nail', 'shoe')).toEqual(proverb('nail', 'shoe'));
+  test("proverb is the same each time", () => {
+    expect(proverb("nail", "shoe")).toEqual(proverb("nail", "shoe"));
   });
 
-  xtest('four pieces modernized', () => {
-    const result = proverb('pin', 'gun', 'soldier', 'battle');
+  test("four pieces modernized", () => {
+    const result = proverb("pin", "gun", "soldier", "battle");
 
     expect(result).toEqual(
       `For want of a pin the gun was lost.
@@ -69,17 +61,10 @@ And all for the want of a pin.`
     );
   });
 
-  xtest('the use of an optional qualifier in the final consequence', () => {
-    const result = proverb(
-      'nail',
-      'shoe',
-      'horse',
-      'rider',
-      'message',
-      'battle',
-      'kingdom',
-      { qualifier: 'horseshoe' }
-    );
+  test("the use of an optional qualifier in the final consequence", () => {
+    const result = proverb("nail", "shoe", "horse", "rider", "message", "battle", "kingdom", {
+      qualifier: "horseshoe",
+    });
 
     expect(result).toEqual(
       `For want of a nail the shoe was lost.
