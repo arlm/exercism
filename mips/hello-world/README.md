@@ -2,6 +2,7 @@
 
 Welcome to Hello World on Exercism's MIPS Assembly Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
+If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
 
 ## Instructions
 
@@ -19,6 +20,12 @@ The objectives are simple:
 If everything goes well, you will be ready to fetch your first real exercise.
 
 [hello-world]: https://en.wikipedia.org/wiki/%22Hello,_world!%22_program
+
+## Registers
+
+| Register | Usage  | Type    | Description            |
+| -------- | ------ | ------- | ---------------------- |
+| `$v0`    | output | address | null-terminated string |
 
 ## Source
 
