@@ -6,6 +6,7 @@
         "kevinrose.vsc-python-indent",
         "ms-python.vscode-pylance",
         "ms-python.python",
-        "njqdev.vscode-python-typehint"
+        "njqdev.vscode-python-typehint",
+        "ms-python.pylint"
     ]
 }
