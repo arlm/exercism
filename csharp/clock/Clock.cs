@@ -6,7 +6,7 @@ using System.Text;
 /// <summary>
 /// Class that represents a clock.
 /// </summary>
-public class Clock : IEquatable<Clock>
+public partial class Clock
 {
     internal int Hours { get; } = 0;
     internal int Minutes { get; } = 0;
@@ -58,24 +58,6 @@ public class Clock : IEquatable<Clock>
         }
 
         return obj is Clock clock && Equals(clock);
-    }
-
-    /// <summary>
-    /// Compares the value of two different clocks.
-    /// </summary>
-    public bool Equals([AllowNull] Clock other)
-    {
-        if (other is null)
-        {
-            return false;
-        }
-
-        if (ReferenceEquals(this, other))
-        {
-            return true;
-        }
-
-        return Hours == other.Hours && Minutes == other.Minutes;
     }
 
     ///<summary>
