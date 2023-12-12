@@ -387,7 +387,7 @@ FodyWeavers.xsd
 test-results/
 
 # VS Code files for those working on multiple tools
-*.code-workspace
+!*.code-workspace
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

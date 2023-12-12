@@ -1,0 +1,257 @@
+{
+    "folders": [
+        {
+            "name": "Exercism",
+            "path": "."
+        },
+        {
+            "name": "fredericbonnet.cmake-test-adapter-0.17.2",
+            "path": "../../.vscode-insiders/extensions/fredericbonnet.cmake-test-adapter-0.17.2"
+        },
+        {
+            "name": "fpopescu.vscode-unity-test-adapter-0.1.5",
+            "path": "../../.vscode-insiders/extensions/fpopescu.vscode-unity-test-adapter-0.1.5"
+        },
+        {
+            "name": "vscode-unity-test-adapter",
+            "path": "../vscode-unity-test-adapter"
+        },
+        {
+            "name": "c:hello-world",
+            "path": "c/hello-world"
+        },
+        {
+            "name": "c:matching-brackets",
+            "path": "c/matching-brackets"
+        },
+        {
+            "name": "c:allergies",
+            "path": "c/allergies"
+        },
+        {
+            "name": "c:two-fer",
+            "path": "c/two-fer"
+        },
+        {
+            "name": "c:space-age",
+            "path": "c/space-age"
+        },
+        {
+            "name": "c:pangram",
+            "path": "c/pangram"
+        },
+        {
+            "name": "c:rna-transcription",
+            "path": "c/rna-transcription"
+        },
+        {
+            "name": "c:resistor-color",
+            "path": "c/resistor-color"
+        },
+        {
+            "name": "c:leap",
+            "path": "c/leap"
+        },
+        {
+            "name": "c:isogram",
+            "path": "c/isogram"
+        },
+        {
+            "name": "c:hamming",
+            "path": "c/hamming"
+        },
+        {
+            "name": "c:grains",
+            "path": "c/grains"
+        },
+        {
+            "name": "c:difference-of-squares",
+            "path": "c/difference-of-squares"
+        },
+        {
+            "name": "c:binary-search",
+            "path": "c/binary-search"
+        },
+        {
+            "name": "cpp:hello-world",
+            "path": "cpp/hello-world"
+        },
+        {
+            "name": "objective-c:hello-world",
+            "path": "objective-c/hello-world"
+        },
+        {
+            "name": "mips:hello-world",
+            "path": "mips/hello-world"
+        },
+        {
+            "name": "mips:grains",
+            "path": "mips/grains"
+        },
+        {
+            "name": "mips:resistor-color",
+            "path": "mips/resistor-color"
+        },
+        {
+            "name": "mips:nucleotide-count",
+            "path": "mips/nucleotide-count"
+        },
+        {
+            "name": "mips:rotational-cipher",
+            "path": "mips/rotational-cipher"
+        },
+        {
+            "name": "mips:pop-count",
+            "path": "mips/pop-count"
+        },
+        {
+            "name": "mips:nth-prime",
+            "path": "mips/nth-prime"
+        },
+        {
+            "name": "mips:scrabble-score",
+            "path": "mips/scrabble-score"
+        },
+        {
+            "name": "mips:raindrops",
+            "path": "mips/raindrops"
+        },
+        {
+            "name": "mips:isogram",
+            "path": "mips/isogram"
+        },
+        {
+            "name": "mips:triangle",
+            "path": "mips/triangle"
+        },
+        {
+            "name": "mips:atbash-cipher",
+            "path": "mips/atbash-cipher"
+        },
+        {
+            "name": "mips:rna-transcription",
+            "path": "mips/rna-transcription"
+        },
+        {
+            "name": "mips:hamming",
+            "path": "mips/hamming"
+        },
+        {
+            "name": "mips:difference-of-squares",
+            "path": "mips/difference-of-squares"
+        },
+        {
+            "name": "mips:leap",
+            "path": "mips/leap"
+        },
+        {
+            "name": "mips:hexadecimal",
+            "path": "mips/hexadecimal"
+        },
+        {
+            "name": "mips:trinary",
+            "path": "mips/trinary"
+        },
+        {
+            "name": "mips:octal",
+            "path": "mips/octal"
+        },
+        {
+            "name": "mips:binary",
+            "path": "mips/binary"
+        },
+        {
+            "name": "x86-64-assembly:pop-count",
+            "path": "x86-64-assembly/pop-count"
+        },
+        {
+            "name": "x86-64-assembly:pangram",
+            "path": "x86-64-assembly/pangram"
+        },
+        {
+            "name": "x86-64-assembly:allergies",
+            "path": "x86-64-assembly/allergies"
+        },
+        {
+            "name": "x86-64-assembly:binary-search",
+            "path": "x86-64-assembly/binary-search"
+        },
+        {
+            "name": "x86-64-assembly:difference-of-squares",
+            "path": "x86-64-assembly/difference-of-squares"
+        },
+        {
+            "name": "x86-64-assembly:grains",
+            "path": "x86-64-assembly/grains"
+        },
+        {
+            "name": "x86-64-assembly:hamming",
+            "path": "x86-64-assembly/hamming"
+        },
+        {
+            "name": "x86-64-assembly:isogram",
+            "path": "x86-64-assembly/isogram"
+        },
+        {
+            "name": "x86-64-assembly:leap",
+            "path": "x86-64-assembly/leap"
+        },
+        {
+            "name": "x86-64-assembly:rna-transcription",
+            "path": "x86-64-assembly/rna-transcription"
+        },
+        {
+            "name": "x86-64-assembly:resistor-color",
+            "path": "x86-64-assembly/resistor-color"
+        },
+        {
+            "name": "x86-64-assembly:reverse-string",
+            "path": "x86-64-assembly/reverse-string"
+        },
+        {
+            "name": "x86-64-assembly:space-age",
+            "path": "x86-64-assembly/space-age"
+        },
+        {
+            "name": "x86-64-assembly:two-fer",
+            "path": "x86-64-assembly/two-fer"
+        },
+        {
+            "name": "x86-64-assembly:matching-brackets",
+            "path": "x86-64-assembly/matching-brackets"
+        },
+        {
+            "name": "x86-64-assembly:rotational-cipher",
+            "path": "x86-64-assembly/rotational-cipher"
+        },
+        {
+            "name": "x86-64-assembly:hello-world",
+            "path": "x86-64-assembly/hello-world"
+        },
+            ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.DS_Store": true,
+            "**/Thumbs.db": true,
+            "**/{bash,cfml,clojure,clojurescript,coffeescript,common-lisp,crystal,csharp,d,dart,delphi,elixir,elm,emacs-lisp,fortran,fsharp,go,groovy,java,javascript,julia,kotlin,lfe,lua,nim,ocaml,perl5,pharo-smalltalk,php,plsql,purescript,python,r,racket,raku,reasonml,ruby,rust,scala,scheme,sml,swift,tcl,test,typescript,vbnet,vimscript,wasm,wren}": true,
+            "**/{c,cpp,mips,x86-64-assembly,objective-c}/{binary,hexadecimal,octal,pop-count,trinary,accumulate,hangman,react,acronym,rectangles,affine-cipher,hello-world,resistor-color,all-your-base,high-scores,resistor-color-duo,allergies,house,resistor-color-trio,alphametics,hyper-optimized-telemetry,rest-api,anagram,interest-is-interesting,reverse-string,annalyns-infiltration,isbn-verifier,rna-transcription,armstrong-numbers,isogram,robot-name,atbash-cipher,kindergarten-garden,robot-simulator,bank-account,largest-series-product,roll-the-die,beer-song,leap,roman-numerals,binary-search,rotational-cipher,binary-search-tree,ledger,run-length-encoding,bird-watcher,linked-list,saddle-points,bob,list-ops,say,book-store,log-analysis,scale-generator,booking-up-for-beauty,log-levels,scrabble-score,bowling,lucians-luscious-lasagna,secret-handshake,cars-assemble,luhn,series,change,markdown,sgf-parsing,circular-buffer,matching-brackets,sieve,clock,matrix,simple-cipher,collatz-conjecture,simple-linked-list,complex-numbers,meetup,space-age,connect,minesweeper,spiral-matrix,crypto-square,need-for-speed,squeaky-clean,custom-set,nth-prime,strain,darts,nucleotide-count,sublist,diamond,ocr-numbers,sum-of-multiples,difference-of-squares,palindrome-products,tim-from-marketing,diffie-hellman,pangram,tournament,dnd-character,parallel-letter-frequency,tracks-on-tracks-on-tracks,dominoes,pascals-triangle,transpose,dot-dsl,perfect-numbers,tree-building,phone-number,triangle,elons-toys,phone-number-analysis,twelve-days,error-handling,pig-latin,two-bucket,etl,poker,two-fer,flatten-array,pov,variable-length-quantity,food-chain,prime-factors,wizards-and-warriors,forth,protein-translation,word-count,gigasecond,proverb,word-search,go-counting,pythagorean-triplet,wordy,grade-school,queen-attack,yacht,grains,rail-fence-cipher,zebra-puzzle,grep,raindrops,zipper,hamming,rational-numbers}": true,
+            "**/{c,cpp,mips,x86-64-assembly,objective-c}/*/**/*.*": true,
+        },
+        "testing.openTesting": "openOnTestFailure",
+        "testExplorer.addToEditorContextMenu": true,
+        "testExplorer.mergeSuites": true
+    },
+    "extensions": {
+        "recommendations": [
+            "editorconfig.editorconfig",
+            "exercism.exercism-cli",
+            "npxms.hide-gitignored",
+            "visualstudioexptteam.vscodeintellicode",
+            "visualstudioexptteam.intellicode-api-usage-examples",
+            "ms-vscode.vscode-markdown-notebook",
+            "esbenp.prettier-vscode",
+            "dotjoshjohnson.xml"
+        ]
+    }
+}

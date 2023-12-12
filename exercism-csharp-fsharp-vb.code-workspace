@@ -1,0 +1,599 @@
+{
+    "folders": [
+        {
+            "name": "Exercism",
+            "path": "."
+        },
+        {
+            "name": "csharp:zipper",
+            "path": "csharp/zipper"
+        },
+        {
+            "name": "csharp:zebra-puzzle",
+            "path": "csharp/zebra-puzzle"
+        },
+        {
+            "name": "csharp:yacht",
+            "path": "csharp/yacht"
+        },
+        {
+            "name": "csharp:wordy",
+            "path": "csharp/wordy"
+        },
+        {
+            "name": "csharp:word-search",
+            "path": "csharp/word-search"
+        },
+        {
+            "name": "csharp:word-count",
+            "path": "csharp/word-count"
+        },
+        {
+            "name": "csharp:wizards-and-warriors",
+            "path": "csharp/wizards-and-warriors"
+        },
+        {
+            "name": "csharp:variable-length-quantity",
+            "path": "csharp/variable-length-quantity"
+        },
+        {
+            "name": "csharp:two-fer",
+            "path": "csharp/two-fer"
+        },
+        {
+            "name": "csharp:two-bucket",
+            "path": "csharp/two-bucket"
+        },
+        {
+            "name": "csharp:twelve-days",
+            "path": "csharp/twelve-days"
+        },
+        {
+            "name": "csharp:triangle",
+            "path": "csharp/triangle"
+        },
+        {
+            "name": "csharp:tree-building",
+            "path": "csharp/tree-building"
+        },
+        {
+            "name": "csharp:transpose",
+            "path": "csharp/transpose"
+        },
+        {
+            "name": "csharp:tracks-on-tracks-on-tracks",
+            "path": "csharp/tracks-on-tracks-on-tracks"
+        },
+        {
+            "name": "csharp:tournament",
+            "path": "csharp/tournament"
+        },
+        {
+            "name": "csharp:tim-from-marketing",
+            "path": "csharp/tim-from-marketing"
+        },
+        {
+            "name": "csharp:sum-of-multiples",
+            "path": "csharp/sum-of-multiples"
+        },
+        {
+            "name": "csharp:sublist",
+            "path": "csharp/sublist"
+        },
+        {
+            "name": "csharp:strain",
+            "path": "csharp/strain"
+        },
+        {
+            "name": "csharp:squeaky-clean",
+            "path": "csharp/squeaky-clean"
+        },
+        {
+            "name": "csharp:spiral-matrix",
+            "path": "csharp/spiral-matrix"
+        },
+        {
+            "name": "csharp:space-age",
+            "path": "csharp/space-age"
+        },
+        {
+            "name": "csharp:simple-linked-list",
+            "path": "csharp/simple-linked-list"
+        },
+        {
+            "name": "csharp:simple-cipher",
+            "path": "csharp/simple-cipher"
+        },
+        {
+            "name": "csharp:sieve",
+            "path": "csharp/sieve"
+        },
+        {
+            "name": "csharp:sgf-parsing",
+            "path": "csharp/sgf-parsing"
+        },
+        {
+            "name": "csharp:series",
+            "path": "csharp/series"
+        },
+        {
+            "name": "csharp:secret-handshake",
+            "path": "csharp/secret-handshake"
+        },
+        {
+            "name": "csharp:scrabble-score",
+            "path": "csharp/scrabble-score"
+        },
+        {
+            "name": "csharp:scale-generator",
+            "path": "csharp/scale-generator"
+        },
+        {
+            "name": "csharp:say",
+            "path": "csharp/say"
+        },
+        {
+            "name": "csharp:saddle-points",
+            "path": "csharp/saddle-points"
+        },
+        {
+            "name": "csharp:run-length-encoding",
+            "path": "csharp/run-length-encoding"
+        },
+        {
+            "name": "csharp:rotational-cipher",
+            "path": "csharp/rotational-cipher"
+        },
+        {
+            "name": "csharp:roman-numerals",
+            "path": "csharp/roman-numerals"
+        },
+        {
+            "name": "csharp:roll-the-die",
+            "path": "csharp/roll-the-die"
+        },
+        {
+            "name": "csharp:robot-simulator",
+            "path": "csharp/robot-simulator"
+        },
+        {
+            "name": "csharp:robot-name",
+            "path": "csharp/robot-name"
+        },
+        {
+            "name": "csharp:rna-transcription",
+            "path": "csharp/rna-transcription"
+        },
+        {
+            "name": "csharp:reverse-string",
+            "path": "csharp/reverse-string"
+        },
+        {
+            "name": "csharp:rest-api",
+            "path": "csharp/rest-api"
+        },
+        {
+            "name": "csharp:resistor-color",
+            "path": "csharp/resistor-color"
+        },
+        {
+            "name": "csharp:resistor-color-trio",
+            "path": "csharp/resistor-color-trio"
+        },
+        {
+            "name": "csharp:resistor-color-duo",
+            "path": "csharp/resistor-color-duo"
+        },
+        {
+            "name": "csharp:rectangles",
+            "path": "csharp/rectangles"
+        },
+        {
+            "name": "csharp:react",
+            "path": "csharp/react"
+        },
+        {
+            "name": "csharp:rational-numbers",
+            "path": "csharp/rational-numbers"
+        },
+        {
+            "name": "csharp:raindrops",
+            "path": "csharp/raindrops"
+        },
+        {
+            "name": "csharp:rail-fence-cipher",
+            "path": "csharp/rail-fence-cipher"
+        },
+        {
+            "name": "csharp:queen-attack",
+            "path": "csharp/queen-attack"
+        },
+        {
+            "name": "csharp:pythagorean-triplet",
+            "path": "csharp/pythagorean-triplet"
+        },
+        {
+            "name": "csharp:proverb",
+            "path": "csharp/proverb"
+        },
+        {
+            "name": "csharp:protein-translation",
+            "path": "csharp/protein-translation"
+        },
+        {
+            "name": "csharp:prime-factors",
+            "path": "csharp/prime-factors"
+        },
+        {
+            "name": "csharp:pov",
+            "path": "csharp/pov"
+        },
+        {
+            "name": "csharp:poker",
+            "path": "csharp/poker"
+        },
+        {
+            "name": "csharp:pig-latin",
+            "path": "csharp/pig-latin"
+        },
+        {
+            "name": "csharp:phone-number",
+            "path": "csharp/phone-number"
+        },
+        {
+            "name": "csharp:phone-number-analysis",
+            "path": "csharp/phone-number-analysis"
+        },
+        {
+            "name": "csharp:perfect-numbers",
+            "path": "csharp/perfect-numbers"
+        },
+        {
+            "name": "csharp:pascals-triangle",
+            "path": "csharp/pascals-triangle"
+        },
+        {
+            "name": "csharp:parallel-letter-frequency",
+            "path": "csharp/parallel-letter-frequency"
+        },
+        {
+            "name": "csharp:pangram",
+            "path": "csharp/pangram"
+        },
+        {
+            "name": "csharp:palindrome-products",
+            "path": "csharp/palindrome-products"
+        },
+        {
+            "name": "csharp:ocr-numbers",
+            "path": "csharp/ocr-numbers"
+        },
+        {
+            "name": "csharp:nucleotide-count",
+            "path": "csharp/nucleotide-count"
+        },
+        {
+            "name": "csharp:nth-prime",
+            "path": "csharp/nth-prime"
+        },
+        {
+            "name": "csharp:need-for-speed",
+            "path": "csharp/need-for-speed"
+        },
+        {
+            "name": "csharp:minesweeper",
+            "path": "csharp/minesweeper"
+        },
+        {
+            "name": "csharp:meetup",
+            "path": "csharp/meetup"
+        },
+        {
+            "name": "csharp:matrix",
+            "path": "csharp/matrix"
+        },
+        {
+            "name": "csharp:matching-brackets",
+            "path": "csharp/matching-brackets"
+        },
+        {
+            "name": "csharp:markdown",
+            "path": "csharp/markdown"
+        },
+        {
+            "name": "csharp:luhn",
+            "path": "csharp/luhn"
+        },
+        {
+            "name": "csharp:lucians-luscious-lasagna",
+            "path": "csharp/lucians-luscious-lasagna"
+        },
+        {
+            "name": "csharp:log-levels",
+            "path": "csharp/log-levels"
+        },
+        {
+            "name": "csharp:log-analysis",
+            "path": "csharp/log-analysis"
+        },
+        {
+            "name": "csharp:list-ops",
+            "path": "csharp/list-ops"
+        },
+        {
+            "name": "csharp:linked-list",
+            "path": "csharp/linked-list"
+        },
+        {
+            "name": "csharp:ledger",
+            "path": "csharp/ledger"
+        },
+        {
+            "name": "csharp:leap",
+            "path": "csharp/leap"
+        },
+        {
+            "name": "csharp:largest-series-product",
+            "path": "csharp/largest-series-product"
+        },
+        {
+            "name": "csharp:kindergarten-garden",
+            "path": "csharp/kindergarten-garden"
+        },
+        {
+            "name": "csharp:isogram",
+            "path": "csharp/isogram"
+        },
+        {
+            "name": "csharp:isbn-verifier",
+            "path": "csharp/isbn-verifier"
+        },
+        {
+            "name": "csharp:interest-is-interesting",
+            "path": "csharp/interest-is-interesting"
+        },
+        {
+            "name": "csharp:hyper-optimized-telemetry",
+            "path": "csharp/hyper-optimized-telemetry"
+        },
+        {
+            "name": "csharp:house",
+            "path": "csharp/house"
+        },
+        {
+            "name": "csharp:high-scores",
+            "path": "csharp/high-scores"
+        },
+        {
+            "name": "csharp:hello-world",
+            "path": "csharp/hello-world"
+        },
+        {
+            "name": "csharp:hangman",
+            "path": "csharp/hangman"
+        },
+        {
+            "name": "csharp:hamming",
+            "path": "csharp/hamming"
+        },
+        {
+            "name": "csharp:grep",
+            "path": "csharp/grep"
+        },
+        {
+            "name": "csharp:grains",
+            "path": "csharp/grains"
+        },
+        {
+            "name": "csharp:grade-school",
+            "path": "csharp/grade-school"
+        },
+        {
+            "name": "csharp:go-counting",
+            "path": "csharp/go-counting"
+        },
+        {
+            "name": "csharp:gigasecond",
+            "path": "csharp/gigasecond"
+        },
+        {
+            "name": "csharp:forth",
+            "path": "csharp/forth"
+        },
+        {
+            "name": "csharp:food-chain",
+            "path": "csharp/food-chain"
+        },
+        {
+            "name": "csharp:flatten-array",
+            "path": "csharp/flatten-array"
+        },
+        {
+            "name": "csharp:etl",
+            "path": "csharp/etl"
+        },
+        {
+            "name": "csharp:error-handling",
+            "path": "csharp/error-handling"
+        },
+        {
+            "name": "csharp:elons-toys",
+            "path": "csharp/elons-toys"
+        },
+        {
+            "name": "csharp:dot-dsl",
+            "path": "csharp/dot-dsl"
+        },
+        {
+            "name": "csharp:dominoes",
+            "path": "csharp/dominoes"
+        },
+        {
+            "name": "csharp:dnd-character",
+            "path": "csharp/dnd-character"
+        },
+        {
+            "name": "csharp:diffie-hellman",
+            "path": "csharp/diffie-hellman"
+        },
+        {
+            "name": "csharp:difference-of-squares",
+            "path": "csharp/difference-of-squares"
+        },
+        {
+            "name": "csharp:darts",
+            "path": "csharp/darts"
+        },
+        {
+            "name": "csharp:custom-set",
+            "path": "csharp/custom-set"
+        },
+        {
+            "name": "csharp:crypto-square",
+            "path": "csharp/crypto-square"
+        },
+        {
+            "name": "csharp:connect",
+            "path": "csharp/connect"
+        },
+        {
+            "name": "csharp:complex-numbers",
+            "path": "csharp/complex-numbers"
+        },
+        {
+            "name": "csharp:collatz-conjecture",
+            "path": "csharp/collatz-conjecture"
+        },
+        {
+            "name": "csharp:clock",
+            "path": "csharp/clock"
+        },
+        {
+            "name": "csharp:circular-buffer",
+            "path": "csharp/circular-buffer"
+        },
+        {
+            "name": "csharp:change",
+            "path": "csharp/change"
+        },
+        {
+            "name": "csharp:cars-assemble",
+            "path": "csharp/cars-assemble"
+        },
+        {
+            "name": "csharp:bowling",
+            "path": "csharp/bowling"
+        },
+        {
+            "name": "csharp:booking-up-for-beauty",
+            "path": "csharp/booking-up-for-beauty"
+        },
+        {
+            "name": "csharp:book-store",
+            "path": "csharp/book-store"
+        },
+        {
+            "name": "csharp:bob",
+            "path": "csharp/bob"
+        },
+        {
+            "name": "csharp:bird-watcher",
+            "path": "csharp/bird-watcher"
+        },
+        {
+            "name": "csharp:binary-search",
+            "path": "csharp/binary-search"
+        },
+        {
+            "name": "csharp:binary-search-tree",
+            "path": "csharp/binary-search-tree"
+        },
+        {
+            "name": "csharp:beer-song",
+            "path": "csharp/beer-song"
+        },
+        {
+            "name": "csharp:bank-account",
+            "path": "csharp/bank-account"
+        },
+        {
+            "name": "csharp:atbash-cipher",
+            "path": "csharp/atbash-cipher"
+        },
+        {
+            "name": "csharp:armstrong-numbers",
+            "path": "csharp/armstrong-numbers"
+        },
+        {
+            "name": "csharp:annalyns-infiltration",
+            "path": "csharp/annalyns-infiltration"
+        },
+        {
+            "name": "csharp:anagram",
+            "path": "csharp/anagram"
+        },
+        {
+            "name": "csharp:alphametics",
+            "path": "csharp/alphametics"
+        },
+        {
+            "name": "csharp:allergies",
+            "path": "csharp/allergies"
+        },
+        {
+            "name": "csharp:all-your-base",
+            "path": "csharp/all-your-base"
+        },
+        {
+            "name": "csharp:affine-cipher",
+            "path": "csharp/affine-cipher"
+        },
+        {
+            "name": "csharp:acronym",
+            "path": "csharp/acronym"
+        },
+        {
+            "name": "csharp:accumulate",
+            "path": "csharp/accumulate"
+        },
+        {
+            "name": "csharp:diamond",
+            "path": "csharp/diamond"
+        },
+        {
+            "name": "vbnet:hello-world",
+            "path": "vbnet/hello-world"
+        },
+        {
+            "name": "fsharp:hello-world",
+            "path": "fsharp/hello-world"
+        },
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.DS_Store": true,
+            "**/Thumbs.db": true,
+            "**/{bash,c,cfml,clojure,clojurescript,coffeescript,common-lisp,cpp,crystal,d,dart,delphi,elixir,elm,emacs-lisp,fortran,go,groovy,java,javascript,julia,kotlin,lfe,lua,mips,nim,objective-c,ocaml,perl5,pharo-smalltalk,php,plsql,purescript,python,r,racket,raku,reasonml,ruby,rust,scala,scheme,sml,swift,tcl,test,typescript,vimscript,wasm,wren,x86-64-assembly}": true,
+            "**/{csharp,fsharp,vbnet}/{binary,hexadecimal,octal,pop-count,trinary,accumulate,hangman,react,acronym,rectangles,affine-cipher,hello-world,resistor-color,all-your-base,high-scores,resistor-color-duo,allergies,house,resistor-color-trio,alphametics,hyper-optimized-telemetry,rest-api,anagram,interest-is-interesting,reverse-string,annalyns-infiltration,isbn-verifier,rna-transcription,armstrong-numbers,isogram,robot-name,atbash-cipher,kindergarten-garden,robot-simulator,bank-account,largest-series-product,roll-the-die,beer-song,leap,roman-numerals,binary-search,rotational-cipher,binary-search-tree,ledger,run-length-encoding,bird-watcher,linked-list,saddle-points,bob,list-ops,say,book-store,log-analysis,scale-generator,booking-up-for-beauty,log-levels,scrabble-score,bowling,lucians-luscious-lasagna,secret-handshake,cars-assemble,luhn,series,change,markdown,sgf-parsing,circular-buffer,matching-brackets,sieve,clock,matrix,simple-cipher,collatz-conjecture,simple-linked-list,complex-numbers,meetup,space-age,connect,minesweeper,spiral-matrix,crypto-square,need-for-speed,squeaky-clean,custom-set,nth-prime,strain,darts,nucleotide-count,sublist,diamond,ocr-numbers,sum-of-multiples,difference-of-squares,palindrome-products,tim-from-marketing,diffie-hellman,pangram,tournament,dnd-character,parallel-letter-frequency,tracks-on-tracks-on-tracks,dominoes,pascals-triangle,transpose,dot-dsl,perfect-numbers,tree-building,phone-number,triangle,elons-toys,phone-number-analysis,twelve-days,error-handling,pig-latin,two-bucket,etl,poker,two-fer,flatten-array,pov,variable-length-quantity,food-chain,prime-factors,wizards-and-warriors,forth,protein-translation,word-count,gigasecond,proverb,word-search,go-counting,pythagorean-triplet,wordy,grade-school,queen-attack,yacht,grains,rail-fence-cipher,zebra-puzzle,grep,raindrops,zipper,hamming,rational-numbers}": true,
+            "**/{csharp,fsharp,vbnet}/*/**/*.*": true,
+        },
+        "testing.openTesting": "openOnTestFailure",
+        "testExplorer.addToEditorContextMenu": true,
+        "testExplorer.mergeSuites": true,
+        "dotnet-test-explorer.testProjectPath": "**/*.@(csproj|vbproj|fsproj)",
+        "dotnet-test-explorer.treeMode": "merged"
+    },
+    "extensions": {
+        "recommendations": [
+            "editorconfig.editorconfig",
+            "exercism.exercism-cli",
+            "npxms.hide-gitignored",
+            "visualstudioexptteam.vscodeintellicode",
+            "visualstudioexptteam.intellicode-api-usage-examples",
+            "ms-vscode.vscode-markdown-notebook",
+            "esbenp.prettier-vscode",
+            "dotjoshjohnson.xml"
+        ]
+    }
+}
