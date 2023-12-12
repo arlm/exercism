@@ -23,4 +23,5 @@
     ".gitignore": false,
   },
   "editor.formatOnSave": true,
+  "dotnet.defaultSolution": "disable",
 }

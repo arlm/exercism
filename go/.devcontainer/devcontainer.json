@@ -1,15 +1,19 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/go
 {
   "name": "Exercism:Go",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
   "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
     "ghcr.io/devcontainers/features/go:1": {},
     "ghcr.io/devcontainers-contrib/features/exercism-cli:1": {},
     "ghcr.io/guiyomh/features/gomarkdoc:0": {},
-    "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {}
+    "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {},
+    "ghcr.io/itsmechlark/features/1password:1.0.2": {}
   },
+  "initializeCommand": "ssh-add ${localEnv:HOME}/.ssh/github_rsa",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -22,7 +26,9 @@
         "766b.go-outliner",
         "npxms.hide-gitignored",
         "oderwat.indent-rainbow",
-        "cweijan.vscode-office"
+        "cweijan.vscode-office",
+        "GitHub.vscode-pull-request-github",
+        "jrieken.regex-notebook"
       ],
       "settings": {
         "editor.tabSize": 4,
@@ -52,14 +58,4 @@
       }
     }
   }
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "go version",
-  // Configure tool-specific properties.
-  // "customizations": {},
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
 }
