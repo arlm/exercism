@@ -4,6 +4,30 @@
             "name": "Exercism",
             "path": "."
         },
+        {
+            "path": "lua/hello-world"
+        },
+        {
+            "path": "lua/hamming"
+        },
+        {
+            "path": "lua/house"
+        },
+        {
+            "path": "lua/nucleotide-count"
+        },
+        {
+            "path": "lua/protein-translation"
+        },
+        {
+            "path": "lua/resistor-color-trio"
+        },
+        {
+            "path": "lua/rna-transcription"
+        },
+        {
+            "path": "lua/scrabble-score"
+        }
     ],
     "settings": {
         "files.exclude": {
@@ -16,7 +40,8 @@
         },
         "testing.openTesting": "openOnTestFailure",
         "testExplorer.addToEditorContextMenu": true,
-        "testExplorer.mergeSuites": true
+        "testExplorer.mergeSuites": true,
+        "busted-tests.pattern.prefix": "**"
     },
     "extensions": {
         "recommendations": [
@@ -27,7 +52,8 @@
             "visualstudioexptteam.intellicode-api-usage-examples",
             "ms-vscode.vscode-markdown-notebook",
             "esbenp.prettier-vscode",
-            "dotjoshjohnson.xml"
+            "dotjoshjohnson.xml",
+            "oroschz.busted-tests"
         ]
     }
 }
