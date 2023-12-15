@@ -4,6 +4,9 @@
             "name": "Exercism",
             "path": "."
         },
+        {
+            "path": "plsql/hello-world"
+        }
     ],
     "settings": {
         "files.exclude": {
@@ -27,7 +30,9 @@
             "visualstudioexptteam.intellicode-api-usage-examples",
             "ms-vscode.vscode-markdown-notebook",
             "esbenp.prettier-vscode",
-            "dotjoshjohnson.xml"
+            "dotjoshjohnson.xml",
+            "adpyke.vscode-sql-formatter",
+            "oracle.oracledevtools"
         ]
     }
 }

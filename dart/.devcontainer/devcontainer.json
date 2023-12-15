@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
   "features": {
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
-      "packages": "lua5.4,liblua5.4-dev,luarocks"
+      "packages": ""
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,

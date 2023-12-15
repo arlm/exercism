@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "HelloWorldExample.h"
+
+# import "HelloWorld.h"
 
 @implementation HelloWorld
 - (NSString *)hello {

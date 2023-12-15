@@ -27,7 +27,10 @@
             "exercism.exercism-cli",
             "npxms.hide-gitignored",
             "ms-vscode.vscode-markdown-notebook",
-            "dotjoshjohnson.xml"
+            "xaver.clang-format",
+            "llvm-vs-code-extensions.vscode-clangd",
+            "jeff-hykin.better-objc-syntax",
+            "wmaurer.change-case"
         ]
     }
 }
