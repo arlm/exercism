@@ -5,6 +5,6 @@
 
 class Hello {
   static world() {
-    return "Goodbye, Mars!"
+    return "Hello, World!"
   }
 }

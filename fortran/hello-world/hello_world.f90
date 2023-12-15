@@ -2,7 +2,7 @@ module hello_world
 contains
   function hello()
     character(13) :: hello
-    hello = 'Goodbye, Mars!'
+    hello = 'Hello, World!'
 
   end function hello
 

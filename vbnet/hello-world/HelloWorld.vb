@@ -1,5 +1,5 @@
 Public Module HelloWorld
     Public Function Hello() As String
-        Return "Goodbye, Mars!"
+        Return "Hello, World!"
     End Function
 End Module

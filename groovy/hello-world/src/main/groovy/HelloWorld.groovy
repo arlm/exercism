@@ -1,7 +1,7 @@
 class HelloWorld {
 
     def hello() {
-        'Goodbye, Mars!'
+        'Hello, World!'
     }
 
 }

@@ -1,1 +1,1 @@
-fun hello () = "Goodbye, Mars!"
+fun hello () = "Hello, World!"

@@ -2,4 +2,4 @@
   (export (hello-world 0)))
 
 (defun hello-world ()
-  "Goodbye, Mars!")
+  "Hello, World!")

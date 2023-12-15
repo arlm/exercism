@@ -21,8 +21,8 @@ public class TreeBuildingRecord : IEquatable<TreeBuildingRecord>
         }
     }
 
-    public int ParentId { get; internal set; }
-    public int RecordId { get; set; }
+    public int ParentId { get; internal set; } = 0;
+    public int RecordId { get; set; } = 0;
 
     public override bool Equals(object obj)
         => obj switch
@@ -95,7 +95,7 @@ public static class TreeBuilder
 
         for (int index = 0; index < array.Length - 1; index++)
         {
-            if ((array[index].RecordId + 1) != array[index+ 1].RecordId)
+            if ((array[index].RecordId + 1) != array[index + 1].RecordId)
             {
                 throw new ArgumentException("list have RecordIds in sequence", nameof(records));
             }

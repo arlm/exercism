@@ -2,4 +2,4 @@ module HelloWorld exposing (helloWorld)
 
 
 helloWorld =
-    "Goodbye, Mars!"
+    "Hello, World!"

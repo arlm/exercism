@@ -3,7 +3,5 @@ defmodule HelloWorld do
   Simply returns "Hello, World!"
   """
   @spec hello :: String.t()
-  def hello do
-    "Goodbye, Mars!"
-  end
+  def hello(), do: "Hello, World!"
 end
