@@ -3,7 +3,11 @@
 # import "HelloWorld.h"
 
 @implementation HelloWorld
-- (NSString *)hello {
-  return @"Goodbye, Mars!";
+
+- (NSString *)hello:(NSString *) name {
+  return name == nil
+    ? @"Hello, World!"
+    : [NSString stringWithFormat: @"Hello, %@!", name];
 }
+
 @end

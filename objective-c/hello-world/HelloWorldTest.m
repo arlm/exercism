@@ -1,10 +1,6 @@
 #import <XCTest/XCTest.h>
 
-#if __has_include("HelloWorldExample.h")
-# import "HelloWorldExample.h"
-# else
 # import "HelloWorld.h"
-#endif
 
 NS_ASSUME_NONNULL_BEGIN
 

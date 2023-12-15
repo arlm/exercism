@@ -2,6 +2,6 @@
 
 @interface HelloWorld : NSObject
 
-- (NSString *)hello;
+- (NSString *)hello: (NSString *) name;
 
 @end
