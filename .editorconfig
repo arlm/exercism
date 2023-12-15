@@ -7,7 +7,7 @@ root = true
 indent_style = space
 indent_size = 4
 tab_width = 4
-nd_of_line = lf
+end_of_line = lf
 charset = utf-8
 insert_final_newline = true
 trim_trailing_whitespace = true
@@ -19,6 +19,10 @@ ij_formatter_on_tag = @formatter:on
 ij_formatter_tags_enabled = false
 ij_smart_tabs = false
 ij_wrap_on_typing = false
+
+# Ignore the entire directories.
+[{third_party,vendor,node_modules,gradle,.pytest_cache,__pycache__},.spago/**]
+ignore = true
 
 [*.{yml,yaml}]
 indent_size = 2
@@ -243,10 +247,21 @@ indent_size = 2
 [*.{cmd,bat}]
 end_of_line = crlf
 
-[*.sh]
+[*.{sh,bash}]
 end_of_line = lf
+# like -i=4
+indent_style = space
+indent_size = 4
 
-[*.{sh,bat.tpl,Makefile.tpl}]
+shell_variant      = auto  # like -ln=bash/posix/mksh/bats, default "auto"
+binary_next_line   = true  # like -bn
+switch_case_indent = true  # like -ci
+space_redirects    = true  # like -sr
+keep_padding       = true  # like -kp
+function_next_line = true  # like -fn
+never_split        = true  # like -ns
+
+[*.{bat.tpl,Makefile.tpl}]
 indent_style = tab
 
 [*.{ex,exs}]

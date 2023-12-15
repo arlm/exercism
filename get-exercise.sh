@@ -1,6 +1,25 @@
 #!/bin/bash
 
-total_exercises=$(find . -type d -name "*" -mindepth 2 -maxdepth 2 | wc -l)
+script_name=$(basename "$0")
+
+if [ $# -ne 1 ]; then
+    echo "usage: $script_name exercise_name" >&2
+    exit 1
+fi
+
+exercise_name="$1"
+
+tracks=(8th abap awk ballerina bash c cfml clojure cobol coffeescript
+    common-lisp cpp crystal csharp d dart delphi
+    elixir elm emacs-lisp erlang
+    fortran fsharp gleam go groovy haskell
+    java javascript jq julia kotlin lfe lua
+    mips nim objective-c ocaml perl5 pharo-smalltalk php plsql
+    powershell prolog purescript python r racket raku
+    reasonml red ruby rust scala scheme sml swift tcl typescript
+    unison vbnet vimscript vlang wasm wren x86-64-assembly zig
+)
+total_exercises=${#tracks[@]}
 completed_exercises=0
 
 progreSh()
@@ -62,20 +81,17 @@ progreSh()
     done
 }
 
-find . -type d -name "*" -mindepth 2 -maxdepth 2 | while read -r dir; do
-    exercise_name=${dir##*/}
+if [ -e get-exercise.log ]; then
+    rm get-exercise.log
+fi
 
-    # Extract track name without the dot or slashes
-    track_name=${dir%/}
-    track_name=${track_name#./}
-    track_name=${track_name%%/*}
-
+for track_name in "${tracks[@]}"; do
     completed_exercises=$((completed_exercises + 1))
     progress=$((completed_exercises * 100 / total_exercises))
 
     progreSh $progress "$track_name" "$exercise_name"
-
-    exercism download --track="$track_name" --exercise="$exercise_name" --force &> /dev/null
+    echo "Getting $track_name/$exercise_name ..." >> get-exercise.log
+    exercism download --track="$track_name" --exercise="$exercise_name" --force >> get-exercise.log  2>&1
 done
 
 echo ""
