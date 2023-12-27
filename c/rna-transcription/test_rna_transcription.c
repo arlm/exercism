@@ -24,28 +24,27 @@ static void test_empty_rna_sequence(void)
 
 static void test_rna_complement_of_cytosine_is_guanine(void)
 {
-
    check_transcription("C", "G");
 }
 
 static void test_rna_complement_of_guanine_is_cytosine(void)
 {
-    check_transcription("G", "C");
+   check_transcription("G", "C");
 }
 
 static void test_rna_complement_of_thymine_is_adenine(void)
 {
-    check_transcription("T", "A");
+   check_transcription("T", "A");
 }
 
 static void test_rna_complement_of_adenine_is_uracil(void)
 {
-    check_transcription("A", "U");
+   check_transcription("A", "U");
 }
 
 static void test_rna_complement(void)
 {
-    check_transcription("ACGTGGTCTTAA", "UGCACCAGAAUU");
+   check_transcription("ACGTGGTCTTAA", "UGCACCAGAAUU");
 }
 
 int main(void)

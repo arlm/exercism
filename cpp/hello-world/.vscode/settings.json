@@ -1,9 +1,0 @@
-{
-    "jest.enable": false,
-    "search.exclude": {
-    },
-    "files.exclude": {
-        ".gitignore": false,
-    },
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-}
