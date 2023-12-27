@@ -21,56 +21,72 @@
             "path": "c/hello-world"
         },
         {
-            "name": "c:matching-brackets",
-            "path": "c/matching-brackets"
-        },
-        {
             "name": "c:allergies",
             "path": "c/allergies"
         },
         {
-            "name": "c:two-fer",
-            "path": "c/two-fer"
+            "name": "c:armstrong-numbers",
+            "path": "c/armstrong-numbers"
         },
         {
-            "name": "c:space-age",
-            "path": "c/space-age"
+            "name": "c:binary-search",
+            "path": "c/binary-search"
         },
         {
-            "name": "c:pangram",
-            "path": "c/pangram"
-        },
-        {
-            "name": "c:rna-transcription",
-            "path": "c/rna-transcription"
-        },
-        {
-            "name": "c:resistor-color",
-            "path": "c/resistor-color"
-        },
-        {
-            "name": "c:leap",
-            "path": "c/leap"
-        },
-        {
-            "name": "c:isogram",
-            "path": "c/isogram"
-        },
-        {
-            "name": "c:hamming",
-            "path": "c/hamming"
-        },
-        {
-            "name": "c:grains",
-            "path": "c/grains"
+            "name": "c:bob",
+            "path": "c/bob"
         },
         {
             "name": "c:difference-of-squares",
             "path": "c/difference-of-squares"
         },
         {
-            "name": "c:binary-search",
-            "path": "c/binary-search"
+            "name": "c:grains",
+            "path": "c/grains"
+        },
+        {
+            "name": "c:hamming",
+            "path": "c/hamming"
+        },
+        {
+            "name": "c:high-scores",
+            "path": "c/high-scores"
+        },
+        {
+            "name": "c:isogram",
+            "path": "c/isogram"
+        },
+        {
+            "name": "c:leap",
+            "path": "c/leap"
+        },
+        {
+            "name": "c:matching-brackets",
+            "path": "c/matching-brackets"
+        },
+        {
+            "name": "c:pangram",
+            "path": "c/pangram"
+        },
+        {
+            "name": "c:resistor-color",
+            "path": "c/resistor-color"
+        },
+        {
+            "name": "c:reverse-string",
+            "path": "c/reverse-string"
+        },
+        {
+            "name": "c:rna-transcription",
+            "path": "c/rna-transcription"
+        },
+        {
+            "name": "c:space-age",
+            "path": "c/space-age"
+        },
+        {
+            "name": "c:two-fer",
+            "path": "c/two-fer"
         },
         {
             "name": "cpp:hello-world",
@@ -227,7 +243,7 @@
         {
             "name": "x86-64-assembly:hello-world",
             "path": "x86-64-assembly/hello-world"
-        },
+        }
     ],
     "settings": {
         "files.exclude": {
@@ -251,7 +267,8 @@
             "visualstudioexptteam.intellicode-api-usage-examples",
             "ms-vscode.vscode-markdown-notebook",
             "esbenp.prettier-vscode",
-            "dotjoshjohnson.xml"
+            "dotjoshjohnson.xml",
+            "alexandre.arlm-c-unity-test-adapter"
         ]
     }
 }

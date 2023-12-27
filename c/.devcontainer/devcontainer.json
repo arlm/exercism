@@ -1,0 +1,65 @@
+{
+  "name": "exercism-lua",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-debian-11",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
+      "packages": "build-essential,gdb"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+    "ghcr.io/devcontainers-contrib/features/exercism-cli:1": {}
+  },
+  "initializeCommand": "./.devcontainer/initializeCommand.sh",
+  "onCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "cweijan.vscode-office",
+        "EditorConfig.EditorConfig",
+        "exercism.exercism-cli",
+        "GitHub.vscode-pull-request-github",
+        "jrieken.regex-notebook",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "mutantdino.resourcemonitor",
+        "npxms.hide-gitignored",
+        "twxs.cmake",
+        "wmaurer.change-case",
+        "ms-vscode.cpptools-extension-pack",
+        "carlos-algms.make-task-provider",
+        "ms-vscode.cpptools",
+        "ms-vscode.makefile-tools"
+      ],
+      "settings": {
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh",
+            "icon": "terminal-debian"
+          },
+          "fish": {
+            "path": "fish",
+            "icon": "terminal-linux"
+          },
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          },
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+          }
+        }
+      }
+    }
+  }
+}

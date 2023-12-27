@@ -1,0 +1,3 @@
+[submodule "delphi/DUnitX"]
+	path = delphi/DUnitX
+	url = https://github.com/arlm/DUnitX.git
