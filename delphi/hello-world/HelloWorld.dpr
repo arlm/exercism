@@ -1,30 +1,43 @@
-program HelloWorld;
+
+Program HelloWorld;
+
+{$UNITPATH ../DUnitX/Source}
+
+{$IFDEF FPC}
+    {$MACRO ON}
+    {$DEFINE CompilerVersion:=20.0}
+    {$mode delphi}
+    {$H+}
+    {$modeswitch advancedrecords}
+{$ENDIF}
 
 {$IFNDEF TESTINSIGHT}
-{$APPTYPE CONSOLE}
-{$ENDIF}{$STRONGLINKTYPES ON}
-uses
-  System.SysUtils,
-  {$IFDEF TESTINSIGHT}
-  TestInsight.DUnitX,
-  {$ENDIF }
-  DUnitX.Loggers.Console,
-  DUnitX.Loggers.Xml.NUnit,
-  DUnitX.TestFramework,
-  uHelloWorldTests in 'uHelloWorldTests.pas',
-  uHelloWorld in 'uHelloWorld.pas';
+//{$APPTYPE CONSOLE}
+{$ENDIF}
+//{$STRONGLINKTYPES ON}
 
-var
+Uses
+SysUtils,
+  {$IFDEF TESTINSIGHT}
+TestInsight.DUnitX,
+  {$ENDIF }
+DUnitX.Loggers.Console,
+DUnitX.Loggers.Xml.NUnit,
+DUnitX.TestFramework,
+uHelloWorldTests in 'uHelloWorldTests.pas',
+uHelloWorld in 'uHelloWorld.pas';
+
+Var
   runner : ITestRunner;
   results : IRunResults;
   logger : ITestLogger;
   nunitLogger : ITestLogger;
-begin
+Begin
 {$IFDEF TESTINSIGHT}
   TestInsight.DUnitX.RunRegisteredTests;
   exit;
 {$ENDIF}
-  try
+  Try
     //Check command line options, will exit if invalid
     TDUnitX.CheckCommandLine;
     //Create the test runner
@@ -36,25 +49,27 @@ begin
     logger := TDUnitXConsoleLogger.Create(true);
     runner.AddLogger(logger);
     //Generate an NUnit compatible XML File
-    nunitLogger := TDUnitXXMLNUnitFileLogger.Create(TDUnitX.Options.XMLOutputFile);
+    nunitLogger := TDUnitXXMLNUnitFileLogger.Create(TDUnitX.Options.
+                   XMLOutputFile);
     runner.AddLogger(nunitLogger);
-    runner.FailsOnNoAsserts := False; //When true, Assertions must be made during tests;
+    runner.FailsOnNoAsserts := False;
+    //When true, Assertions must be made during tests;
 
     //Run tests
     results := runner.Execute;
-    if not results.AllPassed then
+    If Not results.AllPassed Then
       System.ExitCode := EXIT_ERRORS;
 
     {$IFNDEF CI}
     //We don't want this happening when running under CI.
-    if TDUnitX.Options.ExitBehavior = TDUnitXExitBehavior.Pause then
-    begin
-      System.Write('Done.. press <Enter> key to quit.');
-      System.Readln;
-    end;
+    If TDUnitX.Options.ExitBehavior = TDUnitXExitBehavior.Pause Then
+      Begin
+        System.Write('Done.. press <Enter> key to quit.');
+        System.Readln;
+      End;
     {$ENDIF}
-  except
-    on E: Exception do
-      System.Writeln(E.ClassName, ': ', E.Message);
-  end;
-end.
+  Except
+    on E: Exception Do
+          System.Writeln(E.ClassName, ': ', E.Message);
+End;
+End.
