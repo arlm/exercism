@@ -4,6 +4,15 @@
             "name": "Exercism",
             "path": "."
         },
+        {
+            "path": "delphi/hello-world"
+        },
+        {
+            "path": "delphi/DUnitX"
+        },
+        {
+            "path": "../../usr/lib/x86_64-linux-gnu/fpc/3.2.0"
+        }
     ],
     "settings": {
         "files.exclude": {
@@ -16,18 +25,22 @@
         },
         "testing.openTesting": "openOnTestFailure",
         "testExplorer.addToEditorContextMenu": true,
-        "testExplorer.mergeSuites": true
+        "testExplorer.mergeSuites": true,
+        "pascal.formatter.engine": "ptop",
+        "pascal.formatter.enginePath": "/usr/bin/ptop",
+        "omnipascal.searchPath": "${workspaceFolder}/delphi/DUnitX/Source/*;/usr/lib/x86_64-linux-gnu/fpc/3.2.0/*;~/.fppkg/lib/fpc/3.2.0/units/*",
+        "omnipascal.freePascalSourcePath": "/usr/lib/x86_64-linux-gnu/fpc/3.2.0",
+        "omnipascal.defaultDevelopmentEnvironment": "FreePascal",
+        "omnipascal.symbolIndex": "searchPath"
     },
     "extensions": {
         "recommendations": [
             "editorconfig.editorconfig",
             "exercism.exercism-cli",
             "npxms.hide-gitignored",
-            "visualstudioexptteam.vscodeintellicode",
-            "visualstudioexptteam.intellicode-api-usage-examples",
             "ms-vscode.vscode-markdown-notebook",
-            "esbenp.prettier-vscode",
-            "dotjoshjohnson.xml"
+            "alefragnani.pascal-formatter",
+            "alefragnani.pascal"
         ]
     }
 }
