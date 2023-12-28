@@ -272,6 +272,17 @@
         "unityExplorer.unitUnderTestFolder": ".",
         "unityExplorer.testBuildCwdPath": ".",
         "unityExplorer.testSourceFolder": ".",
+        "files.associations": {
+            ".zshrc": "shellscript",
+            "cctype": "c",
+            "strings.h": "c",
+            "ctype.h": "c",
+            "stdio.h": "c",
+            "stdlib.h": "c",
+            "armstrong_numbers.h": "c",
+            "string.h": "c",
+            "math.h": "c"
+        },
     },
     "extensions": {
         "recommendations": [
