@@ -1,0 +1,58 @@
+{
+  "name": "exercism-bash",
+  "image": "mcr.microsoft.com/powershell:latest",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
+      "packages": "build-essential,gdb,git,original-awk,shfmt,bats"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+    "ghcr.io/devcontainers-contrib/features/exercism-cli:1": {}
+  },
+  "initializeCommand": "./.devcontainer/initializeCommand.sh",
+  "onCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "cweijan.vscode-office",
+        "EditorConfig.EditorConfig",
+        "exercism.exercism-cli",
+        "GitHub.vscode-pull-request-github",
+        "jrieken.regex-notebook",
+        "mutantdino.resourcemonitor",
+        "npxms.hide-gitignored",
+        "wmaurer.change-case",
+      ],
+      "settings": {
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh",
+            "icon": "terminal-debian"
+          },
+          "fish": {
+            "path": "fish",
+            "icon": "terminal-linux"
+          },
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          },
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+          }
+        }
+      }
+    }
+  }
+}

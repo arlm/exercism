@@ -4,6 +4,30 @@
             "name": "Exercism",
             "path": "."
         },
+        {
+            "name": "bash:hello-world",
+            "path": "bash/hello-world"
+        },
+        {
+            "name": "bash:atbash-cipher",
+            "path": "bash/atbash-cipher"
+        },
+        {
+            "name": "bash:darts",
+            "path": "bash/darts"
+        },
+        {
+            "name": "bash:gigasecond",
+            "path": "bash/gigasecond"
+        },
+        {
+            "name": "bash:luhn",
+            "path": "bash/luhn"
+        },
+        {
+            "name": "bash:series",
+            "path": "bash/series"
+        }
     ],
     "settings": {
         "files.exclude": {
@@ -27,7 +51,9 @@
             "visualstudioexptteam.intellicode-api-usage-examples",
             "ms-vscode.vscode-markdown-notebook",
             "esbenp.prettier-vscode",
-            "dotjoshjohnson.xml"
+            "dotjoshjohnson.xml",
+            "foxundermoon.shell-format",
+            "jetmartin.bats"
         ]
     }
 }
