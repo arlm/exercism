@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/powershell:latest",
   "features": {
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
-      "packages": "build-essential,gdb,git,original-awk,shfmt,bats"
+      "packages": "build-essential,gdb,git,original-awk,shfmt,bats,bc"
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,

@@ -1,24 +1,17 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+GIGA_SECOND=1000000000
+
+function main() {
+    if [ "$#" -ne 1 ]; then
+        echo -e "Illegal number of parameters!\n"
+        echo "Use: $0 date"
+        exit 255
+    fi
+
+    # The Linux Epoch is 1970-01-01 00:00:00 UTC
+    gigasec_date=$(( $(date -d "$1" +"%s") +  GIGA_SECOND ))
+    printf '%(%Y-%m-%dT%H:%M:%S)T\n' "$gigasec_date"
+}
+
+main "$@"

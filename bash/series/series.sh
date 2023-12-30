@@ -1,24 +1,47 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+function main() {
+    if [ "$#" -ne 2 ]; then
+        echo -e "Illegal number of parameters!\n"
+        echo "Use: $0 number digits"
+        exit 255
+    fi
+
+    if [ "$1" == "" ]; then
+        echo "series cannot be empty"
+        exit 254
+    fi
+
+    if [ "$2" -lt 0 ]; then
+        echo "slice length cannot be negative"
+        exit 253
+    fi
+
+    if [ "$2" == 0 ]; then
+        echo "slice length cannot be zero"
+        exit 252
+    fi
+
+    local length
+    length=${#1}
+
+    if [ "$2" -gt "$length" ]; then
+        echo "slice length cannot be greater than series length"
+        exit 252
+    fi
+
+    local limit
+    local limit_check
+    limit_check=$((length - $2))
+    limit=$((limit_check + 1))
+
+    for ((i = 0; i < limit; i++)); do
+        if [ "$i" == "$limit_check" ]; then
+            printf "%s" "${1:i:$2}"
+        else
+            printf "%s " "${1:i:$2}"
+        fi
+    done
+}
+
+main "$@"
