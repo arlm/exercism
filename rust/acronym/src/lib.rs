@@ -1,17 +1,26 @@
-use regex::Regex;
 use std::fmt;
 
 fn match_first_letter(input_string: &str) -> Result<String, fmt::Error> {
-    let re  = Regex::new(r"^(?P<acronym1>[[:alpha:]])|(?:[_\- &&[^']])(?P<acronym2>[[:alpha:]])|(?:[[:lower:]])(?P<acronym3>[[:upper:]])").unwrap();
+    let result = input_string.split(|c: char|  c.is_whitespace() || c == '_' || c == '-')
+        .map(|word| {
+            if word.chars().all(|c| c.is_uppercase()) {
+                return word.chars().take(1).collect::<String>();
+            } else  {
+                return word.chars()
+                        .take(1)
+                        .chain(
+                            word.chars()
+                                .skip(1)
+                                .skip_while(|c| c.is_lowercase() || c.is_ascii_punctuation() || *c == '\'')
+                                .take(1)
+                            )
+                        .collect::<String>();
+            }
+        })
+        .collect::<String>()
+        .to_uppercase();
 
-    let output_string: String =
-        re.captures_iter(input_string)
-            .map(|m| (m.name("acronym1").or(m.name("acronym2")).or(m.name("acronym3"))).unwrap())
-            .filter(|o| !o.is_empty())
-            .map(|c| c.as_str().to_uppercase())
-        .collect();
-
-    Ok(format!("{}", output_string))
+        Ok(result)
 }
 
 pub fn abbreviate(phrase: &str) -> String {
