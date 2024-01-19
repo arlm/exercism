@@ -6,13 +6,6 @@
 # s2 - address of expected output word
 # s3 - input word
 # s4 - output word
-#
-# is_leap_year must:
-# - be named is_leap_year and declared as global
-# - read input integer from a0
-# - follow the convention of using the t0-9 registers for temporary storage
-# - (if it wants to use s0-7 then it is responsible for pushing existing values to the stack then popping them back off before returning)
-# - write boolean result to v0
 
 .data
 
@@ -21,6 +14,8 @@ ins:  .word 1996, 1997, 1998, 1900, 1800, 2400, 2000  # input years
 outs: .word    1,    0,    0,    0,    0,    1,    1  # expected result
 
 failmsg: .asciiz "failed for test input: "
+expectedmsg: .asciiz ". expected "
+tobemsg: .asciiz " to be "
 okmsg: .asciiz "all tests passed"
 
 
@@ -60,6 +55,22 @@ exit_fail:
 
         move    $a0, $s3                # set arg of syscall to input that failed the test
         li      $v0, 1                  # 1 is print int
+        syscall
+
+        la      $a0, expectedmsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $v1                # print actual that failed on
+        li      $v0, 1
+        syscall
+
+        la      $a0, tobemsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $s4                # print expected value that failed on
+        li      $v0, 1
         syscall
 
         li      $a0, 1                  # set exit code to 1
