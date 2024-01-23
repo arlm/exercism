@@ -1,6 +1,9 @@
 {
-  "name": "exercism-lua",
+  "name": "exercism-delphi",
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
+  ],
   "features": {
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
       "packages": "build-essential,gdb,libgpm-dev,libncurses5-dev,libncursesw5-dev"
@@ -42,17 +45,9 @@
             "path": "zsh",
             "icon": "terminal-debian"
           },
-          "fish": {
-            "path": "fish",
-            "icon": "terminal-linux"
-          },
           "tmux": {
             "path": "tmux",
             "icon": "terminal-tmux"
-          },
-          "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell"
           }
         }
       }

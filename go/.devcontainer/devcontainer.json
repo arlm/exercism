@@ -1,6 +1,9 @@
 {
   "name": "exercism-go",
   "image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
+  ],
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,
@@ -13,7 +16,8 @@
     "ghcr.io/guiyomh/features/gomarkdoc:0": {},
     "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {}
   },
-  // "initializeCommand": "ssh-add ${localEnv:HOME}/.ssh/github_rsa",
+  "initializeCommand": "./.devcontainer/initializeCommand.sh",
+  "onCreateCommand": "./.devcontainer/postCreateCommand.sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -42,17 +46,9 @@
             "path": "zsh",
             "icon": "terminal-debian"
           },
-          "fish": {
-            "path": "fish",
-            "icon": "terminal-linux"
-          },
           "tmux": {
             "path": "tmux",
             "icon": "terminal-tmux"
-          },
-          "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell"
           }
         }
       }

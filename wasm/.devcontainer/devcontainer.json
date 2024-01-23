@@ -1,35 +1,40 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-	"name": "Node.js",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/exercism-cli:1": {},
-		"ghcr.io/devcontainers-contrib/features/prettier:1": {},
-		"ghcr.io/devcontainers-contrib/features/jest:1": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"wasm-fmt.wasm-fmt",
-				"traBpUkciP.vscode-npm-scripts"
-			]
-		}
-	}
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  "name": "exercism-wasm",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
+  ],
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/exercism-cli:1": {},
+    "ghcr.io/devcontainers-contrib/features/prettier:1": {},
+    "ghcr.io/devcontainers-contrib/features/jest:1": {}
+  },
+  "initializeCommand": "./.devcontainer/initializeCommand.sh",
+  "onCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "wasm-fmt.wasm-fmt",
+        "traBpUkciP.vscode-npm-scripts"
+      ],
+      "settings": {
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh",
+            "icon": "terminal-debian"
+          },
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          }
+        }
+      }
+    }
+  }
 }

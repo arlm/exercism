@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-# set -ex
-
 BUILD_DIR="$(dirname -- "${BASH_SOURCE[0]}")" # relative
-BUILD_DIR="$(cd -- "$BUILD_DIR" && pwd)" # absolutized and normalized
-if [[ -z "$BUILD_DIR" ]] ; then
-# error; for some reason, the path is not accessible
-# to the script (e.g. permissions re-evaled after suid)
-exit 1 # fail
+BUILD_DIR="$(cd -- "$BUILD_DIR" && pwd)"      # absolutized and normalized
+if [[ -z "$BUILD_DIR" ]]; then
+    # error; for some reason, the path is not accessible
+    # to the script (e.g. permissions re-evaled after suid)
+    exit 1 # fail
 fi
 
 # clean files for a clean build of everything

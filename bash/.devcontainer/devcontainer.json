@@ -1,6 +1,9 @@
 {
   "name": "exercism-bash",
   "image": "mcr.microsoft.com/powershell:latest",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
+  ],
   "features": {
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
       "packages": "build-essential,gdb,git,original-awk,shfmt,bats,bc,jq"
@@ -38,10 +41,6 @@
           "zsh": {
             "path": "zsh",
             "icon": "terminal-debian"
-          },
-          "fish": {
-            "path": "fish",
-            "icon": "terminal-linux"
           },
           "tmux": {
             "path": "tmux",

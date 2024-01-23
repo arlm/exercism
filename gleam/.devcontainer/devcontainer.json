@@ -2,7 +2,7 @@
   "name": "exercism-gleam",
   "image": "mcr.microsoft.com/devcontainers/base:alpine",
   "mounts": [
-    "source=${localEnv:HOME}/.config/exercism,target=${containerEnv:HOME}/.config/exercism,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
   ],
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -43,17 +43,9 @@
             "path": "zsh",
             "icon": "terminal-debian"
           },
-          "fish": {
-            "path": "fish",
-            "icon": "terminal-linux"
-          },
           "tmux": {
             "path": "tmux",
             "icon": "terminal-tmux"
-          },
-          "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell"
           }
         }
       }

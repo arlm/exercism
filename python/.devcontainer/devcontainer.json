@@ -1,30 +1,52 @@
 {
+  "name": "exercism-python",
   "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
+  ],
   "postCreateCommand": "sh ./.devcontainer/setup.sh",
   "customizations": {
-      "vscode": {
-          "settings": {
-              "python.testing.pytestEnabled": true,
-              "editor.formatOnSave": true,
-              "editor.codeActionsOnSave": {
-                  "source.organizeImports": true
-              },
-              "[python]": {
-                  "editor.defaultFormatter": "ms-python.black-formatter"
-              },
-              "editor.rulers": [
-                  80
-              ]
+    "vscode": {
+      "settings": {
+        "python.testing.pytestEnabled": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "always"
+        },
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter"
+        },
+        "editor.rulers": [
+          80
+        ],
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
           },
-          "extensions": [
-              "ms-python.python",
-              "ms-python.isort",
-              "ms-python.flake8",
-              "ms-python.black-formatter"
-          ]
-      }
+          "zsh": {
+            "path": "zsh",
+            "icon": "terminal-debian"
+          },
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          }
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.isort",
+        "ms-python.flake8",
+        "ms-python.black-formatter"
+      ]
+    }
   },
   "features": {
-      "ghcr.io/devcontainers/features/github-cli:1": {}
-  }
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "initializeCommand": "./.devcontainer/initializeCommand.sh",
+  "onCreateCommand": "./.devcontainer/postCreateCommand.sh"
 }

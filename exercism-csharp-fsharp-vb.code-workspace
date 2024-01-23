@@ -565,8 +565,28 @@
             "path": "vbnet/hello-world"
         },
         {
-            "name": "fsharp:hello-world",
-            "path": "fsharp/hello-world"
+            "name": "vbnet:hello-world",
+            "path": "vbnet/hello-world"
+        },
+        {
+            "name": "vbnet:leap",
+            "path": "vbnet/leap"
+        },
+        {
+            "name": "fsharp:lucians-luscious-lasagna",
+            "path": "fsharp/lucians-luscious-lasagna"
+        },
+        {
+            "name": "fsharp:annalyns-infiltration",
+            "path": "fsharp/annalyns-infiltration"
+        },
+        {
+            "name": "fsharp:cars-assemble",
+            "path": "fsharp/cars-assemble"
+        },
+        {
+            "name": "fsharp:leap",
+            "path": "fsharp/leap"
         },
     ],
     "settings": {
@@ -582,7 +602,16 @@
         "testExplorer.addToEditorContextMenu": true,
         "testExplorer.mergeSuites": true,
         "dotnet-test-explorer.testProjectPath": "**/*.@(csproj|vbproj|fsproj)",
-        "dotnet-test-explorer.treeMode": "merged"
+        "dotnet-test-explorer.treeMode": "merged",
+        "dotnet.defaultSolution": "disable",
+        "dotnet-test-explorer.autoWatch": true,
+        "dotnetCoreExplorer.searchpatterns": [
+            "**/*Test.@(cs|fs|vb)",
+            "**/*Tests.@(cs|fs|vb)",
+            "*Test.{cs,fs,vb}",
+            "*Tests.{cs,fs,vb}"
+        ],
+        "editor.formatOnSave": false
     },
     "extensions": {
         "recommendations": [
@@ -593,7 +622,15 @@
             "visualstudioexptteam.intellicode-api-usage-examples",
             "ms-vscode.vscode-markdown-notebook",
             "esbenp.prettier-vscode",
-            "dotjoshjohnson.xml"
+            "dotjoshjohnson.xml",
+            "ms-dotnettools.vscode-dotnet-pack",
+            "ms-dotnettools.vscode-dotnet-runtime",
+            "pbkit.vscode-pbkit",
+            "zxh404.vscode-proto3",
+            "ripwu.protobuf-helper",
+            "ms-dotnettools.csdevkit",
+            "ms-dotnettools.csharp",
+            "ms-dotnettools.vscodeintellicode-csharp"
         ]
     }
 }

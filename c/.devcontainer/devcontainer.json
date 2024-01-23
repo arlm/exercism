@@ -1,12 +1,12 @@
 {
-  "name": "exercism-lua",
+  "name": "exercism-c",
   "image": "mcr.microsoft.com/devcontainers/cpp:1-debian-11",
   "mounts": [
     "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
   ],
   "features": {
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
-      "packages": "build-essential,gdb,default-jre,nasm"
+      "packages": "build-essential,gdb,libgpm-dev,libncurses5-dev,libncursesw5-dev,default-jre,nasm"
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,

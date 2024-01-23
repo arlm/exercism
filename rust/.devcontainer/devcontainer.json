@@ -1,6 +1,9 @@
 {
   "name": "exercism-rust",
   "image": "mcr.microsoft.com/devcontainers/rust:1",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
+  ],
   "features": {
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
       "packages": ""
@@ -39,17 +42,9 @@
             "path": "zsh",
             "icon": "terminal-debian"
           },
-          "fish": {
-            "path": "fish",
-            "icon": "terminal-linux"
-          },
           "tmux": {
             "path": "tmux",
             "icon": "terminal-tmux"
-          },
-          "pwsh": {
-            "path": "pwsh",
-            "icon": "terminal-powershell"
           }
         }
       }
