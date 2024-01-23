@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-if [ ! -e "~/.ssh/github_rsa" ]
-then
-ssh-add ~/.ssh/github_rsa
+if [ ! -e "$HOME/.ssh/github_rsa" ]; then
+    ssh-add "$HOME/.ssh/github_rsa"
 fi
 
-if [ ! -e "~/.ssh/arlm-GitHub" ]
-then
-ssh-add ~/.ssh/arlm-GitHub
+if [ ! -e "$HOME/.ssh/arlm-GitHub" ]; then
+    ssh-add "$HOME/.ssh/arlm-GitHub"
 fi
