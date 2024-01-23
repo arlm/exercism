@@ -2,10 +2,10 @@
 # website: https://exercism.io/
 
 # Ignore .exercism folder which contain sensitive data
-.exercism
+**/.exercism
 
 # Ignore teamwork
-/teams
+teams/
 
 # Ignore statistics
 *.stats.out
