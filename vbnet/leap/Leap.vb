@@ -1,5 +1,5 @@
 Public Module Leap
     Public Function IsLeapYear(ByVal year As Integer) As Boolean
-        Throw New NotImplementedException("Delete this statement and write your own implementation here")
+        Return If (year Mod 100 = 0, year Mod 400 = 0, year Mod 4 = 0)
     End Function
 End Module

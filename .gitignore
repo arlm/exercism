@@ -569,3 +569,4 @@ Backup of *.doc*
 *.i*86
 *.x86_64
 *.hex
+fsharp/leap/.config
