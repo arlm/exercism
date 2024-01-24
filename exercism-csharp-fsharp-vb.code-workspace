@@ -565,10 +565,6 @@
             "path": "vbnet/hello-world"
         },
         {
-            "name": "vbnet:hello-world",
-            "path": "vbnet/hello-world"
-        },
-        {
             "name": "vbnet:leap",
             "path": "vbnet/leap"
         },
