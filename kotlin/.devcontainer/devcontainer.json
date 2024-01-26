@@ -1,0 +1,62 @@
+{
+  "name": "exercism-kotlin",
+  "image": "mcr.microsoft.com/devcontainers/java:21-bullseye",
+  "mounts": [
+    "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.p10k.zsh,target=/home/vscode/.p10k.zsh,type=bind,consistency=cached"
+  ],
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/maven-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/kotlin-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/gradle-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/grails-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/scala-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/sbt-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/groovy-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/ballerina-sdkman:2": {},
+    "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
+      "packages": "rakudo"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+    "ghcr.io/devcontainers-contrib/features/exercism-cli:1": {}
+  },
+  "initializeCommand": "./.devcontainer/initializeCommand.sh",
+  "onCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "cweijan.vscode-office",
+        "EditorConfig.EditorConfig",
+        "exercism.exercism-cli",
+        "GitHub.vscode-pull-request-github",
+        "jrieken.regex-notebook",
+        "mutantdino.resourcemonitor",
+        "npxms.hide-gitignored",
+        "wmaurer.change-case"
+      ],
+      "settings": {
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh",
+            "icon": "terminal-debian"
+          },
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          }
+        }
+      }
+    }
+  }
+}

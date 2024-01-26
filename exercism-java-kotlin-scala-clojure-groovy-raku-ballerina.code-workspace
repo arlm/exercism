@@ -130,7 +130,47 @@
         "testExplorer.addToEditorContextMenu": true,
         "testExplorer.mergeSuites": true,
         "java.debug.settings.onBuildFailureProceed": true,
-        "taskExplorer.enableSideBar": true
+        "taskExplorer.enableSideBar": true,
+        "gradle.javaDebug.cleanOutput": true,
+        "ballerina.enableRunFast": true,
+        "ballerina.experimental": true,
+        "calva.evalOnSave": true,
+        "calva.referencesCodeLens.enabled": true,
+        "kotlin.externalSources.autoConvertToKotlin": true,
+        "redhat.telemetry.enabled": true,
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.maven.downloadSources": true,
+        "java.import.gradle.offline.enabled": true,
+        "java.completion.chain.enabled": true,
+        "java.signatureHelp.description.enabled": true,
+        "java.codeGeneration.generateComments": true,
+        "java.codeGeneration.hashCodeEquals.useInstanceof": true,
+        "java.codeGeneration.useBlocks": true,
+        "java.edit.smartSemicolonDetection.enabled": false,
+        "java.referencesCodeLens.enabled": true,
+        "java.implementationsCodeLens.enabled": true,
+        "java.eclipse.downloadSources": true,
+        "java.import.generatesMetadataFilesAtProjectRoot": true,
+        "java.import.exclusions": [
+            "**/kotlin/**",
+            "**/scala/**",
+            "**/clojure/**",
+            "**/groovy/**",
+            "**/raku/**",
+            "**/ballerina/**",
+            "**/node_modules/**",
+            "**/.metadata/**",
+            "**/archetype-resources/**",
+            "**/META-INF/maven/**"
+        ],
+        "java.import.maven.offline.enabled": true,
+        "taskExplorer.enableExplorerView": false,
+        "taskExplorer.numLastTasks": 10,
+        "taskExplorer.pathToPrograms": {
+            "gradle": "gradle"
+        },
+        "ballerina.enableInlayHints": true,
+        "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable"
     },
     "extensions": {
         "recommendations": [
@@ -155,7 +195,9 @@
             "bscan.raku-navigator",
             "marlon407.code-groovy",
             "wso2.ballerina",
-            "spmeesseman.vscode-taskexplorer"
+            "spmeesseman.vscode-taskexplorer",
+            "richardwillis.vscode-gradle-extension-pack",
+            "itryapitsin.sbt"
         ]
     }
 }
