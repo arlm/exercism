@@ -44,7 +44,12 @@ cd -
 
 echo 'export PATH=$PATH:$HOME/zef/bin' >> "$HOME/.zshrc"
 
-$HOME/zef/bin/zef
+ballerina dist upgrade
+ballerina update
+
+curl -O https://download.clojure.org/install/linux-install-1.11.1.1347.sh
+chmod +x linux-install-1.11.1.1347.sh
+sudo ./linux-install-1.11.1.1347.sh
 
 set +ex
 source "$HOME/.zshrc"

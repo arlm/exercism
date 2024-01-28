@@ -89,6 +89,14 @@
             "path": "clojure/hello-world"
         },
         {
+            "name": "clojure:lucians-luscious-lasagna",
+            "path": "clojure/lucians-luscious-lasagna"
+        },
+        {
+            "name": "clojure:cars-assemble",
+            "path": "clojure/cars-assemble"
+        },
+        {
             "name": "clojure:leap",
             "path": "clojure/leap"
         },
@@ -197,7 +205,8 @@
             "wso2.ballerina",
             "spmeesseman.vscode-taskexplorer",
             "richardwillis.vscode-gradle-extension-pack",
-            "itryapitsin.sbt"
+            "itryapitsin.sbt",
+            "leocardoso94.clojure-snippets"
         ]
     }
 }
