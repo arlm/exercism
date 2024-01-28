@@ -3,8 +3,6 @@
 load bats-extra
 
 @test 'Say Hi!' {
-    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-
     run jq -r -f hello-world.jq << 'END_INPUT'
         {}
 END_INPUT

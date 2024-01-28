@@ -4,6 +4,8 @@ set -ex
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
 
+source "$HOME/.zshrc"
+
 mkdir -p "$HOME/.config/exercism"
 cp "$HOME/.exercism-config/user.json" "$HOME/.config/exercism/user.json"
 exercism configure -w /workspaces/exercism

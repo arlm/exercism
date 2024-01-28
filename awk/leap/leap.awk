@@ -1,4 +1,9 @@
 BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+    getline year < "-"
+
+    if ((year % 100 == 0) ? (year % 400 == 0) : (year % 4 == 0))
+        print "true";
+    else
+        print "false";
+    fi
 }
