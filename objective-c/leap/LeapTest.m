@@ -1,10 +1,6 @@
 #import <XCTest/XCTest.h>
 
-#if __has_include("LeapExample.h")
-# import "LeapExample.h"
-# else
-# import "Leap.h"
-#endif
+#import "Leap.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
