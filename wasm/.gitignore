@@ -122,6 +122,9 @@ dist
 .vscode-test
 
 # yarn v2
+yarn.lock
+!.yarn/releases
+!.yarnrc.yml
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
@@ -197,3 +200,5 @@ yarn-error.log
 
 # Dependency directories
 jspm_packages/
+
+*.map
