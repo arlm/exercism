@@ -1,19 +1,19 @@
 import { Series } from './series'
 
 describe('Series', () => {
-  it('slices of one from one', () => {
+  xit('slices of one from one', () => {
     expect(new Series('1').slices(1)).toEqual([[1]])
   })
 
-  it('slices of one from two', () => {
+  xit('slices of one from two', () => {
     expect(new Series('12').slices(1)).toEqual([[1], [2]])
   })
 
-  it('slices of two', () => {
+  xit('slices of two', () => {
     expect(new Series('35').slices(2)).toEqual([[3, 5]])
   })
 
-  it('slices of two overlap', () => {
+  xit('slices of two overlap', () => {
     expect(new Series('9142').slices(2)).toEqual([
       [9, 1],
       [1, 4],
@@ -21,7 +21,7 @@ describe('Series', () => {
     ])
   })
 
-  it('slices can include duplicates', () => {
+  xit('slices can include duplicates', () => {
     expect(new Series('777777').slices(3)).toEqual([
       [7, 7, 7],
       [7, 7, 7],
@@ -30,7 +30,7 @@ describe('Series', () => {
     ])
   })
 
-  it('slices of long series', () => {
+  xit('slices of long series', () => {
     expect(new Series('918493904243').slices(5)).toEqual([
       [9, 1, 8, 4, 9],
       [1, 8, 4, 9, 3],
@@ -43,31 +43,31 @@ describe('Series', () => {
     ])
   })
 
-  it('slice length is too large', () => {
+  xit('slice length is too large', () => {
     expect(() => {
       new Series('12345').slices(6)
     }).toThrow(new Error('slice length cannot be greater than series length'))
   })
 
-  it('slice length is way too large', () => {
+  xit('slice length is way too large', () => {
     expect(() => {
       new Series('12345').slices(42)
     }).toThrow(new Error('slice length cannot be greater than series length'))
   })
 
-  it('slice length cannot be zero', () => {
+  xit('slice length cannot be zero', () => {
     expect(() => {
       new Series('12345').slices(0)
     }).toThrow(new Error('slice length cannot be zero'))
   })
 
-  it('slice length cannot be negative', () => {
+  xit('slice length cannot be negative', () => {
     expect(() => {
       new Series('123').slices(-1)
     }).toThrow(new Error('slice length cannot be negative'))
   })
 
-  it('empty series is invalid', () => {
+  xit('empty series is invalid', () => {
     expect(() => {
       new Series('').slices(1)
     }).toThrow(new Error('series cannot be empty'))

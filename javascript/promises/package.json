@@ -22,7 +22,7 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "jest ./*",
+    "test": "jest ./* --forceExit --detectOpenHandles",
     "watch": "jest --watch ./*",
     "lint": "eslint ."
   }

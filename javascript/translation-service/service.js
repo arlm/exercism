@@ -110,19 +110,16 @@ export class TranslationService {
    */
   async premium(text, minimumQuality) {
     const translation = await this.fetchAndRequest(text);
-
+  
     if (translation == null) {
       return (await this.api.fetch(text)).translation;
     }
-
-    if (translation.quality >= minimumQuality) {
-      return translation.translation;
+  
+    if (translation.quality < minimumQuality) {
+      new QualityThresholdNotMet(text);
     }
-    
-    const timeout = Math.random() * 100;
-    return new Promise((_, reject) => {
-      setTimeout(() => reject(new QualityThresholdNotMet(text)), timeout);
-    });
+  
+    return translation.translation;
   }
 }
 
