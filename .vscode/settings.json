@@ -7,4 +7,5 @@
     ".gitignore": false,
   },
   "editor.formatOnSave": true,
+  "jest.enable": true,
 }
