@@ -1,6 +1,6 @@
 {
   "name": "exercism-wasm",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
   "mounts": [
     "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
   ],

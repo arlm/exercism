@@ -2,12 +2,7 @@
 
 set -ex
 
-wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg
-echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list
-apt update
-apt install dart -y
-
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 set +ex
 source "$HOME/.zshrc"
@@ -32,6 +27,14 @@ cat "$HOME/.zshrc" >> "$HOME/.zshrc-tmp"
 
 cat << EOF
 
+# pnpm
+export PNPM_HOME="/home/node/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 # To customize prompt, run $(p10k configure) or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh"
 
@@ -42,5 +45,16 @@ rm "$HOME/.zshrc-tmp"
 
 source "$HOME/.zshrc"
 set -ex
+
+nvm install stable
+nvm install lts/hydrogen
+
+npm install -g npm@latest
+npm remove yarn -g
+
+pnpm setup
+pnpm add -g pnpm
+pnpm add coffee-script -g
+pnpm add jasmine-node -g
 
 omz theme set powerlevel10k/powerlevel10k

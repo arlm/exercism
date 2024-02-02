@@ -7,8 +7,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sdk install java 11.0.22-tem
 sdk default java 21.0.2-tem
 
+set +ex
+source "$HOME/.zshrc"
+set -ex
+
 mkdir -p "$HOME/.config/exercism"
-cp "$HOME/.exercism-config/user.json" "$HOME/.config/exercism/user.json"
+cp "/home/vscode/.exercism-config/user.json" "$HOME/.config/exercism/user.json"
 exercism configure -w /workspaces/exercism
 
 curl https://rakubrew.org/install-on-perl.sh | sh
