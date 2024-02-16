@@ -3,6 +3,17 @@
 Welcome to Bob on Exercism's JavaScript Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
+## Introduction
+
+Bob is a [lackadaisical][] teenager.
+He likes to think that he's very cool.
+And he definitely doesn't get excited about things.
+That wouldn't be cool.
+
+When people talk to him, his responses are pretty limited.
+
+[lackadaisical]: https://www.collinsdictionary.com/dictionary/english/lackadaisical
+
 ## Instructions
 
 Your task is to determine what Bob will reply to someone when they say something to him or ask him a question.

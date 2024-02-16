@@ -9,7 +9,7 @@ component {
 	* @returns A boolean for whether the inputted year is true or false
 	*/
 	 function leapYear( year ) {
-		// Implement me here
+		return (year % 100 == 0) ? year % 400 == 0 : year % 4 == 0;
 	}
 	
 }

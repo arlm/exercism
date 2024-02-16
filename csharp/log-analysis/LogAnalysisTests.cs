@@ -31,7 +31,7 @@ public class LogAnalysisTests
     {
         Assert.Equal("SOMETHING", "FIND >>> SOMETHING <===< HERE".SubstringBetween(">>> ", " <===<"));
     }
-
+    
     [Fact]
     [Task(3)]
     public void Message()

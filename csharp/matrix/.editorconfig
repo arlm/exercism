@@ -139,6 +139,3 @@ csharp_space_between_method_call_empty_parameter_list_parentheses = false
 # Wrapping preferences
 csharp_preserve_single_line_blocks = true
 csharp_preserve_single_line_statements = true
-
-# csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental
-dotnet_diagnostic.IDE0063.severity = none

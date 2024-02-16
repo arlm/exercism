@@ -5,7 +5,7 @@ using Xunit;
 
 public class SimpleLinkedListTests
 {
-    [Fact]
+    [Fact] 
     public void Empty_list_has_no_elements()
     {
         var list = new SimpleLinkedList<int>();
@@ -48,7 +48,7 @@ public class SimpleLinkedListTests
         list.Push(3);
         list.Push(5);
         Assert.Equal(5, list.Pop());
-        list.Push(7);
+        list.Push(7);        
         Assert.Equal(7, list.Pop());
         Assert.Equal(3, list.Pop());
     }
@@ -56,16 +56,16 @@ public class SimpleLinkedListTests
     private static SimpleLinkedList<int> CreateSimpleLinkedList(int value)
     {
         var type = typeof(SimpleLinkedList<>).MakeGenericType(typeof(int));
-        var constructor = type.GetConstructor(new Type[] { typeof(int) });
-        return (SimpleLinkedList<int>)constructor?.Invoke(new object[] { value })
-            ?? CreateSimpleLinkedList(new int[] { value });
+		var constructor = type.GetConstructor(new Type[] { typeof(int) });
+		return (SimpleLinkedList<int>)constructor?.Invoke(new object[]{ value })
+			?? CreateSimpleLinkedList(new int[] { value });
     }
-
+	
     private static SimpleLinkedList<int> CreateSimpleLinkedList(params int[] values)
     {
         var type = typeof(SimpleLinkedList<>).MakeGenericType(typeof(int));
-        var constructor = type.GetConstructor(new Type[] { typeof(int[]) });
-        return (SimpleLinkedList<int>)constructor.Invoke(new object[] { values });
+		var constructor = type.GetConstructor(new Type[]{typeof(int[])});	
+		return (SimpleLinkedList<int>)constructor.Invoke(new object[]{ values });
     }
 
     [Fact]
@@ -101,7 +101,7 @@ public class SimpleLinkedListTests
     {
         var values = Enumerable.Range(1, 5).ToArray();
         var list = CreateSimpleLinkedList(values);
-        var enumerable = Assert.IsAssignableFrom<IEnumerable<int>>(list);
+        var enumerable = Assert.IsAssignableFrom<IEnumerable<int>>(list);    
         var reversed = enumerable.Reverse();
         Assert.Equal(values, reversed);
     }
@@ -111,7 +111,7 @@ public class SimpleLinkedListTests
     {
         var values = Enumerable.Range(1, 7);
         var list = CreateSimpleLinkedList(values.ToArray());
-        var enumerable = Assert.IsAssignableFrom<IEnumerable<int>>(list);
+        var enumerable = Assert.IsAssignableFrom<IEnumerable<int>>(list);    
         Assert.Equal(values.Reverse(), enumerable);
     }
 }

@@ -1,3 +1,3 @@
 public function isLeapYear(int year) returns boolean {
-    // TODO: implement this function
+    return year % 100 == 0 ? year % 400 == 0 : year % 4 == 0;
 }

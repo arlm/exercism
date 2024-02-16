@@ -45,7 +45,7 @@ do
 {
     // Execute logic if x > 10
     x = x - 2;
-} while (x > 10)
+} while (x > 10);
 ```
 
 ## Instructions

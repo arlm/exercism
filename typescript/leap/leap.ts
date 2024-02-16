@@ -1,6 +1,5 @@
 export function isLeap(year: number): boolean {
-  return year.isDivisibleBy(400) 
-        || (!year.isDivisibleBy(100) && year.isDivisibleBy(4));
+  return year.isDivisibleBy(100) ? year.isDivisibleBy(400) : year.isDivisibleBy(4);
 }
 
 declare global {

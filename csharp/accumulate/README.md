@@ -55,4 +55,4 @@ This exercise requires you to write an extension method. For more information, s
 
 ### Based on
 
-Conversation with James Edward Gray II - https://twitter.com/jeg2
+Conversation with James Edward Gray II - http://graysoftinc.com/

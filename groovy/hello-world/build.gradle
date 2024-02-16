@@ -16,9 +16,3 @@ test {
         events = ["passed", "failed", "skipped"]
     }
 }
-
-java {
-  toolchain {
-    languageVersion.set(JavaLanguageVersion.of(11))
-  }
-}

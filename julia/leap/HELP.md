@@ -28,3 +28,7 @@ If you'd like help solving the exercise, check the following pages:
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
+
+To get help if you're having trouble, we recommend that you submit your code and request mentoring :)
+
+If you don't want to do that for whatever reason, then you can find the wider Julia community channels [here](https://julialang.org/community/).

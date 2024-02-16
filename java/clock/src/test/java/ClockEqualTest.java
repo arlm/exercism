@@ -1,8 +1,9 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClockEqualTest {
+
     @Test
     public void clocksWithSameTimeAreEqual() {
         assertThat(new Clock(15, 37))

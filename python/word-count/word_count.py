@@ -12,6 +12,4 @@ def count_words(sentence):
     """
 
     words = re.split(r"[!-&(-/:-@{-~[-`]|^'+|'+$|\s'+|'+\s|\s", sentence.lower())
-    return dict(
-        (word, words.count(word)) for word in set(words) if len(word.strip()) > 0
-    )
+    return  dict((word, words.count(word)) for word in set(words) if len(word.strip()) > 0)

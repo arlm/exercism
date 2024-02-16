@@ -42,7 +42,7 @@ More information on the color encoding of resistors can be found in the [Electro
 
 ## Reserved Memory
 
-The buffer for the input string uses bytes 64-189 of linear memory.
+The buffer for the input string uses bytes 64-191 of linear memory.
 
 ## Arrays
 

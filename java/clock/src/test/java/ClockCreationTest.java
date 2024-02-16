@@ -1,8 +1,9 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClockCreationTest {
+
     @Test
     public void canPrintTimeOnTheHour() {
         assertThat(new Clock(8, 0).toString()).isEqualTo("08:00");

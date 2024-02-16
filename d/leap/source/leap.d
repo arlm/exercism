@@ -1,5 +1,10 @@
 module leap;
 
+bool isLeap(int year)
+{
+    return year % 100 == 0 ? year % 400 == 0 : year % 4 == 0;
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;

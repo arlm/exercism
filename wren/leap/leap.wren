@@ -1,5 +1,5 @@
 class Year {
   static isLeap(n) {
-    Fiber.abort("Remove this statement and implement this function")
+    return n % 100 == 0 ? n % 400 == 0 : n % 4 == 0
   }
 }

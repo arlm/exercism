@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+function main() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: $0 <year>"
+        exit 255
+    fi
+
+    if [[ "$1" =~ [A-Za-z] || "$1" =~ ^[+-]?[0-9]+\.[0-9]*$ ]]; then
+        echo "Usage: $0 <year>"
+        exit 255
+    fi
+
+    year=$1
+
+    if ((year % 100 == 0 ? year % 400 == 0 : year % 4 == 0)); then
+        echo "true"
+        return
+    else
+        echo "false"
+        return
+    fi
+}
+
+main "$@"

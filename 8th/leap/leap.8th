@@ -1,3 +1,16 @@
-: leap-year? \
+with: n
 
+: div? SED: n1 n2 -- boolean
+  mod
+  0 =
+;
+
+: leap-year? SED: n --  boolean
+  dup
+  100 div?
+  if
+    400 div?
+  else
+    4 div?
+  then
 ;

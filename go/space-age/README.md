@@ -29,12 +29,6 @@ See [Year on Wikipedia][year] for more ways to measure a year.
 [pluto-video]: https://www.youtube.com/watch?v=Z_2gbGXzFbs
 [year]: https://en.wikipedia.org/wiki/Year#Summary
 
-## Planet Type
-
-The test cases make use of a custom `Planet` type that is sent to your function.
-You will need to implement this custom type yourself.
-Implementing this new custom type as a string should suffice.
-
 ## Source
 
 ### Created by

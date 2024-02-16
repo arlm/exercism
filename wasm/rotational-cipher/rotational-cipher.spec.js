@@ -20,12 +20,18 @@ function rotate(text, shiftKey) {
 
   const inputLengthEncoded = new TextEncoder().encode(text).length;
   if (inputLengthEncoded > inputBufferCapacity) {
-    throw new Error(`String is too large for buffer of size ${inputBufferCapacity} bytes`);
+    throw new Error(
+      `String is too large for buffer of size ${inputBufferCapacity} bytes`
+    );
   }
 
   currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, text);
 
-  const [outputOffset, outputLength] = currentInstance.exports.rotate(inputBufferOffset, text.length, shiftKey);
+  const [outputOffset, outputLength] = currentInstance.exports.rotate(
+    inputBufferOffset,
+    text.length,
+    shiftKey
+  );
   expect(outputLength).toEqual(text.length);
 
   return currentInstance.get_mem_as_utf8(outputOffset, outputLength);

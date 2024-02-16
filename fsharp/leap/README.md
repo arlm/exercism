@@ -7,25 +7,28 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 A leap year (in the Gregorian calendar) occurs:
 
-- In every year that is evenly divisible by 4
+- In every year that is evenly divisible by 4.
 - Unless the year is evenly divisible by 100, in which case it's only a leap year if the year is also evenly divisible by 400.
 
 Some examples:
 
 - 1997 was not a leap year as it's not divisible by 4.
-- 1900 was not a leap year as it's not divisible by 400
+- 1900 was not a leap year as it's not divisible by 400.
 - 2000 was a leap year!
 
 ~~~~exercism/note
-For a delightful, four minute explanation of the whole phenomenon of leap years, check out [this youtube video](https://www.youtube.com/watch?v=xX96xng7sAE).
+For a delightful, four-minute explanation of the whole phenomenon of leap years, check out [this YouTube video](https://www.youtube.com/watch?v=xX96xng7sAE).
 ~~~~
 
 ## Instructions
 
 Your task is to determine whether a given year is a leap year.
 
-The DateTime class in F# provides a built-in [IsLeapYear](https://msdn.microsoft.com/en-us/library/system.datetime.isleapyear(v=vs.110).aspx?cs-save-lang=1&cs-lang=fsharp) method
+The [DateTime class][datetime] provides a built-in [IsLeapYear][datetime.isleapyear] method
 which you should pretend doesn't exist for the purposes of implementing this exercise.
+
+[datetime]: https://learn.microsoft.com/en-us/dotnet/api/system.datetime
+[datetime.isleapyear]: https://learn.microsoft.com/en-us/dotnet/api/system.datetime.isleapyear
 
 ## Source
 

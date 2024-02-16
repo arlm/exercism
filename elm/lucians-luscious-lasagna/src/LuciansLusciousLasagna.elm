@@ -1,5 +1,12 @@
 module LuciansLusciousLasagna exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
 
--- TODO: define the expectedMinutesInOven constant
--- TODO: define the preparationTimeInMinutes function
--- TODO: define the elapsedTimeInMinutes function
+expectedMinutesInOven = 40
+minutesPerLayer = 2
+
+preparationTimeInMinutes : Int -> Int
+preparationTimeInMinutes layers =
+    layers * minutesPerLayer
+
+elapsedTimeInMinutes : Int -> Int -> Int
+elapsedTimeInMinutes layers timeInOven =
+    timeInOven + preparationTimeInMinutes(layers)

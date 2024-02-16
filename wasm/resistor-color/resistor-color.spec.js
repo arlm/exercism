@@ -20,12 +20,17 @@ function colorCode(input = "") {
 
   const inputLengthEncoded = new TextEncoder().encode(input).length;
   if (inputLengthEncoded > inputBufferCapacity) {
-    throw new Error(`String is too large for buffer of size ${inputBufferCapacity} bytes`);
+    throw new Error(
+      `String is too large for buffer of size ${inputBufferCapacity} bytes`
+    );
   }
 
   currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, input);
 
-  return currentInstance.exports.colorCode(inputBufferOffset, inputLengthEncoded);
+  return currentInstance.exports.colorCode(
+    inputBufferOffset,
+    inputLengthEncoded
+  );
 }
 
 describe("ResistorColor", () => {
@@ -63,6 +68,17 @@ describe("ResistorColor", () => {
     const commaDelimited = currentInstance.get_mem_as_utf8(offset, length);
     const colors = commaDelimited.split(",");
 
-    expect(colors).toEqual(["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]);
+    expect(colors).toEqual([
+      "black",
+      "brown",
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "violet",
+      "grey",
+      "white",
+    ]);
   });
 });

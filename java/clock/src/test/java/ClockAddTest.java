@@ -1,8 +1,9 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClockAddTest {
+
     @Test
     public void addMinutes() {
         Clock clock = new Clock(10, 0);

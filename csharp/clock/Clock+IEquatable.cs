@@ -36,7 +36,7 @@ public partial class Clock :
     /// <summary>
     /// Compares the value of two different clocks.
     /// </summary>
-    public bool Equals(long other) => Convert.ToInt64(ToMinutes()) == other;
+    public bool Equals(long other) => Convert.ToInt64(ToMinutes() == other;
 
     /// <summary>
     /// Compares the value of two different clocks.

@@ -29,10 +29,12 @@ See [Year on Wikipedia][year] for more ways to measure a year.
 [pluto-video]: https://www.youtube.com/watch?v=Z_2gbGXzFbs
 [year]: https://en.wikipedia.org/wiki/Year#Summary
 
+## Topics
+
 Some Rust topics you may want to read about while solving this problem:
 
-- Traits, both the From trait and implementing your own traits
-- Default method implementations for traits
+- Traits, both the From trait and [implementing your own traits](https://doc.rust-lang.org/book/ch10-02-traits.html)
+- [Default method implementations](https://doc.rust-lang.org/book/ch10-02-traits.html#default-implementations) for traits
 - Macros, the use of a macro could reduce boilerplate and increase readability
   for this exercise. For instance,
   [a macro can implement a trait for multiple types at once](https://stackoverflow.com/questions/39150216/implementing-a-trait-for-multiple-types-at-once),

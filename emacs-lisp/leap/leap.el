@@ -3,7 +3,10 @@
 ;;; Commentary:
 
 (defun leap-year-p (year)
-;;; Code:
+  (if (zerop (mod year 100))
+    (zerop (mod year 400))
+    (zerop (mod year 4))
+    )
 )
 
 (provide 'leap-year-p)

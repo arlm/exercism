@@ -37,7 +37,7 @@ public class HangmanTests : ReactiveTest
     public void Initial_state_has_no_guessed_chars()
     {
         var hangman = new Hangman("foo");
-        var actual = new HashSet<char> { 'x' }.ToImmutableHashSet();
+        var actual = new HashSet<char> {'x'}.ToImmutableHashSet();
 
         // +a->
         hangman.StateObservable.Subscribe(x => actual = x.GuessedChars);

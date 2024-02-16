@@ -46,28 +46,27 @@ public class RobotNameTests
         const int robotsCount = 10_000;
         var robots = new List<Robot>(robotsCount); // Needed to keep a reference to the robots as IDs of recycled robots may be re-issued
         var names = new HashSet<string>(robotsCount);
-        for (int i = 0; i < robotsCount; i++)
-        {
+        for (int i = 0; i < robotsCount; i++) {
             var robot = new Robot();
             robots.Add(robot);
             Assert.True(names.Add(robot.Name));
             Assert.Matches(@"^[A-Z]{2}\d{3}$", robot.Name);
         }
     }
-
+    
     [Fact]
     public void Robot_names_should_generate_edge_case_a()
     {
         const int robotsCount = 10_000;
-        var robots = Enumerable.Range(0, robotsCount).Select(x => new Robot());
+        var robots = Enumerable.Range(0,robotsCount).Select( x => new Robot());
         Assert.Contains(robots, robot => robot.Name.Contains('A'));
     }
-
+    
     [Fact]
     public void Robot_names_should_generate_edge_case_z()
     {
         const int robotsCount = 10_000;
-        var robots = Enumerable.Range(0, robotsCount).Select(x => new Robot());
+        var robots = Enumerable.Range(0,robotsCount).Select( x => new Robot());
         Assert.Contains(robots, robot => robot.Name.Contains('Z'));
     }
 }

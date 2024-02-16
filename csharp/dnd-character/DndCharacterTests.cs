@@ -145,33 +145,25 @@ public class DndCharacterTests
     {
         var expectedDistribution = new Dictionary<int, int>
         {
-            [3] = 1,
-            [4] = 4,
-            [5] = 10,
-            [6] = 21,
-            [7] = 38,
-            [8] = 62,
-            [9] = 91,
-            [10] = 122,
-            [11] = 148,
-            [12] = 167,
-            [13] = 172,
-            [14] = 160,
-            [15] = 131,
-            [16] = 94,
-            [17] = 54,
-            [18] = 21
+            [3] = 1,        [4] = 4,
+            [5] = 10,       [6] = 21,
+            [7] = 38,       [8] = 62,
+            [9] = 91,       [10] = 122,
+            [11] = 148,     [12] = 167,
+            [13] = 172,     [14] = 160,
+            [15] = 131,     [16] = 94,
+            [17] = 54,      [18] = 21
         };
-
+     
         var actualDistribution = new Dictionary<int, int>(expectedDistribution);
         foreach (var key in actualDistribution.Keys)
-            actualDistribution[key] = 0;
-
+            actualDistribution[key] = 0;        
+     
         const int times = 250;
-        const int possibleCombinationsCount = 6 * 6 * 6 * 6; // 4d6
+        const int possibleCombinationsCount = 6*6*6*6; // 4d6
         for (var i = 0; i < times * possibleCombinationsCount; i++)
             actualDistribution[DndCharacter.Ability()]++;
-
+     
         const double minTimes = times * 0.8;
         const double maxTimes = times * 1.2;
         foreach (var k in expectedDistribution.Keys)

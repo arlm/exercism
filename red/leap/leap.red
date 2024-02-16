@@ -6,6 +6,6 @@ Red [
 leap: function [
 	year
 ] [
-	cause-error 'user 'message ["You need to implement this function."]
+	either year % 100 == 0 [year % 400 == 0] [year % 4 == 0]
 ]
 

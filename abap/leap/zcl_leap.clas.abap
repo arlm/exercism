@@ -10,7 +10,11 @@ ENDCLASS.
 CLASS zcl_leap IMPLEMENTATION.
 
   METHOD leap.
-* add solution here
+    IF year MOD 100 EQ 0.
+      result = boolc( year MOD 400 = 0 ).
+    ELSE.
+      result = boolc( year MOD 4 = 0 ).
+    ENDIF.
   ENDMETHOD.
 
 ENDCLASS.

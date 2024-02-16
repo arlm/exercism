@@ -10,6 +10,7 @@ TEST_CASE( "ghost gets eaten", "[task_1]") {
   REQUIRE( can_eat_ghost(true, true));
 }
 
+
 TEST_CASE( "ghost does not get eaten because no power pellet active", "[task_1]") {
   REQUIRE_FALSE( can_eat_ghost(false, true));
 }
@@ -21,7 +22,7 @@ TEST_CASE( "ghost does not get eaten because not touching ghost", "[task_1]") {
 TEST_CASE( "ghost does not get eaten because no power pellet is active, even if not touching ghost", "[task_1]") {
   REQUIRE_FALSE( can_eat_ghost(false, false));
 }
-
+    
 TEST_CASE("score when eating dot", "[task_2]") {
   REQUIRE( scored(false, true));
 }
@@ -33,7 +34,7 @@ TEST_CASE("score when eating power pellet", "[task_2]") {
 TEST_CASE("no score when nothing eaten", "[task_2]") {
   REQUIRE_FALSE( scored(false, false));
 }
-
+    
 TEST_CASE("lose if touching a ghost without a power pellet active", "[task_3]") {
   REQUIRE( lost(false, true));
 }
@@ -57,3 +58,4 @@ TEST_CASE( "don't win if all dots eaten, but touching a ghost", "[task_4]") {
 TEST_CASE( "win if all dots eaten and touching a ghost with a power pellet active", "[task_4]") {
       REQUIRE( won(true, true, true));
 }
+

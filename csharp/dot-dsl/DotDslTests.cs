@@ -82,20 +82,20 @@ public class DotDslTests
             { "bar", "true" }
         };
 
-        Node[] nodes = new[] { new Node("a") { { "color", "green" } }, new Node("b") { { "label", "Beta!" } }, new Node("c") };
-        Edge[] edges = new[] { new Edge("a", "b") { { "color", "blue" } }, new Edge("b", "c") };
-        Attr[] attrs = new[] { new Attr("bar", "true"), new Attr("foo", "1"), new Attr("title", "Testing Attrs") };
-        Assert.Equal(nodes, g.Nodes, EnumerableEqualityComparer<Node>.Instance);
-        Assert.Equal(edges, g.Edges, EnumerableEqualityComparer<Edge>.Instance);
-        Assert.Equal(attrs, g.Attrs, EnumerableEqualityComparer<Attr>.Instance);
+        Assert.Equal(new[] { new Node("a") { { "color", "green" } }, new Node("b") { { "label", "Beta!" } }, new Node("c") }, g.Nodes, EnumerableEqualityComparer<Node>.Instance);
+        Assert.Equal(new[] { new Edge("a", "b") { { "color", "blue" } }, new Edge("b", "c") }, g.Edges, EnumerableEqualityComparer<Edge>.Instance);
+        Assert.Equal(new[] { new Attr("bar", "true"), new Attr("foo", "1"), new Attr("title", "Testing Attrs") }, g.Attrs, EnumerableEqualityComparer<Attr>.Instance);
     }
 
     private class EnumerableEqualityComparer<T> : IEqualityComparer<IEnumerable<T>>
     {
-        public static readonly EnumerableEqualityComparer<T> Instance = new();
+        public static readonly EnumerableEqualityComparer<T> Instance = new EnumerableEqualityComparer<T>();
 
         public bool Equals(IEnumerable<T> x, IEnumerable<T> y) => new HashSet<T>(x).SetEquals(y);
 
-        public int GetHashCode(IEnumerable<T> obj) => obj.GetHashCode();
+        public int GetHashCode(IEnumerable<T> obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

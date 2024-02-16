@@ -8,7 +8,7 @@ public class GoCountingTests
     public void Black_corner_territory_on_5x5_board()
     {
         var coordinate = (0, 1);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -25,7 +25,7 @@ public class GoCountingTests
     public void White_center_territory_on_5x5_board()
     {
         var coordinate = (2, 3);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -42,7 +42,7 @@ public class GoCountingTests
     public void Open_corner_territory_on_5x5_board()
     {
         var coordinate = (1, 4);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -59,7 +59,7 @@ public class GoCountingTests
     public void A_stone_and_not_a_territory_on_5x5_board()
     {
         var coordinate = (1, 1);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -76,7 +76,7 @@ public class GoCountingTests
     public void Invalid_because_x_is_too_low_for_5x5_board()
     {
         var coordinate = (-1, 1);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -90,7 +90,7 @@ public class GoCountingTests
     public void Invalid_because_x_is_too_high_for_5x5_board()
     {
         var coordinate = (5, 1);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -104,7 +104,7 @@ public class GoCountingTests
     public void Invalid_because_y_is_too_low_for_5x5_board()
     {
         var coordinate = (1, -1);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -118,7 +118,7 @@ public class GoCountingTests
     public void Invalid_because_y_is_too_high_for_5x5_board()
     {
         var coordinate = (1, 5);
-        var board =
+        var board = 
             "  B  \n" +
             " B B \n" +
             "B W B\n" +
@@ -149,7 +149,7 @@ public class GoCountingTests
     [Fact]
     public void Two_territory_rectangular_board()
     {
-        var board =
+        var board = 
             " BW \n" +
             " BW ";
         var sut = new GoCounting(board);

@@ -1,5 +1,9 @@
 (import (rnrs))
 
 (define (leap-year? year)
-  'implement-me!)
+    (if (zero? (modulo year 100))
+    (zero? (modulo year 400))
+    (zero? (modulo year 4))
+    )
+  )
 
