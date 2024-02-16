@@ -5,14 +5,17 @@
             "path": "."
         },
         {
-            "path": "delphi/hello-world"
-        },
-        {
             "path": "delphi/DUnitX"
         },
         {
             "path": "../../usr/lib/x86_64-linux-gnu/fpc/3.2.0"
-        }
+        },
+        {
+            "path": "delphi/hello-world"
+        },
+        {
+            "path": "delphi/leap"
+        },
     ],
     "settings": {
         "files.exclude": {

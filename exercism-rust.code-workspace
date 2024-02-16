@@ -21,6 +21,9 @@
         },
         {
             "path": "rust/space-age"
+        },
+        {
+            "path": "rust/leap"
         }
     ],
     "settings": {

@@ -4,15 +4,935 @@
             "name": "Exercism",
             "path": "."
         },
+        {
+            "name": "coffeescript:hello-world",
+            "path": "coffeescript/hello-world"
+        },
+        {
+            "name": "coffeescript:leap",
+            "path": "coffeescript/leap"
+        },
+        {
+            "name": "javascript:hello-world",
+            "path": "javascript/hello-world"
+        },
+        {
+            "name": "javascript:accumulate",
+            "path": "javascript/accumulate"
+        },
+        {
+            "name": "javascript:acronym",
+            "path": "javascript/acronym"
+        },
+        {
+            "name": "javascript:affine-cipher",
+            "path": "javascript/affine-cipher"
+        },
+        {
+            "name": "javascript:allergies",
+            "path": "javascript/allergies"
+        },
+        {
+            "name": "javascript:all-your-base",
+            "path": "javascript/all-your-base"
+        },
+        {
+            "name": "javascript:alphametics",
+            "path": "javascript/alphametics"
+        },
+        {
+            "name": "javascript:amusement-park",
+            "path": "javascript/amusement-park"
+        },
+        {
+            "name": "javascript:anagram",
+            "path": "javascript/anagram"
+        },
+        {
+            "name": "javascript:annalyns-infiltration",
+            "path": "javascript/annalyns-infiltration"
+        },
+        {
+            "name": "javascript:armstrong-numbers",
+            "path": "javascript/armstrong-numbers"
+        },
+        {
+            "name": "javascript:atbash-cipher",
+            "path": "javascript/atbash-cipher"
+        },
+        {
+            "name": "javascript:bank-account",
+            "path": "javascript/bank-account"
+        },
+        {
+            "name": "javascript:beer-song",
+            "path": "javascript/beer-song"
+        },
+        {
+            "name": "javascript:binary-search",
+            "path": "javascript/binary-search"
+        },
+        {
+            "name": "javascript:binary-search-tree",
+            "path": "javascript/binary-search-tree"
+        },
+        {
+            "name": "javascript:bird-watcher",
+            "path": "javascript/bird-watcher"
+        },
+        {
+            "name": "javascript:bob",
+            "path": "javascript/bob"
+        },
+        {
+            "name": "javascript:bowling",
+            "path": "javascript/bowling"
+        },
+        {
+            "name": "javascript:change",
+            "path": "javascript/change"
+        },
+        {
+            "name": "javascript:circular-buffer",
+            "path": "javascript/circular-buffer"
+        },
+        {
+            "name": "javascript:clock",
+            "path": "javascript/clock"
+        },
+        {
+            "name": "javascript:collatz-conjecture",
+            "path": "javascript/collatz-conjecture"
+        },
+        {
+            "name": "javascript:complex-numbers",
+            "path": "javascript/complex-numbers"
+        },
+        {
+            "name": "javascript:connect",
+            "path": "javascript/connect"
+        },
+        {
+            "name": "javascript:coordinate-transformation",
+            "path": "javascript/coordinate-transformation"
+        },
+        {
+            "name": "javascript:crypto-square",
+            "path": "javascript/crypto-square"
+        },
+        {
+            "name": "javascript:custom-set",
+            "path": "javascript/custom-set"
+        },
+        {
+            "name": "javascript:darts",
+            "path": "javascript/darts"
+        },
+        {
+            "name": "javascript:diamond",
+            "path": "javascript/diamond"
+        },
+        {
+            "name": "javascript:difference-of-squares",
+            "path": "javascript/difference-of-squares"
+        },
+        {
+            "name": "javascript:diffie-hellman",
+            "path": "javascript/diffie-hellman"
+        },
+        {
+            "name": "javascript:dnd-character",
+            "path": "javascript/dnd-character"
+        },
+        {
+            "name": "javascript:dominoes",
+            "path": "javascript/dominoes"
+        },
+        {
+            "name": "javascript:elyses-analytic-enchantments",
+            "path": "javascript/elyses-analytic-enchantments"
+        },
+        {
+            "name": "javascript:elyses-destructured-enchantments",
+            "path": "javascript/elyses-destructured-enchantments"
+        },
+        {
+            "name": "javascript:elyses-enchantments",
+            "path": "javascript/elyses-enchantments"
+        },
+        {
+            "name": "javascript:elyses-looping-enchantments",
+            "path": "javascript/elyses-looping-enchantments"
+        },
+        {
+            "name": "javascript:etl",
+            "path": "javascript/etl"
+        },
+        {
+            "name": "javascript:factory-sensors",
+            "path": "javascript/factory-sensors"
+        },
+        {
+            "name": "javascript:flatten-array",
+            "path": "javascript/flatten-array"
+        },
+        {
+            "name": "javascript:food-chain",
+            "path": "javascript/food-chain"
+        },
+        {
+            "name": "javascript:forth",
+            "path": "javascript/forth"
+        },
+        {
+            "name": "javascript:freelancer-rates",
+            "path": "javascript/freelancer-rates"
+        },
+        {
+            "name": "javascript:fruit-picker",
+            "path": "javascript/fruit-picker"
+        },
+        {
+            "name": "javascript:gigasecond",
+            "path": "javascript/gigasecond"
+        },
+        {
+            "name": "javascript:grade-school",
+            "path": "javascript/grade-school"
+        },
+        {
+            "name": "javascript:grains",
+            "path": "javascript/grains"
+        },
+        {
+            "name": "javascript:grep",
+            "path": "javascript/grep"
+        },
+        {
+            "name": "javascript:hamming",
+            "path": "javascript/hamming"
+        },
+        {
+            "name": "javascript:high-score-board",
+            "path": "javascript/high-score-board"
+        },
+        {
+            "name": "javascript:high-scores",
+            "path": "javascript/high-scores"
+        },
+        {
+            "name": "javascript:house",
+            "path": "javascript/house"
+        },
+        {
+            "name": "javascript:isbn-verifier",
+            "path": "javascript/isbn-verifier"
+        },
+        {
+            "name": "javascript:isogram",
+            "path": "javascript/isogram"
+        },
+        {
+            "name": "javascript:kindergarten-garden",
+            "path": "javascript/kindergarten-garden"
+        },
+        {
+            "name": "javascript:largest-series-product",
+            "path": "javascript/largest-series-product"
+        },
+        {
+            "name": "javascript:lasagna",
+            "path": "javascript/lasagna"
+        },
+        {
+            "name": "javascript:lasagna-master",
+            "path": "javascript/lasagna-master"
+        },
+        {
+            "name": "javascript:leap",
+            "path": "javascript/leap"
+        },
+        {
+            "name": "javascript:linked-list",
+            "path": "javascript/linked-list"
+        },
+        {
+            "name": "javascript:list-ops",
+            "path": "javascript/list-ops"
+        },
+        {
+            "name": "javascript:lucky-numbers",
+            "path": "javascript/lucky-numbers"
+        },
+        {
+            "name": "javascript:luhn",
+            "path": "javascript/luhn"
+        },
+        {
+            "name": "javascript:matching-brackets",
+            "path": "javascript/matching-brackets"
+        },
+        {
+            "name": "javascript:matrix",
+            "path": "javascript/matrix"
+        },
+        {
+            "name": "javascript:meetup",
+            "path": "javascript/meetup"
+        },
+        {
+            "name": "javascript:minesweeper",
+            "path": "javascript/minesweeper"
+        },
+        {
+            "name": "javascript:mixed-juices",
+            "path": "javascript/mixed-juices"
+        },
+        {
+            "name": "javascript:nth-prime",
+            "path": "javascript/nth-prime"
+        },
+        {
+            "name": "javascript:nucleotide-count",
+            "path": "javascript/nucleotide-count"
+        },
+        {
+            "name": "javascript:ocr-numbers",
+            "path": "javascript/ocr-numbers"
+        },
+        {
+            "name": "javascript:ozans-playlist",
+            "path": "javascript/ozans-playlist"
+        },
+        {
+            "name": "javascript:palindrome-products",
+            "path": "javascript/palindrome-products"
+        },
+        {
+            "name": "javascript:pangram",
+            "path": "javascript/pangram"
+        },
+        {
+            "name": "javascript:pascals-triangle",
+            "path": "javascript/pascals-triangle"
+        },
+        {
+            "name": "javascript:perfect-numbers",
+            "path": "javascript/perfect-numbers"
+        },
+        {
+            "name": "javascript:phone-number",
+            "path": "javascript/phone-number"
+        },
+        {
+            "name": "javascript:pig-latin",
+            "path": "javascript/pig-latin"
+        },
+        {
+            "name": "javascript:poetry-club-door-policy",
+            "path": "javascript/poetry-club-door-policy"
+        },
+        {
+            "name": "javascript:prime-factors",
+            "path": "javascript/prime-factors"
+        },
+        {
+            "name": "javascript:promises",
+            "path": "javascript/promises"
+        },
+        {
+            "name": "javascript:protein-translation",
+            "path": "javascript/protein-translation"
+        },
+        {
+            "name": "javascript:proverb",
+            "path": "javascript/proverb"
+        },
+        {
+            "name": "javascript:pythagorean-triplet",
+            "path": "javascript/pythagorean-triplet"
+        },
+        {
+            "name": "javascript:queen-attack",
+            "path": "javascript/queen-attack"
+        },
+        {
+            "name": "javascript:raindrops",
+            "path": "javascript/raindrops"
+        },
+        {
+            "name": "javascript:rational-numbers",
+            "path": "javascript/rational-numbers"
+        },
+        {
+            "name": "javascript:react",
+            "path": "javascript/react"
+        },
+        {
+            "name": "javascript:rectangles",
+            "path": "javascript/rectangles"
+        },
+        {
+            "name": "javascript:resistor-color",
+            "path": "javascript/resistor-color"
+        },
+        {
+            "name": "javascript:resistor-color-duo",
+            "path": "javascript/resistor-color-duo"
+        },
+        {
+            "name": "javascript:resistor-color-trio",
+            "path": "javascript/resistor-color-trio"
+        },
+        {
+            "name": "javascript:reverse-string",
+            "path": "javascript/reverse-string"
+        },
+        {
+            "name": "javascript:rna-transcription",
+            "path": "javascript/rna-transcription"
+        },
+        {
+            "name": "javascript:robot-name",
+            "path": "javascript/robot-name"
+        },
+        {
+            "name": "javascript:robot-simulator",
+            "path": "javascript/robot-simulator"
+        },
+        {
+            "name": "javascript:roman-numerals",
+            "path": "javascript/roman-numerals"
+        },
+        {
+            "name": "javascript:rotational-cipher",
+            "path": "javascript/rotational-cipher"
+        },
+        {
+            "name": "javascript:run-length-encoding",
+            "path": "javascript/run-length-encoding"
+        },
+        {
+            "name": "javascript:saddle-points",
+            "path": "javascript/saddle-points"
+        },
+        {
+            "name": "javascript:say",
+            "path": "javascript/say"
+        },
+        {
+            "name": "javascript:scale-generator",
+            "path": "javascript/scale-generator"
+        },
+        {
+            "name": "javascript:scrabble-score",
+            "path": "javascript/scrabble-score"
+        },
+        {
+            "name": "javascript:secret-handshake",
+            "path": "javascript/secret-handshake"
+        },
+        {
+            "name": "javascript:series",
+            "path": "javascript/series"
+        },
+        {
+            "name": "javascript:sieve",
+            "path": "javascript/sieve"
+        },
+        {
+            "name": "javascript:simple-cipher",
+            "path": "javascript/simple-cipher"
+        },
+        {
+            "name": "javascript:simple-linked-list",
+            "path": "javascript/simple-linked-list"
+        },
+        {
+            "name": "javascript:space-age",
+            "path": "javascript/space-age"
+        },
+        {
+            "name": "javascript:spiral-matrix",
+            "path": "javascript/spiral-matrix"
+        },
+        {
+            "name": "javascript:square-root",
+            "path": "javascript/square-root"
+        },
+        {
+            "name": "javascript:strain",
+            "path": "javascript/strain"
+        },
+        {
+            "name": "javascript:sublist",
+            "path": "javascript/sublist"
+        },
+        {
+            "name": "javascript:sum-of-multiples",
+            "path": "javascript/sum-of-multiples"
+        },
+        {
+            "name": "javascript:translation-service",
+            "path": "javascript/translation-service"
+        },
+        {
+            "name": "javascript:transpose",
+            "path": "javascript/transpose"
+        },
+        {
+            "name": "javascript:triangle",
+            "path": "javascript/triangle"
+        },
+        {
+            "name": "javascript:twelve-days",
+            "path": "javascript/twelve-days"
+        },
+        {
+            "name": "javascript:two-bucket",
+            "path": "javascript/two-bucket"
+        },
+        {
+            "name": "javascript:two-fer",
+            "path": "javascript/two-fer"
+        },
+        {
+            "name": "javascript:variable-length-quantity",
+            "path": "javascript/variable-length-quantity"
+        },
+        {
+            "name": "javascript:vehicle-purchase",
+            "path": "javascript/vehicle-purchase"
+        },
+        {
+            "name": "javascript:word-count",
+            "path": "javascript/word-count"
+        },
+        {
+            "name": "javascript:word-search",
+            "path": "javascript/word-search"
+        },
+        {
+            "name": "javascript:wordy",
+            "path": "javascript/wordy"
+        },
+        {
+            "name": "javascript:yacht",
+            "path": "javascript/yacht"
+        },
+        {
+            "name": "javascript:zipper",
+            "path": "javascript/zipper"
+        },
+        {
+            "name": "typescript:hello-world",
+            "path": "typescript/hello-world"
+        },
+        {
+            "name": "typescript:accumulate",
+            "path": "typescript/accumulate"
+        },
+        {
+            "name": "typescript:acronym",
+            "path": "typescript/acronym"
+        },
+        {
+            "name": "typescript:allergies",
+            "path": "typescript/allergies"
+        },
+        {
+            "name": "typescript:all-your-base",
+            "path": "typescript/all-your-base"
+        },
+        {
+            "name": "typescript:alphametics",
+            "path": "typescript/alphametics"
+        },
+        {
+            "name": "typescript:anagram",
+            "path": "typescript/anagram"
+        },
+        {
+            "name": "typescript:armstrong-numbers",
+            "path": "typescript/armstrong-numbers"
+        },
+        {
+            "name": "typescript:atbash-cipher",
+            "path": "typescript/atbash-cipher"
+        },
+        {
+            "name": "typescript:beer-song",
+            "path": "typescript/beer-song"
+        },
+        {
+            "name": "typescript:binary-search",
+            "path": "typescript/binary-search"
+        },
+        {
+            "name": "typescript:binary-search-tree",
+            "path": "typescript/binary-search-tree"
+        },
+        {
+            "name": "typescript:bob",
+            "path": "typescript/bob"
+        },
+        {
+            "name": "typescript:bowling",
+            "path": "typescript/bowling"
+        },
+        {
+            "name": "typescript:circular-buffer",
+            "path": "typescript/circular-buffer"
+        },
+        {
+            "name": "typescript:clock",
+            "path": "typescript/clock"
+        },
+        {
+            "name": "typescript:collatz-conjecture",
+            "path": "typescript/collatz-conjecture"
+        },
+        {
+            "name": "typescript:complex-numbers",
+            "path": "typescript/complex-numbers"
+        },
+        {
+            "name": "typescript:connect",
+            "path": "typescript/connect"
+        },
+        {
+            "name": "typescript:crypto-square",
+            "path": "typescript/crypto-square"
+        },
+        {
+            "name": "typescript:custom-set",
+            "path": "typescript/custom-set"
+        },
+        {
+            "name": "typescript:diamond",
+            "path": "typescript/diamond"
+        },
+        {
+            "name": "typescript:difference-of-squares",
+            "path": "typescript/difference-of-squares"
+        },
+        {
+            "name": "typescript:diffie-hellman",
+            "path": "typescript/diffie-hellman"
+        },
+        {
+            "name": "typescript:dnd-character",
+            "path": "typescript/dnd-character"
+        },
+        {
+            "name": "typescript:etl",
+            "path": "typescript/etl"
+        },
+        {
+            "name": "typescript:flatten-array",
+            "path": "typescript/flatten-array"
+        },
+        {
+            "name": "typescript:food-chain",
+            "path": "typescript/food-chain"
+        },
+        {
+            "name": "typescript:gigasecond",
+            "path": "typescript/gigasecond"
+        },
+        {
+            "name": "typescript:grade-school",
+            "path": "typescript/grade-school"
+        },
+        {
+            "name": "typescript:grains",
+            "path": "typescript/grains"
+        },
+        {
+            "name": "typescript:hamming",
+            "path": "typescript/hamming"
+        },
+        {
+            "name": "typescript:house",
+            "path": "typescript/house"
+        },
+        {
+            "name": "typescript:isbn-verifier",
+            "path": "typescript/isbn-verifier"
+        },
+        {
+            "name": "typescript:isogram",
+            "path": "typescript/isogram"
+        },
+        {
+            "name": "typescript:kindergarten-garden",
+            "path": "typescript/kindergarten-garden"
+        },
+        {
+            "name": "typescript:knapsack",
+            "path": "typescript/knapsack"
+        },
+        {
+            "name": "typescript:largest-series-product",
+            "path": "typescript/largest-series-product"
+        },
+        {
+            "name": "typescript:leap",
+            "path": "typescript/leap"
+        },
+        {
+            "name": "typescript:linked-list",
+            "path": "typescript/linked-list"
+        },
+        {
+            "name": "typescript:list-ops",
+            "path": "typescript/list-ops"
+        },
+        {
+            "name": "typescript:luhn",
+            "path": "typescript/luhn"
+        },
+        {
+            "name": "typescript:matching-brackets",
+            "path": "typescript/matching-brackets"
+        },
+        {
+            "name": "typescript:matrix",
+            "path": "typescript/matrix"
+        },
+        {
+            "name": "typescript:minesweeper",
+            "path": "typescript/minesweeper"
+        },
+        {
+            "name": "typescript:nth-prime",
+            "path": "typescript/nth-prime"
+        },
+        {
+            "name": "typescript:nucleotide-count",
+            "path": "typescript/nucleotide-count"
+        },
+        {
+            "name": "typescript:ocr-numbers",
+            "path": "typescript/ocr-numbers"
+        },
+        {
+            "name": "typescript:palindrome-products",
+            "path": "typescript/palindrome-products"
+        },
+        {
+            "name": "typescript:pangram",
+            "path": "typescript/pangram"
+        },
+        {
+            "name": "typescript:pascals-triangle",
+            "path": "typescript/pascals-triangle"
+        },
+        {
+            "name": "typescript:perfect-numbers",
+            "path": "typescript/perfect-numbers"
+        },
+        {
+            "name": "typescript:phone-number",
+            "path": "typescript/phone-number"
+        },
+        {
+            "name": "typescript:pig-latin",
+            "path": "typescript/pig-latin"
+        },
+        {
+            "name": "typescript:prime-factors",
+            "path": "typescript/prime-factors"
+        },
+        {
+            "name": "typescript:protein-translation",
+            "path": "typescript/protein-translation"
+        },
+        {
+            "name": "typescript:proverb",
+            "path": "typescript/proverb"
+        },
+        {
+            "name": "typescript:pythagorean-triplet",
+            "path": "typescript/pythagorean-triplet"
+        },
+        {
+            "name": "typescript:queen-attack",
+            "path": "typescript/queen-attack"
+        },
+        {
+            "name": "typescript:raindrops",
+            "path": "typescript/raindrops"
+        },
+        {
+            "name": "typescript:rational-numbers",
+            "path": "typescript/rational-numbers"
+        },
+        {
+            "name": "typescript:react",
+            "path": "typescript/react"
+        },
+        {
+            "name": "typescript:rectangles",
+            "path": "typescript/rectangles"
+        },
+        {
+            "name": "typescript:resistor-color",
+            "path": "typescript/resistor-color"
+        },
+        {
+            "name": "typescript:resistor-color-duo",
+            "path": "typescript/resistor-color-duo"
+        },
+        {
+            "name": "typescript:reverse-string",
+            "path": "typescript/reverse-string"
+        },
+        {
+            "name": "typescript:rna-transcription",
+            "path": "typescript/rna-transcription"
+        },
+        {
+            "name": "typescript:robot-name",
+            "path": "typescript/robot-name"
+        },
+        {
+            "name": "typescript:robot-simulator",
+            "path": "typescript/robot-simulator"
+        },
+        {
+            "name": "typescript:roman-numerals",
+            "path": "typescript/roman-numerals"
+        },
+        {
+            "name": "typescript:rotational-cipher",
+            "path": "typescript/rotational-cipher"
+        },
+        {
+            "name": "typescript:run-length-encoding",
+            "path": "typescript/run-length-encoding"
+        },
+        {
+            "name": "typescript:saddle-points",
+            "path": "typescript/saddle-points"
+        },
+        {
+            "name": "typescript:say",
+            "path": "typescript/say"
+        },
+        {
+            "name": "typescript:scrabble-score",
+            "path": "typescript/scrabble-score"
+        },
+        {
+            "name": "typescript:secret-handshake",
+            "path": "typescript/secret-handshake"
+        },
+        {
+            "name": "typescript:series",
+            "path": "typescript/series"
+        },
+        {
+            "name": "typescript:sieve",
+            "path": "typescript/sieve"
+        },
+        {
+            "name": "typescript:simple-cipher",
+            "path": "typescript/simple-cipher"
+        },
+        {
+            "name": "typescript:space-age",
+            "path": "typescript/space-age"
+        },
+        {
+            "name": "typescript:spiral-matrix",
+            "path": "typescript/spiral-matrix"
+        },
+        {
+            "name": "typescript:strain",
+            "path": "typescript/strain"
+        },
+        {
+            "name": "typescript:sublist",
+            "path": "typescript/sublist"
+        },
+        {
+            "name": "typescript:sum-of-multiples",
+            "path": "typescript/sum-of-multiples"
+        },
+        {
+            "name": "typescript:transpose",
+            "path": "typescript/transpose"
+        },
+        {
+            "name": "typescript:triangle",
+            "path": "typescript/triangle"
+        },
+        {
+            "name": "typescript:twelve-days",
+            "path": "typescript/twelve-days"
+        },
+        {
+            "name": "typescript:two-bucket",
+            "path": "typescript/two-bucket"
+        },
+        {
+            "name": "typescript:two-fer",
+            "path": "typescript/two-fer"
+        },
+        {
+            "name": "typescript:variable-length-quantity",
+            "path": "typescript/variable-length-quantity"
+        },
+        {
+            "name": "typescript:word-count",
+            "path": "typescript/word-count"
+        },
+        {
+            "name": "typescript:word-search",
+            "path": "typescript/word-search"
+        },
+        {
+            "name": "typescript:wordy",
+            "path": "typescript/wordy"
+        },
+        {
+            "name": "wasm:hello-world",
+            "path": "wasm/hello-world"
+        },
+        {
+            "name": "wasm:grains",
+            "path": "wasm/grains"
+        },
+        {
+            "name": "wasm:nucleotide-count",
+            "path": "wasm/nucleotide-count"
+        },
+        {
+            "name": "wasm:pop-count",
+            "path": "wasm/pop-count"
+        },
+        {
+            "name": "wasm:resistor-color",
+            "path": "wasm/resistor-color"
+        },
+        {
+            "name": "wasm:rotational-cipher",
+            "path": "wasm/rotational-cipher"
+        },
+        {
+            "name": "wasm:leap",
+            "path": "wasm/leap"
+        }
     ],
     "settings": {
         "files.exclude": {
             "**/.git": true,
             "**/.DS_Store": true,
             "**/Thumbs.db": true,
-            "**/{8th,abap,awk,ballerina,bash,c,clojure,cobol,coffeescript,common-lisp,cpp,crystal,csharp,d,dart,delphi,elixir,elm,emacs-lisp,erlang,fortran,fsharp,gleam,go,groovy,haskell,java,jq,julia,kotlin,lfe,lua,mips,nim,objective-c,ocaml,perl5,pharo-smalltalk,php,plsql,powershell,prolog,purescript,python,r,racket,raku,reasonml,red,ruby,rust,scala,scheme,sml,swift,tcl,unison,vbnet,vlang,wren,x86-64-assembly,zig}": true,
-            "**/{javascript,typescript,wasm}/{binary,hexadecimal,octal,pop-count,trinary,accumulate,hangman,react,acronym,rectangles,affine-cipher,hello-world,resistor-color,all-your-base,high-scores,resistor-color-duo,allergies,house,resistor-color-trio,alphametics,hyper-optimized-telemetry,rest-api,anagram,interest-is-interesting,reverse-string,annalyns-infiltration,isbn-verifier,rna-transcription,armstrong-numbers,isogram,robot-name,atbash-cipher,kindergarten-garden,robot-simulator,bank-account,largest-series-product,roll-the-die,beer-song,leap,roman-numerals,binary-search,rotational-cipher,binary-search-tree,ledger,run-length-encoding,bird-watcher,linked-list,saddle-points,bob,list-ops,say,book-store,log-analysis,scale-generator,booking-up-for-beauty,log-levels,scrabble-score,bowling,lucians-luscious-lasagna,secret-handshake,cars-assemble,luhn,series,change,markdown,sgf-parsing,circular-buffer,matching-brackets,sieve,clock,matrix,simple-cipher,collatz-conjecture,simple-linked-list,complex-numbers,meetup,space-age,connect,minesweeper,spiral-matrix,crypto-square,need-for-speed,squeaky-clean,custom-set,nth-prime,strain,darts,nucleotide-count,sublist,diamond,ocr-numbers,sum-of-multiples,difference-of-squares,palindrome-products,tim-from-marketing,diffie-hellman,pangram,tournament,dnd-character,parallel-letter-frequency,tracks-on-tracks-on-tracks,dominoes,pascals-triangle,transpose,dot-dsl,perfect-numbers,tree-building,phone-number,triangle,elons-toys,phone-number-analysis,twelve-days,error-handling,pig-latin,two-bucket,etl,poker,two-fer,flatten-array,pov,variable-length-quantity,food-chain,prime-factors,wizards-and-warriors,forth,protein-translation,word-count,gigasecond,proverb,word-search,go-counting,pythagorean-triplet,wordy,grade-school,queen-attack,yacht,grains,rail-fence-cipher,zebra-puzzle,grep,raindrops,zipper,hamming,rational-numbers}": true,
-            "**/{javascript,typescript,wasm}/!{.devcontainer}/**/*.*": true,
+            "**/{8th,abap,awk,ballerina,bash,c,clojure,cfml,cobol,common-lisp,cpp,crystal,csharp,d,dart,delphi,elixir,elm,emacs-lisp,erlang,fortran,fsharp,gleam,go,groovy,haskell,java,jq,julia,kotlin,lfe,lua,mips,nim,objective-c,ocaml,perl5,pharo-smalltalk,php,plsql,powershell,prolog,purescript,python,r,racket,raku,reasonml,red,ruby,rust,scala,scheme,sml,swift,tcl,unison,vbnet,vimscript,vlang,wren,x86-64-assembly,zig}": true,
+            "**/{coffeescript,javascript,typescript,wasm}/{knapsack,lasagna,lasagna-master,lucky-numbers,mixed-juices,ozans-playlist,promises,square-root,translation-service,vehicle-purchase,poetry-club-door-policy,factory-sensors,freelancer-rates,fruit-picker,high-score-board,binary,amusement-park,coordinate-transformation,elyses-analytic-enchantments,elyses-destructured-enchantments,elyses-enchantments,elyses-looping-enchantments,hexadecimal,octal,pop-count,trinary,accumulate,hangman,react,acronym,rectangles,affine-cipher,hello-world,resistor-color,all-your-base,high-scores,resistor-color-duo,allergies,house,resistor-color-trio,alphametics,hyper-optimized-telemetry,rest-api,anagram,interest-is-interesting,reverse-string,annalyns-infiltration,isbn-verifier,rna-transcription,armstrong-numbers,isogram,robot-name,atbash-cipher,kindergarten-garden,robot-simulator,bank-account,largest-series-product,roll-the-die,beer-song,leap,roman-numerals,binary-search,rotational-cipher,binary-search-tree,ledger,run-length-encoding,bird-watcher,linked-list,saddle-points,bob,list-ops,say,book-store,log-analysis,scale-generator,booking-up-for-beauty,log-levels,scrabble-score,bowling,lucians-luscious-lasagna,secret-handshake,cars-assemble,luhn,series,change,markdown,sgf-parsing,circular-buffer,matching-brackets,sieve,clock,matrix,simple-cipher,collatz-conjecture,simple-linked-list,complex-numbers,meetup,space-age,connect,minesweeper,spiral-matrix,crypto-square,need-for-speed,squeaky-clean,custom-set,nth-prime,strain,darts,nucleotide-count,sublist,diamond,ocr-numbers,sum-of-multiples,difference-of-squares,palindrome-products,tim-from-marketing,diffie-hellman,pangram,tournament,dnd-character,parallel-letter-frequency,tracks-on-tracks-on-tracks,dominoes,pascals-triangle,transpose,dot-dsl,perfect-numbers,tree-building,phone-number,triangle,elons-toys,phone-number-analysis,twelve-days,error-handling,pig-latin,two-bucket,etl,poker,two-fer,flatten-array,pov,variable-length-quantity,food-chain,prime-factors,wizards-and-warriors,forth,protein-translation,word-count,gigasecond,proverb,word-search,go-counting,pythagorean-triplet,wordy,grade-school,queen-attack,yacht,grains,rail-fence-cipher,zebra-puzzle,grep,raindrops,zipper,hamming,rational-numbers}": true,
+            "**/{coffeescript,javascript,typescript,wasm}/!{.devcontainer}/**/*.*": true
         },
         "testing.openTesting": "openOnTestFailure",
         "jest.runMode": "on-demand",
@@ -33,7 +953,18 @@
             "visualstudioexptteam.intellicode-api-usage-examples",
             "ms-vscode.vscode-markdown-notebook",
             "esbenp.prettier-vscode",
-            "dotjoshjohnson.xml"
+            "dotjoshjohnson.xml",
+            "ms-vscode.vscode-typescript-next",
+            "glenn2223.live-sass",
+            "lkytal.coffeelinter",
+            "diniremix.vscode-coffeescript-snippets",
+            "mkloubert.vscode-easy-coffeescript",
+            "hbenl.vscode-jasmine-test-adapter",
+            "gamunu.vscode-yarn",
+            "pflannery.vscode-versionlens",
+            "jacano.vscode-pnpm",
+            "igorjrd.docker-stats",
+            "clemenspeters.format-json"
         ]
     }
 }

@@ -1,4 +1,4 @@
-import { Robot } from "./robot-name";
+import { Robot } from './robot-name';
 
 const areSequential = (name1, name2) => {
   const alpha1 = name1.substr(0, 2);
@@ -7,7 +7,9 @@ const areSequential = (name1, name2) => {
   const num2 = Number(name2.substr(2, 3));
 
   const numDiff = num2 - num1;
-  const alphaDiff = (alpha2.charCodeAt(0) - alpha1.charCodeAt(0)) * 26 + (alpha2.charCodeAt(1) - alpha1.charCodeAt(1));
+  const alphaDiff =
+    (alpha2.charCodeAt(0) - alpha1.charCodeAt(0)) * 26 +
+    (alpha2.charCodeAt(1) - alpha1.charCodeAt(1));
 
   const totalDiff = alphaDiff * 1000 + numDiff;
 
@@ -21,7 +23,7 @@ const TOTAL_NUMBER_OF_NAMES =
   10 * // 0-9
   10; // 0-9
 
-describe("Robot", () => {
+describe('Robot', () => {
   let robot;
 
   beforeEach(() => {
@@ -31,20 +33,20 @@ describe("Robot", () => {
     Robot.releaseNames();
   });
 
-  test("has a name", () => {
+  test('has a name', () => {
     expect(robot.name).toMatch(/^[A-Z]{2}\d{3}$/);
   });
 
-  test("name is the same each time", () => {
+  test('name is the same each time', () => {
     expect(robot.name).toEqual(robot.name);
   });
 
-  test("different robots have different names", () => {
+  test('different robots have different names', () => {
     const differentRobot = new Robot();
     expect(differentRobot.name).not.toEqual(robot.name);
   });
 
-  test("is able to reset the name", () => {
+  test('is able to reset the name', () => {
     const originalName = robot.name;
 
     robot.reset();
@@ -54,7 +56,7 @@ describe("Robot", () => {
     expect(originalName).not.toEqual(newName);
   });
 
-  test("should set a unique name after reset", () => {
+  test('should set a unique name after reset', () => {
     const NUMBER_OF_ROBOTS = 10000;
     const usedNames = new Set();
 
@@ -67,14 +69,14 @@ describe("Robot", () => {
     expect(usedNames.size).toEqual(NUMBER_OF_ROBOTS + 1);
   });
 
-  test("internal name cannot be modified", () => {
+  test('internal name cannot be modified', () => {
     const modifyInternal = () => {
-      robot.name += "a modification";
+      robot.name += 'a modification';
     };
     expect(modifyInternal).toThrow();
   });
 
-  test("new names should not be sequential", () => {
+  test('new names should not be sequential', () => {
     const name1 = robot.name;
     const name2 = new Robot().name;
     const name3 = new Robot().name;
@@ -83,7 +85,7 @@ describe("Robot", () => {
     expect(areSequential(name2, name3)).toBe(false);
   });
 
-  test("names from reset should not be sequential", () => {
+  test('names from reset should not be sequential', () => {
     const name1 = robot.name;
     robot.reset();
     const name2 = robot.name;
@@ -95,7 +97,7 @@ describe("Robot", () => {
   });
 
   // This test is optional.
-  test("all the names can be generated", () => {
+  test('all the names can be generated', () => {
     const usedNames = new Set();
     usedNames.add(robot.name);
 

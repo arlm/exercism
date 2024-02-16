@@ -13,27 +13,21 @@ type
   YearTest = class(TObject)
   public
     [Test]
-//    [Ignore('Comment the "[Ignore]" statement to run the test')]
     procedure year_not_divisible_by_4_common_year;
 
     [Test]
-    [Ignore]
     procedure year_divisible_by_2_not_divisible_by_4_common_year;
-    
+
     [Test]
-    [Ignore]
     procedure year_divisible_by_4_not_divisible_by_100_leap_year;
 
     [Test]
-    [Ignore]
     procedure year_divisible_by_100_not_divisible_by_400_common_year;
 
     [Test]
-    [Ignore]
     procedure year_divisible_by_400_leap_year;
 
     [Test]
-    [Ignore]
     procedure year_divisible_by_200_not_divisible_by_400_common_year;
   end;
 

@@ -6,7 +6,7 @@
   ],
   "features": {
     "ghcr.io/devcontainers-contrib/features/apt-packages:1": {
-      "packages": "build-essential,gdb,git,original-awk,shfmt,bats,bc,jq"
+      "packages": "build-essential,gdb,git,ginal-awk,gawk,shfmt,bats,bc,jq"
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,

@@ -29,6 +29,10 @@
             "path": "bash/series"
         },
         {
+            "name": "bash:leap",
+            "path": "bash/leap"
+        },
+        {
             "name": "jq:hello-world",
             "path": "jq/hello-world"
         },
@@ -55,6 +59,10 @@
         {
             "name": "powershell:hello-world",
             "path": "powershell/hello-world"
+        },
+        {
+            "name": "powershell:leap",
+            "path": "powershell/leap"
         }
     ],
     "settings": {
@@ -88,7 +96,9 @@
             "remisa.shellman",
             "trganda.jq-live",
             "jq-syntax-highlighting.jq-syntax-highlighting",
-            "ms-vscode.powershell"
+            "ms-vscode.powershell",
+            "pspester.pester-test",
+            "beaglefoot.awk-ide-vscode"
         ]
     }
 }
