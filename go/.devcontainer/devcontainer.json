@@ -1,6 +1,6 @@
 {
   "name": "exercism-go",
-  "image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/go:1.21-bullseye",
   "mounts": [
     "source=${localEnv:HOME}/.config/exercism,target=/home/vscode/.exercism-config,type=bind,consistency=cached"
   ],
@@ -11,9 +11,10 @@
       "installOhMyZsh": true
     },
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
-    "ghcr.io/devcontainers-contrib/features/exercism-cli:1": {},
-    "ghcr.io/devcontainers/features/go:1": {},
-    "ghcr.io/guiyomh/features/gomarkdoc:0": {},
+    //"ghcr.io/devcontainers-contrib/features/exercism-cli:1": {},
+    "ghcr.io/codeman99/features/exercism-cli:1": {},
+    //"ghcr.io/devcontainers/features/go:1": {},
+    //"ghcr.io/guiyomh/features/gomarkdoc:0": {},
     "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {}
   },
   "initializeCommand": "./.devcontainer/initializeCommand.sh",
