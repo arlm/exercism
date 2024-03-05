@@ -17,31 +17,24 @@ type
     procedure List_of_scores;
 
     [Test]
-    [Ignore]
     procedure Latest_score;
 
     [Test]
-    [Ignore]
     procedure Personal_best;
 
     [Test]
-    [Ignore]
     procedure Personal_top_three_from_a_list_of_scores;
 
     [Test]
-    [Ignore]
     procedure Personal_top_highest_to_lowest;
 
     [Test]
-    [Ignore]
     procedure Personal_top_when_there_is_a_tie;
 
     [Test]
-    [Ignore]
     procedure Personal_top_when_there_are_less_than_3;
 
     [Test]
-    [Ignore]
     procedure Personal_top_when_there_is_only_one;
 
     [Test]

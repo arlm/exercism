@@ -16,19 +16,15 @@ type
     procedure date_only_specification_of_time;
 
     [Test]
-    [Ignore]
     procedure second_test_for_date_only_specification_of_time;
 
     [Test]
-    [Ignore]
     procedure third_test_for_date_only_specification_of_time;
 
     [Test]
-    [Ignore]
     procedure full_time_specified;
 
     [Test]
-    [Ignore]
     procedure full_time_with_day_roll_over;
   end;
 

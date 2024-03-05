@@ -17,75 +17,57 @@ type
     procedure One_is_a_single_I;
 
     [Test]
-    [Ignore]
     procedure Two_is_two_I_s;
 
     [Test]
-    [Ignore]
     procedure Three_is_three_I_s;
 
     [Test]
-    [Ignore]
     procedure Four_being_5_minus_1_is_IV;
 
     [Test]
-    [Ignore]
     procedure Five_is_a_single_V;
 
     [Test]
-    [Ignore]
     procedure Six_being_5_plus_1_is_VI;
 
     [Test]
-    [Ignore]
     procedure Nine_being_10_minus_1_is_IX;
 
     [Test]
-    [Ignore]
     procedure Twenty_is_two_X_s;
 
     [Test]
-    [Ignore]
     procedure Fourty_eight_is_not_50_minus_2_but_rather_40_plus_8;
 
     [Test]
-    [Ignore]
     procedure Fourty_nine_is_not_40_plus_5_plus_4_but_rather_50_minus_10_plus_10_minus_1;
 
     [Test]
-    [Ignore]
     procedure Fifty_is_a_single_L;
 
     [Test]
-    [Ignore]
     procedure Ninety_being_100_minus_10_is_XC;
 
     [Test]
-    [Ignore]
     procedure One_hundred_is_a_single_C;
 
     [Test]
-    [Ignore]
     procedure Sixety_being_50_plus_10_is_LX;
 
     [Test]
-    [Ignore]
     procedure Four_hundred_being_500_minus_100_is_CD;
 
     [Test]
-    [Ignore]
     procedure Five_hundred_is_a_single_D;
 
     [Test]
-    [Ignore]
     procedure Nine_hundred_being_1000_minus_100_is_CM;
 
     [Test]
-    [Ignore]
     procedure One_thousand_is_a_single_M;
 
     [Test]
-    [Ignore]
     procedure Three_thousand_is_three_M_s;
   end;
 

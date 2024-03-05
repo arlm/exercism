@@ -59,7 +59,6 @@ static void test_date(void)
 
 static void test_another_date(void)
 {
-   TEST_IGNORE();   // delete this line to run test
    time_t before = construct_date(1977, 6, 13, 0, 0, 0);
    char after[BUFFER_SIZE] = { 0 };
    gigasecond(before, after, BUFFER_SIZE);
@@ -68,7 +67,6 @@ static void test_another_date(void)
 
 static void test_third_date(void)
 {
-   TEST_IGNORE();
    time_t before = construct_date(1959, 7, 19, 0, 0, 0);
    char after[BUFFER_SIZE] = { 0 };
    gigasecond(before, after, BUFFER_SIZE);
@@ -77,7 +75,6 @@ static void test_third_date(void)
 
 static void test_date_and_time(void)
 {
-   TEST_IGNORE();
    time_t before = construct_date(2015, 1, 24, 22, 0, 0);
    char after[BUFFER_SIZE] = { 0 };
    gigasecond(before, after, BUFFER_SIZE);
@@ -86,7 +83,6 @@ static void test_date_and_time(void)
 
 static void test_date_and_time_with_day_rollover(void)
 {
-   TEST_IGNORE();
    time_t before = construct_date(2015, 1, 24, 23, 59, 59);
    char after[BUFFER_SIZE] = { 0 };
    gigasecond(before, after, BUFFER_SIZE);

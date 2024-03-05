@@ -33,8 +33,8 @@ expect.extend({
         pass
           ? ''
           : `Expected to see the following values: ${JSON.stringify(
-              expected
-            )}, actual: ${JSON.stringify(values)}`,
+            expected
+          )}, actual: ${JSON.stringify(values)}`,
     }
   },
 })

@@ -2,8 +2,7 @@
 load bats-extra
 
 @test "List of scores" {
-  #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 30
 50
 20
@@ -20,8 +19,7 @@ END_INPUT
 }
 
 @test "Latest score" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 100
 0
 90
@@ -34,8 +32,7 @@ END_INPUT
 }
 
 @test "Personal best" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 40
 100
 70
@@ -47,8 +44,7 @@ END_INPUT
 }
 
 @test "Personal top three from a list of scores" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 10
 30
 90
@@ -73,8 +69,7 @@ END_INPUT
 }
 
 @test "Personal top three from highest to lowest" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 20
 10
 30
@@ -89,8 +84,7 @@ END_INPUT
 }
 
 @test "Personal top three when there is a tie" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 40
 20
 40
@@ -106,8 +100,7 @@ END_INPUT
 }
 
 @test "Personal top three when there are less then 3" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 30
 70
 personalTopThree
@@ -120,8 +113,7 @@ END_INPUT
 }
 
 @test "Personal top three when there is only one" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 40
 personalTopThree
 END_INPUT
@@ -131,8 +123,7 @@ END_INPUT
 }
 
 @test "Latest score after personal top scores" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 70
 50
 20
@@ -150,8 +141,7 @@ END_INPUT
 }
 
 @test "Scores after personal top scores" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 30
 50
 20
@@ -172,8 +162,7 @@ END_INPUT
 }
 
 @test "Latest score after personal best" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 20
 70
 15
@@ -190,8 +179,7 @@ END_INPUT
 }
 
 @test "Scores after personal best" {
-  [[ $BATS_RUN_SKIPPED == "true" ]] || skip
-  run gawk -f high-scores.awk << END_INPUT
+  run gawk -f high-scores.awk <<END_INPUT
 20
 70
 15

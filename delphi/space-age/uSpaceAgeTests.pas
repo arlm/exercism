@@ -17,31 +17,24 @@ type
     procedure Age_on_earth;
 
     [Test]
-    [Ignore]
     procedure Age_on_mercury;
 
     [Test]
-    [Ignore]
     procedure Age_on_venus;
 
     [Test]
-    [Ignore]
     procedure Age_on_mars;
 
     [Test]
-    [Ignore]
     procedure Age_on_jupiter;
 
     [Test]
-    [Ignore]
     procedure Age_on_saturn;
 
     [Test]
-    [Ignore]
     procedure Age_on_uranus;
 
     [Test]
-    [Ignore]
     procedure Age_on_neptune;
   end;
 

@@ -17,7 +17,7 @@ Public Class HighScoresTest
         }, sut.Scores())
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub LatestScore()
         Dim sut = New HighScores(New List(Of Integer) From {
             100,
@@ -28,7 +28,7 @@ Public Class HighScoresTest
         Assert.Equal(30, sut.Latest())
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub PersonalBest()
         Dim sut = New HighScores(New List(Of Integer) From {
             40,
@@ -38,7 +38,7 @@ Public Class HighScoresTest
         Assert.Equal(100, sut.PersonalBest())
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub PersonalTopThreeFromAListOfScores()
         Dim sut = New HighScores(New List(Of Integer) From {
             10,
@@ -62,7 +62,7 @@ Public Class HighScoresTest
         }, sut.PersonalTopThree())
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub PersonalTopHighestToLowest()
         Dim sut = New HighScores(New List(Of Integer) From {
             20,
@@ -76,7 +76,7 @@ Public Class HighScoresTest
         }, sut.PersonalTopThree())
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub PersonalTopWhenThereIsATie()
         Dim sut = New HighScores(New List(Of Integer) From {
             40,
@@ -91,7 +91,7 @@ Public Class HighScoresTest
         }, sut.PersonalTopThree())
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub PersonalTopWhenThereAreLessThan3()
         Dim sut = New HighScores(New List(Of Integer) From {
             30,
@@ -103,7 +103,7 @@ Public Class HighScoresTest
         }, sut.PersonalTopThree())
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub PersonalTopWhenThereIsOnlyOne()
         Dim sut = New HighScores(New List(Of Integer) From {
             40

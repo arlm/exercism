@@ -72,3 +72,4 @@ TEST_CASE("One minute left, 5 layers!", "[task_4]") {
     REQUIRE(expected == actual);
 }
 
+#endif

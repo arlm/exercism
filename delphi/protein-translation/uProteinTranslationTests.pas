@@ -18,91 +18,69 @@ type
     procedure Methionine_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure Phenylalanine_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure Phenylalanine_RNA_sequence_2;
 
     [Test]
-    [Ignore]
     procedure Leucine_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure Leucine_RNA_sequence_2;
 
     [Test]
-    [Ignore]
     procedure Serine_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure Serine_RNA_sequence_2;
 
     [Test]
-    [Ignore]
     procedure Serine_RNA_sequence_3;
 
     [Test]
-    [Ignore]
     procedure Serine_RNA_sequence_4;
 
     [Test]
-    [Ignore]
     procedure Tyrosine_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure Tyrosine_RNA_sequence_2;
 
     [Test]
-    [Ignore]
     procedure Cysteine_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure Cysteine_RNA_sequence_2;
 
     [Test]
-    [Ignore]
     procedure Tryptophan_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure STOP_codon_RNA_sequence;
 
     [Test]
-    [Ignore]
     procedure STOP_codon_RNA_sequence_2;
 
     [Test]
-    [Ignore]
     procedure STOP_codon_RNA_sequence_3;
 
     [Test]
-    [Ignore]
     procedure Translate_RNA_strand_into_correct_protein_list;
 
     [Test]
-    [Ignore]
     procedure Translation_stops_if_STOP_codon_at_beginning_of_sequence;
 
     [Test]
-    [Ignore]
     procedure Translation_stops_if_STOP_codon_at_end_of_two_codon_sequence;
 
     [Test]
-    [Ignore]
     procedure Translation_stops_if_STOP_codon_at_end_of_three_codon_sequence;
 
     [Test]
-    [Ignore]
     procedure Translation_stops_if_STOP_codon_in_middle_of_three_codon_sequence;
 
     [Test]
-    [Ignore]
     procedure Translation_stops_if_STOP_codon_in_middle_of_six_codon_sequence;
   end;
 
